@@ -7,6 +7,7 @@
 import { MarginFromHeader } from "../../constant/NavbarDesign";
 	import UiClean from "$lib/home/UiClean.svelte";
 	import TanpaDataVerbose from "$lib/home/TanpaDataVerbose.svelte";
+	import Filosofi from "$lib/home/Filosofi.svelte";
 
 </script>
 <div class="pr-18 pl-18 space-y-4 {MarginFromHeader}">
@@ -15,6 +16,7 @@ import { MarginFromHeader } from "../../constant/NavbarDesign";
     <UiClean/>
     <TanpaDataVerbose/>
     <LangkahIntegrasi/>
+    <Filosofi/>
     <Testimoni/>
     <Contributor/>
 </div>

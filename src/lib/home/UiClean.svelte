@@ -1,9 +1,40 @@
 <script lang="ts">
+	import { DotLottieSvelte } from "@lottiefiles/dotlottie-svelte";
+
 
 </script>
 
-<section id="kelebihan-app" class="w-full h-[24rem] p-4 bg-amber-100 grid grid-cols-[45%_10%_45%]">
-    <div class="bg-orange-500">Kolom1</div>
+<section id="kelebihan-app" class=" mt-20 w-full h-[24rem] p-4  grid grid-cols-[45%_10%_45%]">
+    <div class="">
+        <h1>Ui Clean Super Cepat</h1>
+        <br>
+        <b>Kami tidak bertele tele dengan animasi berat dan verbose</b>
+        <ul>
+            <li>
+                - UI Pilihan Barang Simple
+                <p>Menampilkan produk dengan jelas, mudah dicari, dan cepat dipilih.</p>
+            </li>
+            <li>
+                – UI Penjual Simple
+                <p>Informasi penjual tersaji rapih, sehingga kamu tahu dari siapa membeli tanpa kebingungan.</p>
+            </li>
+            <li>
+                – UI Pengiriman & Engagement
+                <p>Status pengiriman dan interaksi dengan penjual mudah diikuti, semua transparan.</p>
+            </li>
+            <br>
+            <button>
+                Lanjut
+            </button>
+        </ul>
+    </div>
     <div></div>
-    <div class="bg-emerald-600">Kolom2</div>
+    <div class="">
+        <DotLottieSvelte
+            src="src\constant\ecommerce.json"
+            autoplay={true}
+            loop={true}
+            speed={1}
+        />
+    </div>
 </section>
