@@ -7,3 +7,11 @@ export interface katakata{
     a: string;
     b:string
 }
+
+export interface Testimoni{
+    nama: string;
+    gelar: string;
+    ulasan: string;
+    bintang: number;
+    commited: string;
+}

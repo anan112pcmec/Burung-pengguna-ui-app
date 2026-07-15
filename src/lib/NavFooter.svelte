@@ -3,7 +3,7 @@
     const footerLinks = "text-gray-600 hover:text-black transition-colors block mb-2 text-[12px]";
 </script>
 
-<footer class="bottom-0 left-0 w-full bg-gray-50 border-t border-gray-200 h-[23rem] grid grid-rows-[75%_25%] font-sans">
+<footer class="bottom-0 left-0 w-full mt-20 bg-gray-50 border-t border-gray-200 h-[23rem] grid grid-rows-[75%_25%] font-sans">
     
     <div class="grid grid-cols-[20%_20%_20%_40%] px-12 pt-8">
         <div>

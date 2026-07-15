@@ -18,5 +18,4 @@ import { MarginFromHeader } from "../../constant/NavbarDesign";
     <LangkahIntegrasi/>
     <Filosofi/>
     <Testimoni/>
-    <Contributor/>
 </div>
