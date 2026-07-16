@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	import { navbarState } from "$lib/state/general/state.svelte";
 	import { FontSection } from "../../../constant/NavbarDesign";
 	import { Full } from "../../../constant/UiConstant";
 
 	const topMenus = ["Customer Service", "Newsletter", "Find a store"];
+	let param_search = ""
 
 	let y = $state(0);
 	let progress = $state(0);
@@ -103,16 +105,41 @@
 
 		<div class="{Full} flex items-center justify-end gap-6 text-gray-700 {FontSection} transition duration-700">
 			<div class="{Full} flex items-center justify-end gap-6 text-gray-700 {FontSection}">
-    <!-- Wadah input: Lebar garis bawah memanjang mulus saat fokus -->
-    <div class="relative border-b border-transparent hover:border-black focus-within:border-black pb-1 transition-colors duration-300">
+			<!-- Wadah input: Lebar garis bawah memanjang mulus saat fokus -->
+			<div class="flex items-center gap-4">
+			<div class="relative border-b border-transparent hover:border-black focus-within:border-black pb-1 transition-colors duration-300">
+				<form onsubmit={(e) => {
+					e.preventDefault()
+			goto(`/market`)
+		}} class="relative  focus-within:border-black pb-1 transition-colors duration-300">
         <input 
+			bind:value={param_search}
             type="text" 
-            placeholder="Search products" 
+            placeholder="Search products..." 
             onfocus={() => navbarState.search()}
-            onblur={() =>  navbarState.unsearch()}
+            onblur={() => setTimeout(() => navbarState.unsearch(), 200)} 
             class="bg-transparent outline-none text-[12px] transition-all duration-500 ease-in-out placeholder-gray-400 {navbarState.searching ? 'w-64' : 'w-32'}"
         />
+        </form>
+        {#if navbarState.searching}
+            <div class="absolute left-0 top-full mt-2 w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
+                <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Rekomendasi Produk</div>
+                <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+                    <span>Sepatu Running Nike</span>
+                    <span class="text-[10px] text-gray-400">di Sepatu</span>
+                </a>
+                <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+                    <span>Baju Kaos Polos</span>
+                    <span class="text-[10px] text-gray-400">di Pakaian</span>
+                </a>
+                <hr class="border-gray-100 my-1" />
+                <a href="/market" class="block text-center text-[11px] text-slate-800 font-medium hover:underline py-1">
+                    Lihat semua hasil
+                </a>
+            </div>
+        {/if}
     </div>
+</div>
     
     <!-- Bungkus menu kanan dalam wadah fleksibel dengan transisi lebar dan opacity -->
     <div class="flex items-center gap-6 overflow-hidden transition-all duration-500 ease-in-out {navbarState.searching ? 'w-0 opacity-0 pointer-events-none' : 'w-64 opacity-100'}">

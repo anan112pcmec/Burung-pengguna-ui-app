@@ -6,6 +6,7 @@
 	import TanpaDataVerbose from "$lib/page/home/TanpaDataVerbose.svelte";
 	import Testimoni from "$lib/page/home/Testimoni.svelte";
 	import UiClean from "$lib/page/home/UiClean.svelte";
+	import { navbarState } from '$lib/state/general/state.svelte';
 	import { MarginFromHeader } from "../../constant/NavbarDesign";
 
 	
