@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { FilterState } from "$lib/state/market/state.svelte";
 	import { MarginFromHeader } from "../../../constant/NavbarDesign";
 	import { Full } from "../../../constant/UiConstant";
 
@@ -73,9 +74,15 @@
 
         </svg>
 
-        <span class="tracking-wide">
+        <button onclick={(e) => {
+            e.preventDefault();
+
+            FilterState.filtering();
+        }}>
+        <span class="tracking-wide hover:text-slate-900/80">
             FILTER
         </span>
+        </button>
     </div>
 
 </div>

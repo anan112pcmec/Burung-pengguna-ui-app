@@ -3,6 +3,7 @@
     import { goto } from '$app/navigation';
 	import HeadingResult from '$lib/page/market/HeadingResult.svelte';
 	import SearchingResult from '$lib/page/market/SearchingResult.svelte';
+	import FilterBerdasarRight from '$lib/page/market/FilterBerdasarRight.svelte';
 
     // ==========================================
     // 1. MEMBACA STATE DARI URL (Reaktif via Svelte 5 $derived)
@@ -77,5 +78,6 @@
 
 <main class="pr-2 pl-2 space-y-4 scrollbar-none">
     <HeadingResult/>
+    <FilterBerdasarRight/>
     <SearchingResult/>
 </main>

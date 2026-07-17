@@ -11,5 +11,4 @@ class NavbarState {
     };
 }
 
-// Export satu instance tunggal (Singleton)
 export const navbarState = new NavbarState();
