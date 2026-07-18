@@ -378,7 +378,7 @@
 
                     <div>
                         <h1 class="text-left mt-6 font-bold text-4xl text-slate-800 font-sans tracking-normal">
-                            Jual Beli Jadi Gampang
+                            JUAL BELI JADI GAMPANG
                         </h1>
 
                         <div class="mt-2 w-[30%] h-1 rounded-full bg-slate-900/80"></div>

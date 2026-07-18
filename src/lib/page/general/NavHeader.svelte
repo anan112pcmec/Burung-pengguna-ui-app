@@ -144,13 +144,13 @@
     <!-- Bungkus menu kanan dalam wadah fleksibel dengan transisi lebar dan opacity -->
     <div class="flex items-center gap-6 overflow-hidden transition-all duration-500 ease-in-out {navbarState.searching ? 'w-0 opacity-0 pointer-events-none' : 'w-64 opacity-100'}">
         <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200" href="/home"> 
-            <span>Sign in</span>
+            <span>SIGN</span>
         </a>
         <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200">
-            <span>Favorites</span>
+            <span>TRANSAKSI</span>
         </a>
         <a class="flex items-center gap-1 hover:text-black font-medium whitespace-nowrap transition-colors duration-200">
-            <span>Wishlist (0)</span>
+            <span>WISHLIST (0)</span>
         </a>
     </div>
 </div>
