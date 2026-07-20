@@ -99,7 +99,7 @@
                 Rekomendasi
             </h3>
             <p class="text-[11px] text-zinc-500 font-medium">
-                Produk serupa dari seller ini yang mungkin Anda suka
+                Produk serupa yang mungkin Anda suka
             </p>
         </div>
         

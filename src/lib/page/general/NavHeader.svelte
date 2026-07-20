@@ -86,7 +86,7 @@
 				</svg>
 
 				<div class="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-					<a href="/profil" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Akun Saya</a>
+					<a href="/profile" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Tentang Saya</a>
 					<a href="/pesanan" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900 flex justify-between items-center">
 						<span>Pesanan Saya</span>
 						<span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>

@@ -1,13 +1,44 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import type { Action } from 'svelte/action';
+
     const ulang:number = 24
     let ke: number = 0
     function tambah(){
         ke++
     }
+    // Perubahan: Mengganti tipe event ke MouseEvent (atau PointerEvent) dan return type ke void
+    async function ClickEvent(node: HTMLDivElement, eventHandle: (el: MouseEvent) => void) {
+        node.addEventListener("click", eventHandle);
+    }
+
+    const ProductActions: Action = (node) => {
+        const productCards = node.querySelectorAll('[class*="product-card"]') as NodeListOf<HTMLDivElement>;
+        
+        const handlers: { card: HTMLDivElement; handler: (el: MouseEvent) => void }[] = [];
+
+            for (const Card of productCards) {
+                const handler = (el: MouseEvent) => {
+                    goto("details");
+                };
+                
+                ClickEvent(Card, handler);
+                
+                handlers.push({ card: Card, handler });
+            }
+
+            return {
+                destroy() {
+                    for (const item of handlers) {
+                        item.card.removeEventListener("click", item.handler);
+                    }
+                }   
+            };
+    }
 </script>
 
-{#snippet ProductCard()}
-    <div class="grid grid-cols-2 h-[15rem] w-[25.5rem] rounded-sm border border-zinc-800/20">
+{#snippet ProductCard(id:number)}
+    <div class="grid grid-cols-2 h-[15rem] w-[25.5rem] rounded-sm border border-zinc-800/20 product-card-{id}">
         <div class="relative bg-zinc-400/15 rounded-l-sm overflow-hidden w-full h-full">
   <!-- Foto di paling belakang -->
         <img src="src\constant\hm-removebg-preview.png" alt="Product" class="absolute inset-0 w-full h-full object-cover z-0" />
@@ -94,9 +125,9 @@
     </div>
 {/snippet}
 
-<div class="pr-2 pl-2 w-full flex flex-wrap items-start gap-x-1 gap-y-[10px] min-h-screen scrollbar-none">
+<div use:ProductActions class="pr-2 pl-2 w-full flex flex-wrap items-start gap-x-1 gap-y-[10px] min-h-screen scrollbar-none">
         {#each Array(ulang) as _, i}
-            {@render ProductCard()}
+            {@render ProductCard(i)}
         {/each}
 
 </div>
