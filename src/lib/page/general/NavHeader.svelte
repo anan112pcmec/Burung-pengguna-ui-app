@@ -146,7 +146,7 @@
         <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200" href="/home"> 
             <span>SIGN</span>
         </a>
-        <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200">
+        <a href="/transaksi" class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200">
             <span>TRANSAKSI</span>
         </a>
         <a class="flex items-center gap-1 hover:text-black font-medium whitespace-nowrap transition-colors duration-200">

@@ -15,11 +15,7 @@
             <p class="text-slate-600/70 text-xs leading-relaxed font-light">
                 Platform e-commerce minimalis modern dengan sistem transaksi terenkripsi dan kurasi barang independen.
             </p>
-            <div class="pt-2">
-                <span class="text-[9px] font-mono text-slate-800/50 uppercase border border-zinc-800/20 px-2 py-1 rounded-xs">
-                    SYS VER 2.4.0 — ONLINE
-                </span>
-            </div>
+            
         </div>
 
         <div>
