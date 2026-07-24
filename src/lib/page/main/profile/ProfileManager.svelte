@@ -14,9 +14,7 @@
     const alamatList = node.querySelectorAll('[class*="card-alamat"]') as NodeListOf<HTMLDivElement>;
     const handlers: { alamat: HTMLDivElement; handler: (el: MouseEvent) => void }[] = [];
     
-    // Menyimpan jumlah klik per alamat
     const alamatCountClick = new SvelteMap<HTMLDivElement, number>();
-    // Menyimpan referensi timer timeout per alamat agar tidak saling bentrok
     const alamatTimers = new SvelteMap<HTMLDivElement, ReturnType<typeof setTimeout>>();
 
     for (const alamat of alamatList) {
@@ -24,14 +22,11 @@
             el.stopPropagation();
             el.preventDefault();
 
-            // 1. Ambil hitungan saat ini dan tambahkan 1
             const currentCount = (alamatCountClick.get(alamat) ?? 0) + 1;
             alamatCountClick.set(alamat, currentCount);
 
-            // 2. Jika ini klik pertama, mulai jendela waktu 700ms
             if (currentCount === 1) {
                 const timer = setTimeout(() => {
-                    // Waktu habis, reset hitungan kembali ke 0
                     alamatCountClick.set(alamat, 0);
                     alamatTimers.delete(alamat);
                 }, 700);
@@ -39,9 +34,7 @@
                 alamatTimers.set(alamat, timer);
             }
 
-            // 3. Cek apakah klik sudah LEBIH DARI 2 KALI (artinya klik ke-3 atau lebih)
             if (currentCount > 2) {
-                // Bersihkan timer jendela waktu yang sedang berjalan
                 const activeTimer = alamatTimers.get(alamat);
                 if (activeTimer) clearTimeout(activeTimer);
                 
@@ -710,10 +703,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
             </div>
 {/snippet}
 <section class="grid grid-cols-[36%_64%] w-full h-[27rem] border border-zinc-950/10 rounded-sm bg-white">
-    <!-- LEFT SIDEBAR: Navigasi Opsi -->
     <div class="grid grid-rows-7 pl-4 pr-4 border-r border-zinc-950/10 py-2">
-        <!-- Tombol 1: Aktifitas -->
-       <!-- Tombol 1: Aktifitas -->
 <button 
     onclick={() => LeftOpsiState.setAktifitas()}
     class="w-full grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isAktifitas() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -721,7 +711,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <span class="text-right text-zinc-400">-></span>
 </button>
 
-<!-- Tombol 2: Ubah Profil -->
 <button 
     onclick={() => LeftOpsiState.setUbahProfil()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isUbahProfil() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -729,7 +718,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <span class="text-right text-zinc-400">-></span>
 </button>
 
-<!-- Tombol 3: Daftar Alamat -->
 <button 
     onclick={() => LeftOpsiState.setDaftarAlamat()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isDaftarAlamat() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -737,7 +725,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <span class="text-right text-zinc-400">-></span>
 </button>
 
-<!-- Tombol 4: Keamanan Akun -->
 <button 
     onclick={() => LeftOpsiState.setKeamananAkun()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isKeamananAkun() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -745,7 +732,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <span class="text-right text-zinc-400">-></span>
 </button>
 
-<!-- Tombol 5: Notifikasi -->
 <button 
     onclick={() => LeftOpsiState.setNotifikasi()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isNotifikasi() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -753,7 +739,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <span class="text-right text-zinc-400">-></span>
 </button>
 
-<!-- Tombol 6: Privasi Akun -->
 <button 
     onclick={() => LeftOpsiState.setPrivasiAkun()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isPrivasiAkun() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -761,7 +746,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <span class="text-right text-zinc-400">-></span>
 </button>
 
-<!-- Tombol 7: Penautan -->
 <button 
     onclick={() => LeftOpsiState.setPenautan()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isPenautan() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
@@ -770,36 +754,28 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 </button>
     </div>
 
-    <!-- RIGHT CONTENT: Area Isi Data -->
     <div class="p-6 overflow-y-auto scrollbar-none h-full bg-white flex flex-col min-h-0">
         
         {#if LeftOpsiState.isAktifitas()}
-            <!-- TAB: AKTIFITAS -->
            {@render Aktifitas()}
 
         {:else if LeftOpsiState.isUbahProfil()}
-            <!-- TAB: UBAH PROFIL (Mengikuti struct Pengguna) -->
            {@render Profil()}
 
         {:else if LeftOpsiState.isDaftarAlamat()}
-            <!-- TAB: DAFTAR ALAMAT (Mengikuti struct AlamatPengguna) -->
            {@render Alamat()}
 
         {:else if LeftOpsiState.isKeamananAkun()}
-            <!-- TAB: KEAMANAN AKUN -->
          {@render KeamananAkun()}
 
         {:else if LeftOpsiState.isNotifikasi()}
-            <!-- TAB: NOTIFIKASI -->
         {@render Notifikasi()}
 
 
         {:else if LeftOpsiState.isPrivasiAkun()}
-            <!-- TAB: PRIVASI AKUN -->
             {@render PrivasiAkun()}
 
         {:else if LeftOpsiState.isPenautan()}
-            <!-- TAB: PENAUTAN (Mengikuti struct EntitySocialMedia) -->
           {@render Penautan()}
         {/if}
 

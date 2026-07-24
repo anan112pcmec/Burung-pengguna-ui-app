@@ -1,13 +1,16 @@
 <script lang="ts">
-    // Pure hardcoded UI tanpa state
+	import { goto } from '$app/navigation';
+
+	
+	
 </script>
 
-{#snippet ListTransaksi()}
+{#snippet ListTransaksi(i: number)}
     <!-- Container Utama Kartu Transaksi -->
-    <div class="grid grid-cols-[70%_30%] w-full min-h-[12rem] bg-white  hover:border hover:rounded-sm hover:border-zinc-300 transition duration-700 overflow-hidden shadow-xs">
+    <div class="grid grid-cols-[70%_30%] w-full min-h-[12rem] bg-white  overflow-hidden shadow-xs">
         
         <!-- Kolom Kiri: Detail Utama (Grid 3 Row) -->
-        <div class="grid grid-rows-[auto_1fr_auto] p-4 gap-3 border-r border-zinc-100">
+        <div class="transaction-info-{i} grid grid-rows-[auto_1fr_auto] p-4 gap-3 border-r border-zinc-100">
             
             <!-- Row 1 (Header Transaksi): Meta Data Penting -->
             <div class="flex items-center justify-between text-xs text-slate-500 border-b border-zinc-100 pb-2">
@@ -67,10 +70,10 @@
                 </span>
 
                 <div class="flex items-center gap-2">
-                    <button type="button" class="px-3 py-1 text-xs border border-zinc-200 text-slate-700 hover:bg-zinc-50 rounded-sm transition cursor-pointer">
+                    <button onclick={() => {goto("details/transaksi")}} type="button" class="px-3 py-1 text-xs border border-zinc-200 text-slate-700 hover:bg-zinc-50 rounded-sm transition cursor-pointer">
                         Lihat detail
                     </button>
-                    <button type="button" class="px-3 py-1 text-xs bg-slate-900 text-white font-medium hover:bg-slate-800 rounded-sm transition cursor-pointer">
+                    <button onclick={() => {goto("details/produk")}} type="button" class="px-3 py-1 text-xs bg-slate-900 text-white font-medium hover:bg-slate-800 rounded-sm transition cursor-pointer">
                         Beli lagi
                     </button>
                     <button type="button" class="px-1.5 py-1 text-slate-400 hover:text-slate-800 transition cursor-pointer" title="Opsi lainnya">
@@ -120,7 +123,7 @@
             <!-- Footer Kolom Pengiriman -->
             <div class="pt-2 border-t border-zinc-200/60 flex items-center justify-between text-[10px] text-slate-400">
                 <span>Berat: 1.2 Kg</span>
-                <a href="#track" class="text-slate-800 font-medium hover:underline">Lacak paket &rarr;</a>
+                <a href="/details/pengiriman-ekspedisi" class="text-slate-800 font-medium hover:underline">Lacak paket &rarr;</a>
             </div>
         </div>
 
@@ -128,7 +131,7 @@
 {/snippet}
 
 <section id="transaksi-result" class="mt-2 overflow-y-auto scrollbar-none p-4 lg:p-6 space-y-4">
-    {#each Array(5) as _}
-        {@render ListTransaksi()}
+    {#each Array(5) as _, i}
+        {@render ListTransaksi(i)}
     {/each}
 </section>

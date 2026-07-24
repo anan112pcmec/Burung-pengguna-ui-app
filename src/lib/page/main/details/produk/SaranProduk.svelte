@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProductCard from "$lib/page/main/general/ProductCard.svelte";
+	import ProductCard from "$lib/GeneralComponent/ProductCard.svelte";
 
     // Mock untuk loop rekomendasi produk
     const jumlahSaran: number = 6;

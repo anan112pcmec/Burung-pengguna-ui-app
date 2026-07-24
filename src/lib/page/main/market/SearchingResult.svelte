@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { Action } from 'svelte/action';
-	import ProductCard from '../general/ProductCard.svelte';
+	import ProductCard from '../../../GeneralComponent/ProductCard.svelte';
 
     const ulang:number = 24
     let ke: number = 0
