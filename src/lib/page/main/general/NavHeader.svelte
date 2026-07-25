@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
-	import { navbarState } from "$lib/state/general/state.svelte";
+	import { navbarState } from "$lib/state/main/general/state.svelte";
 	import { FontSection } from "../../../../constant/NavbarDesign";
 	import { Full } from "../../../../constant/UiConstant";
 
@@ -55,7 +55,7 @@
 		
 		<div class="{Full} flex items-center gap-5 font-medium tracking-wide text-gray-800">
 	
-			<button class="relative p-1.5 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
+			<button onclick={() => goto("/inbox")} class="relative p-1.5 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer">
 				<span class="absolute top-1 right-1 flex h-2 w-2 rounded-full bg-red-500"></span>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M9.35417 21C9.65582 21.6033 10.2798 22 11 22C11.7202 22 12.3442 21.6033 12.6458 21M18 8C18 4.13401 14.866 1 11 1C7.13401 1 4 4.13401 4 8C4 14 2 16 2 17H20C20 16 18 14 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -101,17 +101,17 @@
 				</svg>
 
 				<div class="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-					<a href="/profile" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Tentang Saya</a>
+					<a href="/user-overview" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Profile Overview</a>
+					<a href="/settings" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Settings</a>
 					<a href="/pesanan" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900 flex justify-between items-center">
-						<span>Pesanan Saya</span>
+						<span>Following</span>
 						<span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
 					</a>
-					<a href="/wishlist" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Wishlist Keluar</a>
+					
 					<hr class="border-gray-100 my-1" />
 					<button class="w-full text-left block px-4 py-2 text-xs text-red-600 hover:bg-red-50 font-medium">Keluar</button>
 				</div>
 			</div>
-
 		</div>
 
 		<div class="{Full} flex items-center justify-center">

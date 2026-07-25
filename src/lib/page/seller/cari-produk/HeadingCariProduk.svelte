@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { FilterState, UrutkanState } from "$lib/state/market/state.svelte";
+    import { FilterState, UrutkanState } from "$lib/state/main/market/state.svelte";
     import { Full } from "../../../../constant/UiConstant";
 
     let section: string[] = $state<string[]>(["View All Etalase[10]", "Sepatu", "Baju", "Elektronik", "Makanan"]);

@@ -8,7 +8,6 @@
 	import UiClean from '$lib/page/main/home/UiClean.svelte';
 
 
-	import { navbarState } from '$lib/state/general/state.svelte';
 	import { MarginFromHeader } from "../../../constant/NavbarDesign";
 
 	

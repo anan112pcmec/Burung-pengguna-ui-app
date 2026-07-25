@@ -102,6 +102,7 @@
         <!-- KOLOM 1 (5%): Navigasi Kembali -->
         <div class="flex items-center justify-start h-full">
             <button 
+                onclick={() => goto("/home")}
                 type="button" 
                 aria-label="Kembali"
                 class="p-2 text-zinc-400 hover:text-slate-900 hover:bg-zinc-100 rounded-sm transition duration-200 cursor-pointer"

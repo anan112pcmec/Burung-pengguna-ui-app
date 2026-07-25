@@ -1,10 +1,22 @@
 <script lang="ts">
-    // Pure hardcoded UI tanpa state
-    // Mengakomodasi skema Go Struct: Pengiriman & JejakPengiriman
+	import { goto } from "$app/navigation";
+	import type { Action } from "svelte/action";
+
+    const KurirDetailsPage: Action = (node) => {
+        const event = (): void => {
+            goto("/kurir-overview")
+        }
+        node.addEventListener("click", event)
+
+        return{
+            destroy(){
+                node.removeEventListener("click", event)
+            }
+        }
+    }
 </script>
 
 <section class="w-full max-w-6xl mx-auto p-4 md:p-6 lg:p-8 space-y-6 bg-white text-slate-900">
-    
     <!-- Top Bar: Navigation & Status Head -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-zinc-200">
         <div class="flex items-center gap-3">
@@ -65,7 +77,7 @@
             </div>
 
             <!-- Card Profil Kurir Aktif -->
-            <div class="flex items-center justify-between p-3 bg-zinc-50 border border-zinc-200 rounded-sm">
+            <div use:KurirDetailsPage class="flex items-center justify-between p-3 bg-zinc-50 border border-zinc-200 rounded-sm">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-xs">
                         KR

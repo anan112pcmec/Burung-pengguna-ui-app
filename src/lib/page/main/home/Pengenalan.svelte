@@ -3,8 +3,8 @@
 	import type { kartuPengenalanData } from './types';
 	import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
 	import { fade } from 'svelte/transition';
-	import { navbarState } from '$lib/state/general/state.svelte';
 	import { Full } from '../../../../constant/UiConstant';
+	import { navbarState } from '$lib/state/main/general/state.svelte';
     const KontenKartuKanan: kartuPengenalanData[] = [
         {
             header: "Barang-barang",

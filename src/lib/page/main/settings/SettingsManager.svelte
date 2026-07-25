@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { LeftOpsiState } from "$lib/state/profile/state.svelte";
+    import { LeftOpsiState } from "$lib/state/main/profile/state.svelte";
 	import type { Action } from "svelte/action";
 	import { SvelteMap } from "svelte/reactivity";
 
@@ -81,26 +81,26 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <div class="grid grid-cols-2 gap-4">
         <div class="border border-zinc-950/10 p-3 rounded-sm">
             <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Hari Ini</span>
-            <span class="text-sm font-bold text-slate-900 font-mono">Rp 150.000</span>
+            <span class="text-sm font-bold text-slate-900 ">Rp 150.000</span>
         </div>
         <div class="border border-zinc-950/10 p-3 rounded-sm">
             <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Minggu Ini</span>
-            <span class="text-sm font-bold text-slate-900 font-mono">Rp 1.250.000</span>
+            <span class="text-sm font-bold text-slate-900 ">Rp 1.250.000</span>
         </div>
         <div class="border border-zinc-950/10 p-3 rounded-sm">
             <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Bulan Ini</span>
-            <span class="text-sm font-bold text-slate-900 font-mono">Maret — Rp 4.800.000</span>
+            <span class="text-sm font-bold text-slate-900 ">Maret — Rp 4.800.000</span>
         </div>
         <div class="border border-zinc-950/10 p-3 rounded-sm">
             <span class="text-[9px] tracking-wider text-slate-800/40 uppercase block mb-1">Tahun Ini</span>
-            <span class="text-sm font-bold text-slate-900 font-mono">2026 — Rp 14.200.000</span>
+            <span class="text-sm font-bold text-slate-900 ">2026 — Rp 14.200.000</span>
         </div>
     </div>
 
     <div class="flex flex-col space-y-3 pt-2">
         <div class="flex items-center justify-between border-b border-zinc-950/10 pb-2">
             <h3 class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">PESAN & NOTIFIKASI</h3>
-            <span class="text-[9px] font-mono text-slate-950/40 uppercase">3 Pesan</span>
+            <span class="text-[9px]  text-slate-950/40 uppercase">3 Pesan</span>
         </div>
 
         <div class="flex flex-col divide-y divide-zinc-950/10 border border-zinc-950/10 rounded-sm bg-white">
@@ -120,7 +120,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                     <span class="text-[8px] tracking-wider text-white bg-slate-950 px-1.5 py-0.5 rounded-xs uppercase font-semibold">
                         Belum Dibuka
                     </span>
-                    <span class="text-[9px] font-mono text-slate-800/40">10m lalu</span>
+                    <span class="text-[9px]  text-slate-800/40">10m lalu</span>
                 </div>
             </div>
 
@@ -139,7 +139,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                     <span class="text-[8px] tracking-wider text-slate-950/50 border border-zinc-950/20 px-1.5 py-0.5 rounded-xs uppercase font-medium">
                         Dibuka
                     </span>
-                    <span class="text-[9px] font-mono text-slate-800/40">Kemarin</span>
+                    <span class="text-[9px]  text-slate-800/40">Kemarin</span>
                 </div>
             </div>
 
@@ -158,7 +158,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                     <span class="text-[8px] tracking-wider text-slate-950/50 border border-zinc-950/20 px-1.5 py-0.5 rounded-xs uppercase font-medium">
                         Dibuka
                     </span>
-                    <span class="text-[9px] font-mono text-slate-800/40">18 Jul</span>
+                    <span class="text-[9px]  text-slate-800/40">18 Jul</span>
                 </div>
             </div>
 
@@ -194,7 +194,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                     <!-- Field: ID Pengguna -->
                     <div class="flex flex-col space-y-1">
                         <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">ID USER</span>
-                        <span class="text-xs text-slate-900 font-mono font-medium">#10293847</span>
+                        <span class="text-xs text-slate-900  font-medium">#10293847</span>
                     </div>
 
                     <!-- Field: Nama Lengkap -->
@@ -271,7 +271,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                     <div class="flex items-center justify-between border-b border-zinc-950/10 pb-3">
                         <div class="flex flex-col space-y-0.5">
                             <h3 class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">EDIT ALAMAT</h3>
-                            <span class="text-xs font-bold text-slate-950 font-mono">#DUMMY-123</span>
+                            <span class="text-xs font-bold text-slate-950 ">#DUMMY-123</span>
                         </div>
                         <span class="text-[8px] tracking-widest text-white bg-slate-950 px-1.5 py-0.5 rounded-xs uppercase font-semibold">Utama</span>
                     </div>
@@ -291,7 +291,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                     <!-- Field 2: Telepon -->
                     <div class="flex flex-col space-y-2">
                         <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Nomor Telepon</span>
-                        <input type="text" value="081234567890" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm text-slate-900 font-mono" />
+                        <input type="text" value="081234567890" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm text-slate-900" />
                     </div>
 
                     <!-- Field 3: Alamat -->
@@ -312,7 +312,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                         </div>
                         <div class="flex flex-col space-y-2">
                             <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Kode Pos</span>
-                            <input type="text" value="12930" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm text-slate-900 font-mono" />
+                            <input type="text" value="12930" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm text-slate-900 " />
                         </div>
                     </div>
 
@@ -358,8 +358,8 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                             <p class="text-[10px] text-slate-900 line-clamp-2 leading-tight">Jl. Sudirman No. 45, Gedung B Lantai 3, Karet Semanggi</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-zinc-950/10 pt-1.5 mt-2">
-                            <span class="text-[9px] font-mono text-slate-800/60">081234567890</span>
-                            <span class="text-[9px] font-mono text-slate-800/60">12930</span>
+                            <span class="text-[9px]  text-slate-800/60">081234567890</span>
+                            <span class="text-[9px]  text-slate-800/60">12930</span>
                         </div>
                     </div>
 
@@ -372,8 +372,8 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                             <p class="text-[10px] text-slate-800/70 line-clamp-2 leading-tight">Mega Kuningan Kawasan E.3.3 Telkom Hub, Kuningan Timur</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-zinc-950/5 pt-1.5 mt-2">
-                            <span class="text-[9px] font-mono text-slate-800/40">089876543210</span>
-                            <span class="text-[9px] font-mono text-slate-800/40">12950</span>
+                            <span class="text-[9px]  text-slate-800/40">089876543210</span>
+                            <span class="text-[9px]  text-slate-800/40">12950</span>
                         </div>
                     </div>
 
@@ -386,8 +386,8 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                             <p class="text-[10px] text-slate-800/70 line-clamp-2 leading-tight">Tower Noord, Unit 12B, Jl. Antasari No. 8, Cilandak</p>
                         </div>
                         <div class="flex items-center justify-between border-t border-zinc-950/5 pt-1.5 mt-2">
-                            <span class="text-[9px] font-mono text-slate-800/40">081122334455</span>
-                            <span class="text-[9px] font-mono text-slate-800/40">12430</span>
+                            <span class="text-[9px]  text-slate-800/40">081122334455</span>
+                            <span class="text-[9px]  text-slate-800/40">12430</span>
                         </div>
                     </div>
                 </div>
@@ -521,7 +521,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                         pattern="[0-9]*"
                         inputmode="numeric"
                         placeholder="••••••" 
-                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 font-mono tracking-[0.3em]" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70  tracking-[0.3em]" 
                     />
                 </div>
 
@@ -533,7 +533,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                         pattern="[0-9]*"
                         inputmode="numeric"
                         placeholder="••••••" 
-                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 font-mono tracking-[0.3em]" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70  tracking-[0.3em]" 
                     />
                 </div>
 
@@ -545,7 +545,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
                         pattern="[0-9]*"
                         inputmode="numeric"
                         placeholder="••••••" 
-                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70 font-mono tracking-[0.3em]" 
+                        class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70  tracking-[0.3em]" 
                     />
                 </div>
 

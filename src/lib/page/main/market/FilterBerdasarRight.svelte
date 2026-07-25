@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FilterState } from "$lib/state/market/state.svelte";
+	import { FilterState } from "$lib/state/main/market/state.svelte";
 	import type { Action } from "svelte/action";
 	import { fade } from "svelte/transition";
 
