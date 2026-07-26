@@ -470,7 +470,7 @@
                             </button>
 
                             <a
-                                href="/signup"
+                                href="/sign-up"
                                 class="w-full text-slate-950 bg-white border border-slate-300 px-3 py-2 text-xs font-medium uppercase tracking-wider rounded-xs transition duration-300 text-center hover:bg-slate-950 hover:text-white block"
                             >
                                 Sign Up
