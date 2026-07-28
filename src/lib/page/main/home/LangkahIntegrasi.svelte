@@ -1,14 +1,14 @@
 {#snippet carouselData({header, isi}: carouselData, key: number)}
     <div 
         id={String(key)} 
-        class="bg-white hover:bg-slate-950 hover:text-white transition duration-300 border border-zinc-800/20 rounded-t-3xl rounded-b-lg grid w-[100%] h-[6rem] p-4 grid-rows-[30%_5%_65%] shadow-sm text-slate-950"
+        class="bg-white hover:bg-slate-950 hover:text-white transition duration-300 border border-zinc-800/20 rounded-t-3xl rounded-b-lg grid w-full h-[6.5rem] sm:h-[6rem] p-3.5 sm:p-4 grid-rows-[30%_5%_65%] shadow-sm text-slate-950"
     >
         <div>
-            <h2 class="font-bold text-xs uppercase tracking-wider">{header}</h2>
+            <h2 class="font-bold text-[11px] sm:text-xs uppercase tracking-wider">{header}</h2>
         </div>
         <div></div>
         <ul>
-            <li class="text-xs font-light leading-relaxed">
+            <li class="text-[11px] sm:text-xs font-light leading-relaxed">
                 {isi}
             </li>
         </ul>
@@ -70,12 +70,17 @@
     }
 </script>
 
-<section id="kelebihan-app" class="w-full h-[24rem] p-4 grid grid-cols-[50%_5%_45%] mt-20">
-    <div class="text-3xl lg:text-5xl text-right font-bold text-slate-950 uppercase tracking-tight leading-none flex justify-center items-center">
+<section id="kelebihan-app" class="w-full h-auto md:h-[24rem] p-4 sm:p-6 lg:p-8 flex flex-col md:grid md:grid-cols-[50%_5%_45%] items-center mt-6 md:mt-20 my-6 md:my-8 gap-6 md:gap-0">
+    <!-- Judul Utama -->
+    <div class="text-xl sm:text-3xl lg:text-5xl text-left md:text-right font-bold text-slate-950 uppercase tracking-tight leading-snug md:leading-none flex md:justify-center items-center w-full">
         Langkah Nya Cukup Mudah
     </div>
-    <div></div>
-    <div class="relative h-[22rem] mt-20">
+
+    <!-- Spacer khusus desktop -->
+    <div class="hidden md:block"></div>
+
+    <!-- Container Scroll List -->
+    <div class="relative w-full h-[18rem] sm:h-[22rem]">
         
         <div class="absolute top-0 left-0 right-0 h-5 bg-gradient-to-b from-white to-transparent pointer-events-none z-10"></div>
 
