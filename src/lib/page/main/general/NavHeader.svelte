@@ -157,17 +157,55 @@
 </div>
     
     <!-- Bungkus menu kanan dalam wadah fleksibel dengan transisi lebar dan opacity -->
-    <div class="flex items-center gap-6 overflow-hidden transition-all duration-500 ease-in-out {navbarState.searching ? 'w-0 opacity-0 pointer-events-none' : 'w-64 opacity-100'}">
-        <a class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200" href="/home"> 
-            <span>SIGN</span>
-        </a>
-        <a href="/transaksi" class="flex items-center gap-1 hover:text-black whitespace-nowrap transition-colors duration-200">
-            <span>TRANSAKSI</span>
-        </a>
-        <a href="/wishlist" class="flex items-center gap-1 hover:text-black font-medium whitespace-nowrap transition-colors duration-200">
-            <span>WISHLIST (0)</span>
-        </a>
+   <div class="flex items-center gap-4 transition-all duration-500 ease-in-out {navbarState.searching ? 'w-0 opacity-0 pointer-events-none' : 'w-auto opacity-100'}">
+    
+    <!-- SIGN / Akun -->
+	 <div class="group relative">
+        <div class="cursor-pointer p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center" title="Wishlist & Likes">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0 0 0)"><path d="M3.25 9C3.25 6.10051 5.60051 3.75 8.5 3.75H15.5C18.3995 3.75 20.75 6.10051 20.75 9V9.40675C20.435 9.30498 20.0989 9.25 19.75 9.25H4.25C3.90109 9.25 3.56503 9.30498 3.25 9.40675V9Z" fill="#343C54"/><path d="M3.25 10.4839C2.50914 10.8521 2 11.6166 2 12.5C2 13.3834 2.50914 14.1479 3.25 14.5161C3.55124 14.6658 3.89079 14.75 4.25 14.75H19.75C20.1092 14.75 20.4488 14.6658 20.75 14.5161C21.4909 14.1479 22 13.3834 22 12.5C22 11.6166 21.4909 10.8521 20.75 10.4839C20.4488 10.3342 20.1092 10.25 19.75 10.25H4.25C3.89079 10.25 3.55124 10.3342 3.25 10.4839Z" fill="#343C54"/><path d="M20.75 15.5933C20.435 15.695 20.0989 15.75 19.75 15.75H4.25C3.9011 15.75 3.56503 15.695 3.25 15.5933V18C3.25 19.2426 4.25736 20.25 5.5 20.25H18.5C19.7426 20.25 20.75 19.2426 20.75 18V15.5933Z" fill="#343C54"/></svg>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
+            <a href="/home" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+				Home
+            </a>
+            <a href="/sign-up" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+                <span>Sign Up</span>
+                <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+            </a>
+        </div>
     </div>
+   
+
+    <!-- TRANSAKSI -->
+    <a href="/transaksi" class="p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200" title="Transaksi">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3H5C3.89 3 3 3.89 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.89 20.1 3 19 3ZM19 19H5V5H19V19ZM7 11H17V13H7V11ZM7 7H17V9H7V7ZM7 15H13V17H7V15Z" fill="currentColor"/>
+        </svg>
+    </a>
+
+    <!-- WISHLIST & LIKES (Dropdown) -->
+    <div class="group relative">
+        <div class="cursor-pointer p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center" title="Wishlist & Likes">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill="currentColor"/>
+            </svg>
+        </div>
+
+        <!-- Dropdown Menu -->
+        <div class="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
+            <a href="/wishlist" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+				Wishlist
+            </a>
+            <a href="/likes" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+                <span>Likes</span>
+                <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+            </a>
+        </div>
+    </div>
+
+</div>
 </div>
 		</div>
 

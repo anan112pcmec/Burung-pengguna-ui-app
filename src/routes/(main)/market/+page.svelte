@@ -76,7 +76,7 @@
     );
 </script>
 
-<main class="pr-2 pl-2 space-y-4 scrollbar-none">
+<main class="pr-2 pl-2 space-y-4 mt-[8rem] scrollbar-none">
     <HeadingResult/>
     <FilterBerdasarRight/>
     <SearchingResult/>
