@@ -51,14 +51,14 @@
 	<!-- HEADER HALAMAN: Title & Quick Info -->
 	<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-200 pb-5">
 		<div>
-			<h2 class="text-base font-bold tracking-tight text-slate-950 uppercase font-mono">
+			<h2 class="text-base font-bold tracking-tight text-slate-950 uppercase ">
 				Ikhtisar Performa Kurir
 			</h2>
 			<p class="text-xs text-zinc-500 mt-0.5">
 				Analisis histori operasional pengiriman, keandalan rute, dan aktivitas harian.
 			</p>
 		</div>
-		<div class="flex items-center gap-2 font-mono text-[10px]">
+		<div class="flex items-center gap-2  text-[10px]">
 			<span class="px-2 py-1 bg-zinc-100 border border-zinc-200 text-slate-700 rounded-xs">
 				STATUS PERFORMA: <strong class="text-emerald-600">SANGAT BAIK</strong>
 			</span>
@@ -70,14 +70,14 @@
 		
 		<!-- Total Pengiriman -->
 		<div class="p-4 bg-white border border-zinc-200 rounded-xs space-y-2">
-			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase font-mono">
+			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase ">
 				Total Pengiriman
 			</span>
 			<div class="flex items-baseline justify-between">
-				<span class="text-2xl font-bold font-mono text-slate-950">
+				<span class="text-2xl font-bold  text-slate-950">
 					{stats.total_pengiriman.toLocaleString()}
 				</span>
-				<span class="text-[10px] font-mono text-zinc-500">
+				<span class="text-[10px]  text-zinc-500">
 					Order
 				</span>
 			</div>
@@ -86,14 +86,14 @@
 
 		<!-- Berhasil dikirim -->
 		<div class="p-4 bg-white border border-zinc-200 rounded-xs space-y-2">
-			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase font-mono">
+			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase ">
 				Selesai (Berhasil)
 			</span>
 			<div class="flex items-baseline justify-between">
-				<span class="text-2xl font-bold font-mono text-emerald-600">
+				<span class="text-2xl font-bold  text-emerald-600">
 					{stats.berhasil.toLocaleString()}
 				</span>
-				<span class="text-[10px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 px-1 py-0.2 rounded-xs">
+				<span class="text-[10px]  bg-emerald-50 text-emerald-700 border border-emerald-200 px-1 py-0.2 rounded-xs">
 					{((stats.berhasil / stats.total_pengiriman) * 100).toFixed(1)}%
 				</span>
 			</div>
@@ -102,14 +102,14 @@
 
 		<!-- Gagal dikirim -->
 		<div class="p-4 bg-white border border-zinc-200 rounded-xs space-y-2">
-			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase font-mono">
+			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase ">
 				Gagal / Retur
 			</span>
 			<div class="flex items-baseline justify-between">
-				<span class="text-2xl font-bold font-mono text-rose-600">
+				<span class="text-2xl font-bold  text-rose-600">
 					{stats.gagal}
 				</span>
-				<span class="text-[10px] font-mono bg-rose-50 text-rose-700 border border-rose-200 px-1 py-0.2 rounded-xs">
+				<span class="text-[10px]  bg-rose-50 text-rose-700 border border-rose-200 px-1 py-0.2 rounded-xs">
 					{((stats.gagal / stats.total_pengiriman) * 100).toFixed(1)}%
 				</span>
 			</div>
@@ -118,14 +118,14 @@
 
 		<!-- Trouble Rate -->
 		<div class="p-4 bg-white border border-zinc-200 rounded-xs space-y-2">
-			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase font-mono">
+			<span class="text-[10px] font-bold tracking-[0.15em] text-zinc-400 uppercase ">
 				Trouble Rate
 			</span>
 			<div class="flex items-baseline justify-between">
-				<span class="text-2xl font-bold font-mono text-slate-950">
+				<span class="text-2xl font-bold  text-slate-950">
 					{stats.trouble_rate}%
 				</span>
-				<span class="text-[10px] font-mono text-amber-600 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded-xs">
+				<span class="text-[10px]  text-amber-600 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded-xs">
 					Toleransi &lt; 5%
 				</span>
 			</div>
@@ -140,11 +140,11 @@
 		<!-- REVIEWS BREAKDOWN (Col: 5) -->
 		<div class="lg:col-span-5 bg-white border border-zinc-200 p-6 rounded-xs space-y-6">
 			<div class="flex items-center justify-between border-b border-zinc-100 pb-3">
-				<h3 class="text-xs font-bold tracking-wider text-slate-950 uppercase font-mono">
+				<h3 class="text-xs font-bold tracking-wider text-slate-950 uppercase ">
 					Reputasi & Ulasan
 				</h3>
-				<span class="text-xs font-bold font-mono text-slate-950 flex items-center gap-1">
-					<span class="text-amber-500">★</span> {stats.rating_avg} / 5.0
+				<span class="text-xs font-bold  text-slate-950 flex items-center gap-1">
+					<span class="text-amber-500">â˜…</span> {stats.rating_avg} / 5.0
 				</span>
 			</div>
 
@@ -152,7 +152,7 @@
 			<div class="space-y-4">
 				<!-- Good Reviews -->
 				<div class="space-y-1.5">
-					<div class="flex justify-between text-xs font-mono">
+					<div class="flex justify-between text-xs ">
 						<span class="text-slate-700 font-medium">Ulasan Positif (Bintang 4 - 5)</span>
 						<span class="font-bold text-emerald-600">{stats.good_review} ({Math.round((stats.good_review / stats.total_review) * 100)}%)</span>
 					</div>
@@ -163,7 +163,7 @@
 
 				<!-- Bad Reviews -->
 				<div class="space-y-1.5">
-					<div class="flex justify-between text-xs font-mono">
+					<div class="flex justify-between text-xs ">
 						<span class="text-slate-700 font-medium">Ulasan Negatif (Bintang 1 - 3)</span>
 						<span class="font-bold text-rose-600">{stats.bad_review} ({Math.round((stats.bad_review / stats.total_review) * 100)}%)</span>
 					</div>
@@ -174,7 +174,7 @@
 			</div>
 
 			<!-- Stat Ringkas Total Ulasan -->
-			<div class="pt-2 border-t border-zinc-100 flex justify-between items-center text-xs font-mono text-zinc-500">
+			<div class="pt-2 border-t border-zinc-100 flex justify-between items-center text-xs  text-zinc-500">
 				<span>Total Responden:</span>
 				<span class="font-bold text-slate-900">{stats.total_review} Pengguna</span>
 			</div>
@@ -183,11 +183,11 @@
 		<!-- HEATMAP JAM AKTIF OPERASIONAL (Col: 7) -->
 		<div class="lg:col-span-7 bg-white border border-zinc-200 p-6 rounded-xs space-y-4">
 			<div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-zinc-100 pb-3 gap-2">
-				<h3 class="text-xs font-bold tracking-wider text-slate-950 uppercase font-mono">
+				<h3 class="text-xs font-bold tracking-wider text-slate-950 uppercase ">
 					Heatmap Jam Aktif Operasional
 				</h3>
 				<!-- Legenda Heatmap -->
-				<div class="flex items-center gap-2 text-[10px] font-mono text-zinc-500">
+				<div class="flex items-center gap-2 text-[10px]  text-zinc-500">
 					<span>Rendah</span>
 					<span class="w-2.5 h-2.5 bg-zinc-200 border border-zinc-300 rounded-2xs inline-block"></span>
 					<span class="w-2.5 h-2.5 bg-zinc-400 border border-zinc-400 rounded-2xs inline-block"></span>
@@ -198,7 +198,7 @@
 
 			<!-- Matrix Heatmap Table -->
 			<div class="overflow-x-auto">
-				<table class="w-full text-left border-collapse font-mono text-xs">
+				<table class="w-full text-left border-collapse  text-xs">
 					<thead>
 						<tr>
 							<th class="py-1.5 px-2 text-[10px] text-zinc-400 font-normal uppercase">Jam</th>
@@ -230,7 +230,7 @@
 				</table>
 			</div>
 
-			<p class="text-[10px] font-mono text-zinc-400 pt-1">
+			<p class="text-[10px]  text-zinc-400 pt-1">
 				* Menunjukkan intensitas pengambilan dan pengantaran pesanan kurir berdasarkan akumulasi log GPS harian.
 			</p>
 		</div>

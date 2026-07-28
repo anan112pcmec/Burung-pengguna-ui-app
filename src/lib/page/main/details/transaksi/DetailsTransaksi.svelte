@@ -28,8 +28,8 @@
                     </span>
                 </div>
                 <!-- KodeOrderSistem & CreatedAt -->
-                <p class="text-xs text-slate-500 mt-0.5 font-mono">
-                    TRX-20260722-90182 <span class="text-zinc-300 mx-1">•</span> 22 Juli 2026, 14:30 WIB
+                <p class="text-xs text-slate-500 mt-0.5 ">
+                    TRX-20260722-90182 <span class="text-zinc-300 mx-1">â€¢</span> 22 Juli 2026, 14:30 WIB
                 </p>
             </div>
         </div>
@@ -87,13 +87,13 @@
                             Sepatu Running Nike Air Zoom - Sepatu Olahraga Pria
                         </h3>
                         <p class="text-xs text-slate-500">
-                            Ukuran: 42 <span class="text-zinc-300 mx-1">•</span> Warna: Hitam
+                            Ukuran: 42 <span class="text-zinc-300 mx-1">â€¢</span> Warna: Hitam
                         </p>
                         <p class="text-xs text-slate-700 font-medium">
-                            1 x <span class="font-mono">Rp 350.000</span>
+                            1 x <span class="">Rp 350.000</span>
                         </p>
                     </div>
-                    <div class="text-right font-mono font-semibold text-sm text-slate-900">
+                    <div class="text-right  font-semibold text-sm text-slate-900">
                         Rp 350.000
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         <p class="text-slate-600 leading-relaxed">
                             Jl. Raya Pajajaran No. 45, RT 02/RW 05, Baranangsiang, Bogor Timur, Kota Bogor, Jawa Barat 16143
                         </p>
-                        <p class="text-slate-500 font-mono">+62 812-3456-7890</p>
+                        <p class="text-slate-500 ">+62 812-3456-7890</p>
                     </div>
 
                     <!-- Detail Kurir & Logistik -->
@@ -146,7 +146,7 @@
                         <div class="flex justify-between pt-1 border-t border-zinc-100">
                             <span class="text-slate-400">No. Resi</span>
                             <!-- KodeResiEkspedisi -->
-                            <span class="font-mono font-medium text-slate-900">JP-882910492</span>
+                            <span class=" font-medium text-slate-900">JP-882910492</span>
                         </div>
                     </div>
                 </div>
@@ -169,11 +169,11 @@
                     </div>
                     <div class="flex justify-between sm:justify-start sm:gap-6">
                         <span class="text-slate-400 w-28">Kode PG</span>
-                        <span class="font-mono text-slate-800">PG-TRX-992014</span>
+                        <span class=" text-slate-800">PG-TRX-992014</span>
                     </div>
                     <div class="flex justify-between sm:justify-start sm:gap-6">
                         <span class="text-slate-400 w-28">Waktu Bayar</span>
-                        <span class="font-mono text-slate-800">22 Jul 2026, 14:32</span>
+                        <span class=" text-slate-800">22 Jul 2026, 14:32</span>
                     </div>
                 </div>
             </div>
@@ -192,24 +192,24 @@
                 <div class="space-y-2 text-xs">
                     <div class="flex justify-between text-slate-600">
                         <span>Harga Barang (1 item)</span>
-                        <span class="font-mono">Rp 350.000</span>
+                        <span class="">Rp 350.000</span>
                     </div>
                     <div class="flex justify-between text-slate-600">
                         <span>Ongkos Kirim</span>
-                        <span class="font-mono">Rp 20.000</span>
+                        <span class="">Rp 20.000</span>
                     </div>
                     <div class="flex justify-between text-slate-600">
                         <span>Biaya Penanganan / Sistem</span>
-                        <span class="font-mono">Rp 2.000</span>
+                        <span class="">Rp 2.000</span>
                     </div>
                     <div class="flex justify-between text-emerald-600">
                         <span>Diskon / Potongan</span>
-                        <span class="font-mono">-Rp 10.000</span>
+                        <span class="">-Rp 10.000</span>
                     </div>
 
                     <div class="border-t border-zinc-200/80 pt-3 flex justify-between items-center">
                         <span class="font-semibold text-slate-900">Total Belanja</span>
-                        <span class="font-bold font-mono text-base text-slate-900">
+                        <span class="font-bold  text-base text-slate-900">
                             Rp 362.000
                         </span>
                     </div>
@@ -222,7 +222,7 @@
                     Breakdown Alokasi (Internal)
                 </h2>
 
-                <div class="space-y-1.5 text-xs font-mono">
+                <div class="space-y-1.5 text-xs ">
                     <div class="flex justify-between text-slate-600">
                         <span class="font-sans text-slate-400">Seller Paid:</span>
                         <span>Rp 340.000</span>

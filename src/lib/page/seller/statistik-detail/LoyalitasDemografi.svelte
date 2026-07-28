@@ -17,7 +17,7 @@
 					<span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase block">KATALOG PRODUK</span>
 					<h3 class="text-sm font-semibold text-slate-900 mt-0.5">Proporsi Penjualan per Kategori</h3>
 				</div>
-				<span class="text-[10px] font-mono border border-zinc-950/10 px-2 py-0.5 rounded-sm">DONUT</span>
+				<span class="text-[10px]  border border-zinc-950/10 px-2 py-0.5 rounded-sm">DONUT</span>
 			</div>
 
 			<div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-2">
@@ -32,22 +32,22 @@
 						<div class="flex items-center gap-2 text-xs">
 							<span class="w-2.5 h-2.5 bg-slate-950 rounded-xs"></span>
 							<span class="text-slate-800">Pakaian & Fashion</span>
-							<span class="font-mono text-slate-950/50 ml-auto">45%</span>
+							<span class=" text-slate-950/50 ml-auto">45%</span>
 						</div>
 						<div class="flex items-center gap-2 text-xs">
 							<span class="w-2.5 h-2.5 bg-slate-600 rounded-xs"></span>
 							<span class="text-slate-800">Aksesoris</span>
-							<span class="font-mono text-slate-950/50 ml-auto">30%</span>
+							<span class=" text-slate-950/50 ml-auto">30%</span>
 						</div>
 						<div class="flex items-center gap-2 text-xs">
 							<span class="w-2.5 h-2.5 bg-slate-400 rounded-xs"></span>
 							<span class="text-slate-800">Sepatu</span>
-							<span class="font-mono text-slate-950/50 ml-auto">15%</span>
+							<span class=" text-slate-950/50 ml-auto">15%</span>
 						</div>
 						<div class="flex items-center gap-2 text-xs">
 							<span class="w-2.5 h-2.5 bg-slate-200 rounded-xs"></span>
 							<span class="text-slate-800">Lainnya</span>
-							<span class="font-mono text-slate-950/50 ml-auto">10%</span>
+							<span class=" text-slate-950/50 ml-auto">10%</span>
 						</div>
 					</div>
 				</div>
@@ -61,14 +61,14 @@
 					<span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase block">PERILAKU PEMBELI</span>
 					<h3 class="text-sm font-semibold text-slate-900 mt-0.5">Repeat Order vs Pembeli Baru</h3>
 				</div>
-				<span class="text-[10px] font-mono border border-zinc-950/10 px-2 py-0.5 rounded-sm">RATIO</span>
+				<span class="text-[10px]  border border-zinc-950/10 px-2 py-0.5 rounded-sm">RATIO</span>
 			</div>
 
 			<div class="space-y-4 pt-2">
 				<div class="space-y-1.5">
 					<div class="flex justify-between text-xs font-medium">
 						<span class="text-slate-950">Pembeli Baru (New)</span>
-						<span class="font-mono">68%</span>
+						<span class="">68%</span>
 					</div>
 					<div class="h-2 w-full bg-zinc-100 rounded-xs overflow-hidden">
 						<div class="bg-slate-950 h-full w-[68%]"></div>
@@ -78,7 +78,7 @@
 				<div class="space-y-1.5">
 					<div class="flex justify-between text-xs font-medium">
 						<span class="text-slate-700">Repeat Order (Loyal)</span>
-						<span class="font-mono">32%</span>
+						<span class="">32%</span>
 					</div>
 					<div class="h-2 w-full bg-zinc-100 rounded-xs overflow-hidden">
 						<div class="bg-slate-400 h-full w-[32%]"></div>

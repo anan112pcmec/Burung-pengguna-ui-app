@@ -28,7 +28,7 @@
 			<!-- Status Filter -->
 			<select 
 				bind:value={statusFilter}
-				class="w-full  px-2 text-[11px] font-mono bg-white border border-zinc-950/10 rounded-2xs text-slate-800 focus:outline-none focus:border-slate-950 cursor-pointer"
+				class="w-full  px-2 text-[11px]  bg-white border border-zinc-950/10 rounded-2xs text-slate-800 focus:outline-none focus:border-slate-950 cursor-pointer"
 			>
 				<option value="Semua">Status: Semua</option>
 				<option value="Sudah Dibaca">Sudah Dibaca</option>
@@ -38,7 +38,7 @@
 			<!-- Pengirim Filter -->
 			<select 
 				bind:value={senderFilter}
-				class="w-full  px-2 text-[11px] font-mono bg-white border border-zinc-950/10 rounded-2xs text-slate-800 focus:outline-none focus:border-slate-950 cursor-pointer"
+				class="w-full  px-2 text-[11px]  bg-white border border-zinc-950/10 rounded-2xs text-slate-800 focus:outline-none focus:border-slate-950 cursor-pointer"
 			>
 				<option value="Semua">Pengirim: Semua</option>
 				<option value="Seller">Seller</option>
@@ -50,7 +50,7 @@
 		<div></div>
 
 		<!-- Col 3: Angka Total Inbox -->
-		<div class="flex items-center justify-end font-mono">
+		<div class="flex items-center justify-end ">
 			<div class="text-right">
 				<span class="text-[9px] text-zinc-400 block leading-none tracking-wider uppercase">TOTAL INBOX</span>
 				<span class="text-xl font-bold text-slate-950 leading-tight">{totalInbox}</span>

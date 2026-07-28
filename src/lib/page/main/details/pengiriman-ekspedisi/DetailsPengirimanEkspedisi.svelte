@@ -28,9 +28,9 @@
                     </span>
                 </div>
                 <!-- ID Transaksi & Resi -->
-                <p class="text-xs text-slate-500 mt-0.5 font-mono">
+                <p class="text-xs text-slate-500 mt-0.5 ">
                     Resi: <span class="font-bold text-slate-800">EXP-JP-99201928</span> 
-                    <span class="text-zinc-300 mx-1">•</span> ID Transaksi: TRX-20260722-90182
+                    <span class="text-zinc-300 mx-1">â€¢</span> ID Transaksi: TRX-20260722-90182
                 </p>
             </div>
         </div>
@@ -80,15 +80,15 @@
                             <span class="text-xs font-bold text-slate-900">
                                 Paket Tiba di Hub Ekspedisi Jakarta Barat
                             </span>
-                            <span class="text-[11px] font-mono text-slate-400">22 Jul 2026, 18:20</span>
+                            <span class="text-[11px]  text-slate-400">22 Jul 2026, 18:20</span>
                         </div>
                         <p class="text-xs text-slate-600 leading-relaxed">
                             Paket telah diterima oleh tim sortir di sorting hub utama dan siap disalurkan ke kurir pengantar.
                         </p>
                         <!-- Lokasi & Korodinat Geo -->
-                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 font-mono">
+                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Jakarta Barat</span>
-                            <span>•</span>
+                            <span>â€¢</span>
                             <span>Lat/Long: -6.16832100, 106.75885000</span>
                         </div>
                     </div>
@@ -103,14 +103,14 @@
                             <span class="text-xs font-medium text-slate-800">
                                 Paket Diisi ulang/Diserahkan ke Kurir Pertama
                             </span>
-                            <span class="text-[11px] font-mono text-slate-400">22 Jul 2026, 16:05</span>
+                            <span class="text-[11px]  text-slate-400">22 Jul 2026, 16:05</span>
                         </div>
                         <p class="text-xs text-slate-500 leading-relaxed">
                             Kurir pengumpul (Pickup Agent) sedang membawa paket dari Gudang Seller menuju Ekspedisi Hub.
                         </p>
-                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 font-mono">
+                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Gudang Penjual - Tangerang</span>
-                            <span>•</span>
+                            <span>â€¢</span>
                             <span>Lat/Long: -6.17830000, 106.63188000</span>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                             <span class="text-xs font-medium text-slate-500">
                                 Pesanan Diproses & Siap Picked Up
                             </span>
-                            <span class="text-[11px] font-mono text-slate-400">22 Jul 2026, 14:35</span>
+                            <span class="text-[11px]  text-slate-400">22 Jul 2026, 14:35</span>
                         </div>
                         <p class="text-xs text-slate-400 leading-relaxed">
                             Nomor resi berhasil dibuat. Penjual telah mengemas barang dan menunggu penjemputan pihak ekspedisi.
@@ -194,7 +194,7 @@
                     </div>
                     <div class="flex justify-between">
                         <span>Berat Barang</span>
-                        <span class="font-mono font-medium text-slate-900">2 Kg</span>
+                        <span class=" font-medium text-slate-900">2 Kg</span>
                     </div>
                     <div class="flex justify-between">
                         <span>Jarak Tempuh</span>
@@ -202,11 +202,11 @@
                     </div>
                     <div class="flex justify-between">
                         <span>ID Kurir</span>
-                        <span class="font-mono text-slate-800">#KRR-00921</span>
+                        <span class=" text-slate-800">#KRR-00921</span>
                     </div>
                     <div class="flex justify-between pt-2 border-t border-zinc-200/60">
                         <span class="font-medium text-slate-700">Kurir Paid (Fee)</span>
-                        <span class="font-mono font-bold text-slate-900">Rp 18.000</span>
+                        <span class=" font-bold text-slate-900">Rp 18.000</span>
                     </div>
                 </div>
             </div>

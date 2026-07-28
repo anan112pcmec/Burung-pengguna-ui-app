@@ -53,19 +53,19 @@
 			day: 'numeric',
 			month: 'short',
 			year: 'numeric'
-		}) + ' • ' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+		}) + ' â€¢ ' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 	}
 </script>
 
 <div class="w-full p-4 mx-auto space-y-6 font-sans selection:bg-slate-900 selection:text-white">
-	<!-- ─── 1. MAIL TOOLBAR (BACK & ACTIONS) ─── -->
-	<div class="flex items-center justify-between  pb-3 font-mono">
+	<!-- â”€â”€â”€ 1. MAIL TOOLBAR (BACK & ACTIONS) â”€â”€â”€ -->
+	<div class="flex items-center justify-between  pb-3 ">
 		<button 
             onclick={() => goto("/inbox")}
 			type="button" 
 			class="text-xs font-bold text-slate-800 hover:text-slate-950 flex items-center gap-1.5 transition"
 		>
-			← KEMBALI KE INBOX
+			â† KEMBALI KE INBOX
 		</button>
 
 		<div class="flex items-center gap-1.5">
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 
-	<!-- ─── 2. HEADER EMAIL (SUBJECT & SENDER INFO) ─── -->
+	<!-- â”€â”€â”€ 2. HEADER EMAIL (SUBJECT & SENDER INFO) â”€â”€â”€ -->
 	<section class="space-y-4">
 		<!-- Email Subject -->
 		<h1 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-950 leading-snug">
@@ -98,7 +98,7 @@
 		</h1>
 
 		<!-- Sender & Recipient Box -->
-		<div class=" bg-zinc-50/50 p-4 rounded-sm space-y-3 font-mono text-xs">
+		<div class=" bg-zinc-50/50 p-4 rounded-sm space-y-3  text-xs">
 			<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2  pb-3">
 				<!-- Sender Avatar & Name -->
 				<div class="flex items-center gap-2.5">
@@ -145,25 +145,25 @@
 			<!-- Optional Expiration Warning -->
 			{#if notif.expired_at}
 				<div class="p-2 bg-amber-50 text-amber-900 text-[10px] rounded-2xs flex justify-between">
-					<span>⏰ Pesan/Event ini berlaku sampai:</span>
+					<span>â° Pesan/Event ini berlaku sampai:</span>
 					<span class="font-bold">{formatDate(notif.expired_at)}</span>
 				</div>
 			{/if}
 		</div>
 	</section>
 
-	<!-- ─── 3. EMAIL BODY CONTENT ─── -->
+	<!-- â”€â”€â”€ 3. EMAIL BODY CONTENT â”€â”€â”€ -->
 	<section class=" sm:p-8 rounded-sm bg-white space-y-4 shadow-2xs">
 		<div class="text-sm sm:text-base text-slate-800 leading-relaxed font-sans whitespace-pre-line">
 			{notif.pesan}
 		</div>
 	</section>
 
-	<!-- ─── 4. ATTACHED DATA / PAYLOAD (OPTIONAL) ─── -->
+	<!-- â”€â”€â”€ 4. ATTACHED DATA / PAYLOAD (OPTIONAL) â”€â”€â”€ -->
 	{#if notif.data?.metadata || notif.data?.special}
 		<section class="space-y-3 pt-2">
 			<div class="border-b border-zinc-950/10 pb-1.5">
-				<h2 class="text-xs font-bold tracking-[0.18em] text-slate-950 uppercase font-mono">
+				<h2 class="text-xs font-bold tracking-[0.18em] text-slate-950 uppercase ">
 					DATA PAYLOAD / SYSTEM ATTACHMENTS
 				</h2>
 			</div>
@@ -172,10 +172,10 @@
 				<!-- Metadata -->
 				{#if notif.data.metadata}
 					<div class="p-4 border border-zinc-950/10 rounded-sm bg-white space-y-2">
-						<span class="text-[10px] font-mono font-bold text-zinc-400 uppercase block">
+						<span class="text-[10px]  font-bold text-zinc-400 uppercase block">
 							Metadata Map
 						</span>
-						<div class="space-y-1.5 font-mono text-xs">
+						<div class="space-y-1.5  text-xs">
 							{#each Object.entries(notif.data.metadata) as [key, value]}
 								<div class="flex justify-between border-b border-zinc-100 pb-1">
 									<span class="text-zinc-500">{key}</span>

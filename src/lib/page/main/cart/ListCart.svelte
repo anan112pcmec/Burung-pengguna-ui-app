@@ -32,14 +32,14 @@
             
 
             <div class="text-slate-700/60 text-[10px] font-light tracking-wide truncate">
-                Hitam / XL • Ready Stock
+                Hitam / XL â€¢ Ready Stock
             </div>
         </div>
 
         <div class="flex flex-col items-end justify-between self-stretch shrink-0 py-0.5 gap-2">
             
             <div class="flex items-center gap-3">
-                <span class="text-xs font-bold text-slate-900 font-mono">
+                <span class="text-xs font-bold text-slate-900 ">
                     Rp 150.000
                 </span>
                 <button 
@@ -56,16 +56,16 @@
             <div class="flex items-center border border-slate-900/20 rounded-md overflow-hidden">
                 <button 
                     type="button" 
-                    class="w-5 h-5 flex items-center justify-center text-[10px] font-mono text-slate-700 hover:bg-slate-900 hover:text-white transition"
+                    class="w-5 h-5 flex items-center justify-center text-[10px]  text-slate-700 hover:bg-slate-900 hover:text-white transition"
                 >
                     -
                 </button>
-                <span class="px-2 text-[10px] font-bold font-mono text-slate-900 border-x border-slate-900/20 min-w-[20px] text-center">
+                <span class="px-2 text-[10px] font-bold  text-slate-900 border-x border-slate-900/20 min-w-[20px] text-center">
                     1
                 </span>
                 <button 
                     type="button" 
-                    class="w-5 h-5 flex items-center justify-center text-[10px] font-mono text-slate-700 hover:bg-slate-900 hover:text-white transition"
+                    class="w-5 h-5 flex items-center justify-center text-[10px]  text-slate-700 hover:bg-slate-900 hover:text-white transition"
                 >
                     +
                 </button>

@@ -20,8 +20,8 @@
     <div class="grid grid-cols-[55%_45%] items-center gap-2">
       <!-- Teks Diskon -->
       <div class="flex flex-col justify-center">
-        <h2 class="text-4xl font-extrabold text-zinc-900 font-mono tracking-tight">40%</h2>
-        <span class="text-[11px] text-zinc-500 mt-1 font-mono">Promo Spesial</span>
+        <h2 class="text-4xl font-extrabold text-zinc-900  tracking-tight">40%</h2>
+        <span class="text-[11px] text-zinc-500 mt-1 ">Promo Spesial</span>
       </div>
 
       <div class="relative h-28 w-full">

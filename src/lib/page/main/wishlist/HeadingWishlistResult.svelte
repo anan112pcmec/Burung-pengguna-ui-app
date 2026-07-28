@@ -46,8 +46,8 @@
 		<!-- Col 3: Quick Action (Tambah Wishlist Baru / Folder Icon) -->
 		<div class="pr-4 pl-2 border-l border-zinc-950/10 h-full flex items-center justify-end gap-3">
 			<div class="text-right hidden sm:block">
-				<span class="text-[9px] font-mono text-zinc-400 uppercase block leading-none">AKSI</span>
-				<span class="text-[11px] font-mono font-bold text-slate-950">BUAT FOLDER</span>
+				<span class="text-[9px]  text-zinc-400 uppercase block leading-none">AKSI</span>
+				<span class="text-[11px]  font-bold text-slate-950">BUAT FOLDER</span>
 			</div>
 
 			<!-- Action Trigger Box -->

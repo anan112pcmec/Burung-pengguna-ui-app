@@ -49,17 +49,17 @@
                 
                 <a href="/market" class="px-3 py-2 text-[11px] text-slate-800 hover:bg-slate-50 hover:text-slate-950 flex items-center justify-between transition">
                     <span>Harga Tertinggi ke Terendah</span>
-                    <span class="text-[9px] font-mono text-slate-400">→</span>
+                    <span class="text-[9px]  text-slate-400">â†’</span>
                 </a>
                 
                 <a href="/market" class="px-3 py-2 text-[11px] text-slate-800 hover:bg-slate-50 hover:text-slate-950 flex items-center justify-between transition">
                     <span>Harga Terendah ke Tertinggi</span>
-                    <span class="text-[9px] font-mono text-slate-400">→</span>
+                    <span class="text-[9px]  text-slate-400">â†’</span>
                 </a>
 
                 <a href="/market" class="px-3 py-2 text-[11px] text-slate-800 hover:bg-slate-50 hover:text-slate-950 flex items-center justify-between transition">
                     <span>Terbaru Ditambahkan</span>
-                    <span class="text-[9px] font-mono text-slate-400">→</span>
+                    <span class="text-[9px]  text-slate-400">â†’</span>
                 </a>
                 
                 <div class="border-t border-zinc-800/10 my-1"></div>

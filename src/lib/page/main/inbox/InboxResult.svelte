@@ -55,7 +55,7 @@
 			id_pengguna: 88,
 			pengirim: "CUSTOMER_CARE",
 			judul: "Ulasan Baru Dari Penerima Order #R-8810",
-			pesan: "Penerima memberikan rating ★ 5.0 dengan catatan: 'Kurir sangat ramah, barang rentan dilapisi bubble wrap rapi'.",
+			pesan: "Penerima memberikan rating â˜… 5.0 dengan catatan: 'Kurir sangat ramah, barang rentan dilapisi bubble wrap rapi'.",
 			pop: 0.30,
 			archive: false,
 			inbox: true,
@@ -119,7 +119,7 @@
 <div class="w-full w-full mx-auto space-y-4 font-sans selection:bg-slate-900 selection:text-white">
 
 	<!-- HEADER & CONTROL BAR -->
-	<div class="flex pl-5 items-center justify-between border-b border-zinc-950/10 pb-3 font-mono">
+	<div class="flex pl-5 items-center justify-between border-b border-zinc-950/10 pb-3 ">
 		<div class="flex items-center gap-2">
 			<h2 class="text-xs font-bold tracking-[0.18em] text-slate-950 uppercase">
 				KOTAK MASUK NOTIFIKASI
@@ -148,7 +148,7 @@
 				tabindex="0"
 			>
 				<!-- LINE 1: SENDER, BADGES, & TIMESTAMP -->
-				<div class="flex items-center justify-between gap-2 mb-1.5 font-mono text-[10px]">
+				<div class="flex items-center justify-between gap-2 mb-1.5  text-[10px]">
 					<div class="flex items-center gap-2 truncate">
 						<!-- Priority / Pop Level Indicator -->
 						{#if notif.pop >= 0.8}
@@ -197,7 +197,7 @@
 
 				<!-- EXPANDED DETAIL VIEW (MODULAR METADATA) -->
 				{#if isExpanded}
-					<div class="mt-3 pt-3 border-t border-dashed border-zinc-200 space-y-2 text-xs font-mono bg-zinc-50/80 p-3 rounded-2xs">
+					<div class="mt-3 pt-3 border-t border-dashed border-zinc-200 space-y-2 text-xs  bg-zinc-50/80 p-3 rounded-2xs">
 						<div class="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">
 							Detail Pesan Lengkap:
 						</div>
@@ -207,7 +207,7 @@
 
 						{#if notif.expired_at}
 							<div class="text-[10px] text-rose-600 bg-rose-50 border border-rose-200 p-1.5 rounded-2xs">
-								⏳ Batas Waktu Response: {new Date(notif.expired_at).toLocaleString('id-ID')}
+								â³ Batas Waktu Response: {new Date(notif.expired_at).toLocaleString('id-ID')}
 							</div>
 						{/if}
 
@@ -227,7 +227,7 @@
 	</div>
 
 	<!-- FOOTER INFO -->
-	<div class="flex items-center justify-between text-[10px] font-mono text-zinc-400 px-1">
+	<div class="flex items-center justify-between text-[10px]  text-zinc-400 px-1">
 		<span>Klik item untuk melihat detail payload</span>
 	</div>
 

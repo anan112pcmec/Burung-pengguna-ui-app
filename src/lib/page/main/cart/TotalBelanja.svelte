@@ -16,7 +16,7 @@
                 <span class="text-slate-800/60 uppercase text-[10px] tracking-wider">
                     Total Harga (2 Barang)
                 </span>
-                <span class="font-mono font-semibold text-slate-900">
+                <span class=" font-semibold text-slate-900">
                     Rp 300.000
                 </span>
             </div>
@@ -25,7 +25,7 @@
                 <span class="text-slate-800/60 uppercase text-[10px] tracking-wider">
                     Total Diskon
                 </span>
-                <span class="font-mono text-slate-900/40">
+                <span class=" text-slate-900/40">
                     - Rp 0
                 </span>
             </div>
@@ -34,7 +34,7 @@
                 <span class="text-slate-800/60 uppercase text-[10px] tracking-wider">
                     Estimasi Biaya Kirim
                 </span>
-                <span class="font-mono text-[10px] text-slate-900/40 uppercase">
+                <span class=" text-[10px] text-slate-900/40 uppercase">
                     Dihitung nanti
                 </span>
             </div>
@@ -47,7 +47,7 @@
                 <span class="text-[9px] font-bold tracking-[0.18em] text-slate-950/50 uppercase">
                     TOTAL TAGIHAN
                 </span>
-                <span class="text-base font-bold font-mono text-slate-950">
+                <span class="text-base font-bold  text-slate-950">
                     Rp 300.000
                 </span>
             </div>

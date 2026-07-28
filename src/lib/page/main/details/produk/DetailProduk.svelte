@@ -63,7 +63,7 @@
                 <h1 class="text-3xl font-bold tracking-tight text-slate-950 font-sans">
                     {barangInduk.nama}
                 </h1>
-                <p class="text-xs text-zinc-400 font-mono tracking-wide">
+                <p class="text-xs text-zinc-400  tracking-wide">
                     SKU: {selectedVariant.sku_kategori}
                 </p>
             </div>
@@ -122,7 +122,7 @@
         <!-- Counter Kuantitas (Dummy) -->
         <div class="flex items-center border border-zinc-200 rounded-md bg-white h-9">
             <button class="px-3 text-slate-600 hover:bg-zinc-50 text-sm h-full transition">-</button>
-            <span class="px-2 text-xs font-mono font-medium text-slate-900 w-8 text-center select-none">
+            <span class="px-2 text-xs  font-medium text-slate-900 w-8 text-center select-none">
                 1
             </span>
             <button class="px-3 text-slate-600 hover:bg-zinc-50 text-sm h-full transition">+</button>
@@ -140,7 +140,7 @@
             >
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
             </svg>
-            <span class="font-mono text-[11px] font-semibold text-slate-600">
+            <span class=" text-[11px] font-semibold text-slate-600">
                 342
             </span>
         </button>
@@ -162,7 +162,7 @@
 
         <!-- Informasi Stok (Dummy) -->
         <span class="text-xs text-zinc-400 ml-auto lg:ml-2">
-            Stok: <span class="font-medium text-slate-800 font-mono">12</span>
+            Stok: <span class="font-medium text-slate-800 ">12</span>
         </span>
 
     </div>
@@ -207,7 +207,7 @@
                 <div class="space-y-0.5">
                     <div class="flex items-center gap-2">
                         <h4 class="text-sm font-semibold text-slate-900 tracking-tight">{sellerInfo.nama}</h4>
-                        <span class="text-[9px] bg-zinc-900 text-white font-mono px-1.5 py-0.5 rounded tracking-wide uppercase scale-95 origin-left">
+                        <span class="text-[9px] bg-zinc-900 text-white  px-1.5 py-0.5 rounded tracking-wide uppercase scale-95 origin-left">
                             {sellerInfo.badge}
                         </span>
                     </div>
@@ -225,11 +225,11 @@
         <div class="grid grid-cols-2 gap-2 pt-2 border-t border-zinc-200/40 text-[11px]">
             <div class="flex items-center gap-1.5 text-zinc-500">
                 <span class="text-zinc-400">Total terjual:</span>
-                <span class="font-semibold text-slate-800 font-mono">{sellerInfo.total_penjualan}</span>
+                <span class="font-semibold text-slate-800 ">{sellerInfo.total_penjualan}</span>
             </div>
             <div class="flex items-center gap-1.5 text-zinc-500 justify-end">
-                <span class="text-amber-500">★</span>
-                <span class="font-semibold text-slate-800 font-mono">{sellerInfo.total_rating}</span>
+                <span class="text-amber-500">â˜…</span>
+                <span class="font-semibold text-slate-800 ">{sellerInfo.total_rating}</span>
             </div>
         </div>
     </div>

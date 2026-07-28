@@ -74,7 +74,7 @@
 
 <header class="bg-white border-b border-zinc-200 selection:bg-slate-900 selection:text-white sticky top-0 z-40">
 	<!-- TOP BAR: Brand Watermark, Fleet Dispatch Tag & Progress Line -->
-	<div class="{Full} px-6 py-1.5 flex items-center justify-between text-zinc-400 text-[10px] tracking-wider relative border-b border-zinc-100 font-mono">
+	<div class="{Full} px-6 py-1.5 flex items-center justify-between text-zinc-400 text-[10px] tracking-wider relative border-b border-zinc-100 ">
 		<div class="flex items-center gap-2 select-none">
 			<!-- Icon Dispatch/Courier SVG -->
 			<svg class="w-3.5 h-3.5 text-slate-800" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -90,11 +90,11 @@
 
 		<div class="flex gap-2 items-center">
 			<!-- Indicator ID Kurir -->
-			<span class="text-[9px] bg-zinc-100 text-zinc-600 px-1.5 py-0.5 rounded-xs font-mono">
+			<span class="text-[9px] bg-zinc-100 text-zinc-600 px-1.5 py-0.5 rounded-xs ">
 				ID: #{kurir.id_kurir}
 			</span>
 			<button type="button" class="cursor-pointer hover:text-slate-900 transition px-1 py-0.5 rounded-xs" title="Opsi Kurir">
-				•••
+				â€¢â€¢â€¢
 			</button>
 		</div>
 
@@ -152,14 +152,14 @@
 
 					<!-- Badge Verified -->
 					{#if kurir.verified}
-						<span class="text-[9px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-1 py-0.2 rounded-xs font-mono flex items-center gap-0.5 shrink-0" title="Terverifikasi">
-							✓ Verified
+						<span class="text-[9px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-1 py-0.2 rounded-xs  flex items-center gap-0.5 shrink-0" title="Terverifikasi">
+							âœ“ Verified
 						</span>
 					{/if}
 				</div>
 
 				<!-- Tipe Kendaraan & Jenis Layanan -->
-				<div class="flex items-center gap-1.5 text-[10px] font-mono">
+				<div class="flex items-center gap-1.5 text-[10px] ">
 					<span class="bg-slate-900 text-white px-1.5 py-0.5 rounded-xs uppercase tracking-wider font-medium">
 						{kurir.tipe_kendaraan}
 					</span>
@@ -169,7 +169,7 @@
 				</div>
 
 				<!-- Operational Area Info -->
-				<div class="flex items-center gap-1 text-[10px] text-zinc-500 font-mono truncate pt-0.5">
+				<div class="flex items-center gap-1 text-[10px] text-zinc-500  truncate pt-0.5">
 					<svg class="w-3 h-3 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
 						<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
@@ -186,8 +186,8 @@
 					<span class="text-[10px] uppercase font-semibold tracking-[0.15em] text-zinc-400">
 						Rating
 					</span>
-					<span class="text-xs font-bold font-mono text-slate-900 mt-1 flex items-center gap-1">
-						<span class="text-amber-500 text-xs">★</span> {kurir.rating}
+					<span class="text-xs font-bold  text-slate-900 mt-1 flex items-center gap-1">
+						<span class="text-amber-500 text-xs">â˜…</span> {kurir.rating}
 					</span>
 				</div>
 
@@ -196,7 +196,7 @@
 					<span class="text-[10px] uppercase font-semibold tracking-[0.15em] text-zinc-400">
 						Max Load
 					</span>
-					<span class="text-xs font-bold font-mono text-slate-900 mt-1">
+					<span class="text-xs font-bold  text-slate-900 mt-1">
 						{activeBidSession.max_kg} <span class="text-[9px] text-zinc-400 font-normal">KG</span>
 					</span>
 				</div>
@@ -206,7 +206,7 @@
 					<span class="text-[10px] uppercase font-semibold tracking-[0.15em] text-zinc-400">
 						Sisa Slot
 					</span>
-					<span class="text-xs font-bold font-mono text-slate-900 mt-1">
+					<span class="text-xs font-bold  text-slate-900 mt-1">
 						{activeBidSession.slot_tersisa} <span class="text-[9px] text-zinc-400 font-normal">Sesi</span>
 					</span>
 				</div>
@@ -216,7 +216,7 @@
 					<span class="text-[10px] uppercase font-semibold tracking-[0.15em] text-zinc-400">
 						Status Bid
 					</span>
-					<span class="text-xs font-bold font-mono mt-1 flex items-center gap-1.5 {statusBidActive ? 'text-emerald-600' : 'text-zinc-400'}">
+					<span class="text-xs font-bold  mt-1 flex items-center gap-1.5 {statusBidActive ? 'text-emerald-600' : 'text-zinc-400'}">
 						<span class="w-1.5 h-1.5 rounded-full {statusBidActive ? 'bg-emerald-500 animate-pulse' : 'bg-zinc-400'}"></span>
 						{statusBidActive ? 'READY' : 'OFF'}
 					</span>
@@ -282,7 +282,7 @@
 		</div>
 
 		<!-- Dispatch Status Info (Kanan) -->
-		<div class="hidden md:flex items-center gap-2 text-[10px] text-zinc-400 font-mono uppercase tracking-widest">
+		<div class="hidden md:flex items-center gap-2 text-[10px] text-zinc-400  uppercase tracking-widest">
 			<span>Mode Delivery:</span>
 			<span class="text-slate-900 font-semibold px-2 py-0.5 bg-zinc-100 rounded-xs">
 				{activeBidSession.is_ekspedisi ? 'Ekspedisi (HUB)' : 'Direct Pickup / Non-Eks'}

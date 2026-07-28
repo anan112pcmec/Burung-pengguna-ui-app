@@ -14,7 +14,7 @@
 		<div class="p-5 border border-zinc-950/10 rounded-sm bg-white space-y-4">
 			<span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase block">RATING TOKO</span>
 			<div class="flex items-baseline gap-2">
-				<span class="text-3xl font-bold font-mono">4.85</span>
+				<span class="text-3xl font-bold ">4.85</span>
 				<span class="text-xs text-slate-950/50 uppercase tracking-wide">/ 5.0 Skala</span>
 			</div>
 			<div class="h-20 w-full flex items-end border-b border-zinc-950/10 pb-1">
@@ -30,11 +30,11 @@
 			<div class="flex justify-between items-baseline">
 				<div>
 					<span class="text-xs font-medium text-slate-950/60 block">Batal</span>
-					<span class="text-xl font-bold font-mono">0.8%</span>
+					<span class="text-xl font-bold ">0.8%</span>
 				</div>
 				<div class="text-right">
 					<span class="text-xs font-medium text-slate-950/60 block">Retur</span>
-					<span class="text-xl font-bold font-mono text-slate-950/80">0.2%</span>
+					<span class="text-xl font-bold  text-slate-950/80">0.2%</span>
 				</div>
 			</div>
 			<div class="h-20 w-full flex items-end border-b border-zinc-950/10 pb-1 relative">
@@ -49,7 +49,7 @@
 		<div class="p-5 border border-zinc-950/10 rounded-sm bg-white space-y-4">
 			<span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase block">KECEPATAN PROSES</span>
 			<div class="flex items-baseline gap-2">
-				<span class="text-3xl font-bold font-mono">2.4</span>
+				<span class="text-3xl font-bold ">2.4</span>
 				<span class="text-xs text-slate-950/50 uppercase tracking-wide">Jam ke Kurir</span>
 			</div>
 			<div class="h-20 w-full flex items-end gap-2 border-b border-zinc-950/10 pb-1">

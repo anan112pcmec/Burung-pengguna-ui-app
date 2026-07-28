@@ -24,10 +24,10 @@
 
 	<div class="h-[15rem] w-[25.5rem] rounded-sm border border-zinc-800/20 bg-white p-5 flex flex-col justify-between hover:border-zinc-800 transition duration-300 cursor-pointer seller-card-{seller.id_seller}">
 		
-		<!-- ─── HEADER: AVATAR & BASIC INFO ─── -->
+		<!-- â”€â”€â”€ HEADER: AVATAR & BASIC INFO â”€â”€â”€ -->
 		<div class="flex items-center gap-3">
 			<!-- Inisial Avatar Simpel -->
-			<div class="w-10 h-10 rounded-sm bg-slate-900 text-white flex items-center justify-center font-mono font-bold text-sm shrink-0">
+			<div class="w-10 h-10 rounded-sm bg-slate-900 text-white flex items-center justify-center  font-bold text-sm shrink-0">
 				{seller.nama.slice(0, 2).toUpperCase()}
 			</div>
 
@@ -39,20 +39,20 @@
 					<!-- Indicator Online/Offline Minimalis -->
 					<span class="w-2 h-2 rounded-full shrink-0 {seller.status === 'Online' ? 'bg-emerald-500' : 'bg-zinc-300'}" title={seller.status}></span>
 				</div>
-				<p class="text-slate-500 text-[11px] font-mono truncate">
-					@{seller.username} • <span class="uppercase text-slate-400">{seller.jenis}</span>
+				<p class="text-slate-500 text-[11px]  truncate">
+					@{seller.username} â€¢ <span class="uppercase text-slate-400">{seller.jenis}</span>
 				</p>
 			</div>
 		</div>
 
-		<!-- ─── BODY: DESKRIPSI RINGKAS ─── -->
+		<!-- â”€â”€â”€ BODY: DESKRIPSI RINGKAS â”€â”€â”€ -->
 		<div class="my-auto">
 			<p class="text-xs text-slate-600 font-light leading-relaxed line-clamp-3">
 				{seller.deskripsi || seller.punchline}
 			</p>
 		</div>
 
-		<!-- ─── FOOTER: METADATA & LINK ─── -->
+		<!-- â”€â”€â”€ FOOTER: METADATA & LINK â”€â”€â”€ -->
 		<div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500 tracking-wide font-medium">
 			<div class="truncate max-w-[14rem]">
 				<span>{seller.seller_dedication}</span>
@@ -82,10 +82,10 @@
 
 	<div class="h-[15rem] w-[25.5rem] bg-white border border-zinc-950/10 p-5 flex flex-col justify-between hover:border-slate-950 transition-colors duration-300 cursor-pointer group">
 		
-		<!-- ─── HEADER: AVATAR & INFO (RATA KIRI) ─── -->
+		<!-- â”€â”€â”€ HEADER: AVATAR & INFO (RATA KIRI) â”€â”€â”€ -->
 		<div class="flex items-start gap-4">
 			<!-- Avatar Solid Square -->
-			<div class="w-11 h-11 bg-slate-950 text-white flex items-center justify-center font-mono font-bold text-sm shrink-0">
+			<div class="w-11 h-11 bg-slate-950 text-white flex items-center justify-center  font-bold text-sm shrink-0">
 				{kurir.nama.slice(0, 2).toUpperCase()}
 			</div>
 			
@@ -105,11 +105,11 @@
 					<!-- Status Dot Minimalist -->
 					<div class="flex items-center gap-1.5 shrink-0" title={kurir.status}>
 						<span class="w-1.5 h-1.5 rounded-full {kurir.status === 'Online' ? 'bg-slate-950' : 'bg-zinc-300'}"></span>
-						<span class="font-mono text-[9px] text-zinc-500 uppercase">{kurir.status}</span>
+						<span class=" text-[9px] text-zinc-500 uppercase">{kurir.status}</span>
 					</div>
 				</div>
 				
-				<span class="font-mono text-[10px] text-zinc-400 mt-1">@{kurir.username}</span>
+				<span class=" text-[10px] text-zinc-400 mt-1">@{kurir.username}</span>
 				
 				<p class="font-sans text-[11px] text-zinc-600 mt-2.5 leading-relaxed line-clamp-2">
 					{kurir.deskripsi}
@@ -117,16 +117,16 @@
 			</div>
 		</div>
 
-		<!-- ─── BODY: DATA GRID (STRUKTURAL) ─── -->
+		<!-- â”€â”€â”€ BODY: DATA GRID (STRUKTURAL) â”€â”€â”€ -->
 		<div class="border-t border-zinc-950/10 pt-3">
 			<div class="grid grid-cols-2 gap-4">
 				<div class="flex flex-col gap-1">
-					<span class="font-mono text-[9px] text-zinc-400 uppercase tracking-widest">Layanan & Tipe</span>
-					<span class="font-mono text-xs text-slate-950 font-bold uppercase"> — {kurir.tipe_kendaraan}</span>
+					<span class=" text-[9px] text-zinc-400 uppercase tracking-widest">Layanan & Tipe</span>
+					<span class=" text-xs text-slate-950 font-bold uppercase"> â€” {kurir.tipe_kendaraan}</span>
 				</div>
 				<div class="flex flex-col gap-1">
-					<span class="font-mono text-[9px] text-zinc-400 uppercase tracking-widest">Rating Akun</span>
-					<span class="font-mono text-xs text-slate-950 font-bold uppercase flex items-center gap-1">
+					<span class=" text-[9px] text-zinc-400 uppercase tracking-widest">Rating Akun</span>
+					<span class=" text-xs text-slate-950 font-bold uppercase flex items-center gap-1">
 						<svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
 							<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
 						</svg>
@@ -136,19 +136,19 @@
 			</div>
 		</div>
 
-		<!-- ─── FOOTER: ACTION & STATUS BID ─── -->
+		<!-- â”€â”€â”€ FOOTER: ACTION & STATUS BID â”€â”€â”€ -->
 		<div class="flex items-center justify-between pt-3">
 			{#if kurir.status_bid === 'On'}
-				<span class="font-mono text-[9px] px-2 py-1 bg-slate-950 text-white uppercase tracking-wider">
+				<span class=" text-[9px] px-2 py-1 bg-slate-950 text-white uppercase tracking-wider">
 					MENERIMA BID
 				</span>
 			{:else}
-				<span class="font-mono text-[9px] px-2 py-1 bg-zinc-100 text-zinc-400 border border-zinc-200 uppercase tracking-wider">
+				<span class=" text-[9px] px-2 py-1 bg-zinc-100 text-zinc-400 border border-zinc-200 uppercase tracking-wider">
 					BID DITUTUP
 				</span>
 			{/if}
 
-			<span class="font-mono text-[10px] font-bold text-slate-950 flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200">
+			<span class=" text-[10px] font-bold text-slate-950 flex items-center gap-1 group-hover:translate-x-1 transition-transform duration-200">
 				DETAIL PROFIL &rarr;
 			</span>
 		</div>

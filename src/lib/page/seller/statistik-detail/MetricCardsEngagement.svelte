@@ -8,7 +8,7 @@
 			TOTAL PENJUALAN PRODUK
 		</span>
 		<div>
-			<div class="text-xl font-bold font-mono tracking-tight text-slate-950">1,284 Unit</div>
+			<div class="text-xl font-bold  tracking-tight text-slate-950">1,284 Unit</div>
 			<div class="text-[10px] font-medium text-slate-950/60 mt-1 flex items-center gap-1">
 				<span class="inline-block w-1.5 h-1.5 bg-slate-950 rounded-full"></span>
 				+12% vs periode lalu
@@ -21,7 +21,7 @@
 			TOTAL FOLLOWER BARU
 		</span>
 		<div>
-			<div class="text-xl font-bold font-mono tracking-tight text-slate-950">342 Follower</div>
+			<div class="text-xl font-bold  tracking-tight text-slate-950">342 Follower</div>
 			<div class="text-[10px] font-medium text-slate-950/60 mt-1 flex items-center gap-1">
 				<span class="inline-block w-1.5 h-1.5 bg-slate-950 rounded-full"></span>
 				+5% vs periode lalu
@@ -34,7 +34,7 @@
 			TOTAL ULASAN MASUK
 		</span>
 		<div>
-			<div class="text-xl font-bold font-mono tracking-tight text-slate-950">89 Ulasan</div>
+			<div class="text-xl font-bold  tracking-tight text-slate-950">89 Ulasan</div>
 			<div class="text-[10px] font-medium text-slate-950/60 mt-1 flex items-center gap-1">
 				<span class="inline-block w-1.5 h-1.5 bg-slate-950 rounded-full"></span>
 				Rating 4.8 / 5.0
@@ -47,7 +47,7 @@
 			RATA-RATA BALAS CHAT
 		</span>
 		<div>
-			<div class="text-xl font-bold font-mono tracking-tight text-slate-950">4.2 Menit</div>
+			<div class="text-xl font-bold  tracking-tight text-slate-950">4.2 Menit</div>
 			<div class="text-[10px] font-medium text-slate-950/60 mt-1 flex items-center gap-1">
 				<span class="inline-block w-1.5 h-1.5 bg-slate-950 rounded-full"></span>
 				Sangat Cepat
@@ -60,7 +60,7 @@
 			DURASI ONLINE / AKTIF
 		</span>
 		<div>
-			<div class="text-xl font-bold font-mono tracking-tight text-slate-950">8.5 Jam/Hari</div>
+			<div class="text-xl font-bold  tracking-tight text-slate-950">8.5 Jam/Hari</div>
 			<div class="text-[10px] font-medium text-slate-950/60 mt-1 flex items-center gap-1">
 				<span class="inline-block w-1.5 h-1.5 bg-slate-950 rounded-full"></span>
 				Online 12m lalu

@@ -44,7 +44,7 @@
         <!-- Avatar/Foto Profil Dummy -->
         <div class="relative shrink-0 space-y-2  gap-2">
             <!-- Avatar / Foto Profil -->
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-zinc-950/10 bg-slate-950 font-mono text-xs font-bold text-white">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-zinc-950/10 bg-slate-950  text-xs font-bold text-white">
                 {seller.nama.slice(0, 2).toUpperCase()}
             </div>
             
@@ -54,12 +54,12 @@
                     class="h-2.5 w-2.5 shrink-0 rounded-full border-2 border-white {seller.status === 'Online' ? 'bg-emerald-500' : 'bg-zinc-300'}" 
                     title={seller.status}
                 ></span>
-                <span class="font-mono text-[10px] text-zinc-500">{seller.status}</span>
+                <span class=" text-[10px] text-zinc-500">{seller.status}</span>
             </div>
         </div>
 
         <!-- Details -->
-        <div class="min-w-0 space-y-1 font-mono text-xs space-y-1.5">
+        <div class="min-w-0 space-y-1  text-xs space-y-1.5">
             <!-- Badges & Nama Toko -->
             <div class="flex flex-wrap items-center gap-2">
                 <!-- Nama Toko -->
@@ -81,8 +81,8 @@
             <!-- Username & Jam Operasional -->
             <div class="flex items-center gap-2 text-[10px] text-zinc-400">
                 <span class="truncate">@{seller.username}</span>
-                <span>•</span>
-                <span class="shrink-0">🕒 {seller.jam_operasional}</span>
+                <span>â€¢</span>
+                <span class="shrink-0">ðŸ•’ {seller.jam_operasional}</span>
             </div>
 
             <!-- Punchline / Tagline Toko -->
@@ -95,7 +95,7 @@
     </div>
 
     <!-- Right Column: Action Button -->
-    <div class="shrink-0 self-center font-mono">
+    <div class="shrink-0 self-center ">
         <button 
             type="button"
             class="cursor-pointer rounded-2xs border border-zinc-950/10 px-3 py-1.5 text-[10px] font-bold transition "

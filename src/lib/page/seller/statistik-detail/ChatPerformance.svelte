@@ -15,13 +15,13 @@
 					<span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase block">KEAKTIFAN TOKO</span>
 					<h3 class="text-sm font-semibold text-slate-900 mt-0.5">Heatmap Jam Aktif Seller</h3>
 				</div>
-				<span class="text-[10px] font-mono border border-zinc-950/10 px-2 py-0.5 rounded-sm">HEATMAP</span>
+				<span class="text-[10px]  border border-zinc-950/10 px-2 py-0.5 rounded-sm">HEATMAP</span>
 			</div>
 
 			<!-- Grid Matrix Heatmap (hardcoded) -->
 			<div class="space-y-1.5 pt-2">
 				<div class="flex items-center gap-1.5">
-					<span class="text-[10px] font-mono w-6 text-slate-950/50">Sen</span>
+					<span class="text-[10px]  w-6 text-slate-950/50">Sen</span>
 					<div class="grid grid-cols-12 gap-1 w-full">
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-950"></div>
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-400"></div>
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 				<div class="flex items-center gap-1.5">
-					<span class="text-[10px] font-mono w-6 text-slate-950/50">Rab</span>
+					<span class="text-[10px]  w-6 text-slate-950/50">Rab</span>
 					<div class="grid grid-cols-12 gap-1 w-full">
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-950"></div>
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-400"></div>
@@ -55,7 +55,7 @@
 					</div>
 				</div>
 				<div class="flex items-center gap-1.5">
-					<span class="text-[10px] font-mono w-6 text-slate-950/50">Jum</span>
+					<span class="text-[10px]  w-6 text-slate-950/50">Jum</span>
 					<div class="grid grid-cols-12 gap-1 w-full">
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-950"></div>
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-400"></div>
@@ -72,7 +72,7 @@
 					</div>
 				</div>
 				<div class="flex items-center gap-1.5">
-					<span class="text-[10px] font-mono w-6 text-slate-950/50">Min</span>
+					<span class="text-[10px]  w-6 text-slate-950/50">Min</span>
 					<div class="grid grid-cols-12 gap-1 w-full">
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-950"></div>
 						<div class="h-5 rounded-xs border border-zinc-950/5 transition-opacity hover:opacity-80 bg-slate-400"></div>
@@ -105,7 +105,7 @@
 					<span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase block">KECEPATAN RESPON</span>
 					<h3 class="text-sm font-semibold text-slate-900 mt-0.5">Rata-Rata Waktu Balas Chat (Menit)</h3>
 				</div>
-				<span class="text-[10px] font-mono border border-zinc-950/10 px-2 py-0.5 rounded-sm">RESPONSE</span>
+				<span class="text-[10px]  border border-zinc-950/10 px-2 py-0.5 rounded-sm">RESPONSE</span>
 			</div>
 
 			<div class="h-36 w-full flex items-end border-b border-zinc-950/10 pb-2 relative">
@@ -114,7 +114,7 @@
 					<circle cx="80" cy="8" r="3" class="fill-slate-950" />
 				</svg>
 			</div>
-			<div class="flex justify-between text-[10px] font-mono text-slate-950/40 uppercase">
+			<div class="flex justify-between text-[10px]  text-slate-950/40 uppercase">
 				<span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:59</span>
 			</div>
 		</div>

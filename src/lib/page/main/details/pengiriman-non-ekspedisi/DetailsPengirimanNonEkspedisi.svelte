@@ -40,9 +40,9 @@
                     </span>
                 </div>
                 <!-- ID Transaksi & Pengiriman -->
-                <p class="text-xs text-slate-500 mt-0.5 font-mono">
+                <p class="text-xs text-slate-500 mt-0.5 ">
                     ID Pengiriman: <span class="font-bold text-slate-800">SND-8820194</span> 
-                    <span class="text-zinc-300 mx-1">•</span> ID Transaksi: TRX-20260722-90182
+                    <span class="text-zinc-300 mx-1">â€¢</span> ID Transaksi: TRX-20260722-90182
                 </p>
             </div>
         </div>
@@ -85,13 +85,13 @@
                     <div>
                         <p class="text-xs font-bold text-slate-900">Rian Ardianto</p>
                         <!-- IdKurir & KendaraanRequired -->
-                        <p class="text-[11px] text-slate-500 font-mono">
-                            ID Kurir: #KRR-0042 • Motor (B 4821 BCD)
+                        <p class="text-[11px] text-slate-500 ">
+                            ID Kurir: #KRR-0042 â€¢ Motor (B 4821 BCD)
                         </p>
                     </div>
                 </div>
                 <span class="text-[10px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-xs">
-                    • Kurir Ditugaskan
+                    â€¢ Kurir Ditugaskan
                 </span>
             </div>
 
@@ -110,15 +110,15 @@
                             <span class="text-xs font-bold text-slate-900">
                                 Kurir Dalam Perjalanan ke Alamat Penerima
                             </span>
-                            <span class="text-[11px] font-mono text-slate-400">22 Jul 2026, 15:10</span>
+                            <span class="text-[11px]  text-slate-400">22 Jul 2026, 15:10</span>
                         </div>
                         <p class="text-xs text-slate-600 leading-relaxed">
                             Paket sudah diambil dari gudang penjual dan sedang diantar langsung menuju lokasi tujuan Anda.
                         </p>
                         <!-- Lokasi & Koordinat Geo (from JejakPengiriman) -->
-                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 font-mono">
+                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Jl. Raya Pajajaran</span>
-                            <span>•</span>
+                            <span>â€¢</span>
                             <span>Lat/Long: -6.60124000, 106.80512000</span>
                         </div>
                     </div>
@@ -133,14 +133,14 @@
                             <span class="text-xs font-medium text-slate-800">
                                 Kurir Mengambil Paket di Gudang (Picked Up)
                             </span>
-                            <span class="text-[11px] font-mono text-slate-400">22 Jul 2026, 14:45</span>
+                            <span class="text-[11px]  text-slate-400">22 Jul 2026, 14:45</span>
                         </div>
                         <p class="text-xs text-slate-500 leading-relaxed">
                             Kurir telah sampai di gudang penjual dan memverifikasi fisik pesanan.
                         </p>
-                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 font-mono">
+                        <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Gudang Utama BSD</span>
-                            <span>•</span>
+                            <span>â€¢</span>
                             <span>Lat/Long: -6.28821000, 106.67102000</span>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                             <span class="text-xs font-medium text-slate-500">
                                 Pesanan Diteruskan ke Sistem Kurir
                             </span>
-                            <span class="text-[11px] font-mono text-slate-400">22 Jul 2026, 14:30</span>
+                            <span class="text-[11px]  text-slate-400">22 Jul 2026, 14:30</span>
                         </div>
                         <p class="text-xs text-slate-400 leading-relaxed">
                             Sistem mencari kurir terdekat untuk penjemputan barang secara langsung.
@@ -190,7 +190,7 @@
                 <!-- Line Connector Direct Point -->
                 <div class="flex items-center gap-2 px-1 my-1">
                     <div class="h-6 w-0.5 bg-zinc-200 ml-0.5"></div>
-                    <span class="text-[10px] text-slate-400 font-mono">
+                    <span class="text-[10px] text-slate-400 ">
                         Direct Delivery (Tanpa Hub)
                     </span>
                 </div>
@@ -228,7 +228,7 @@
                     </div>
                     <div class="flex justify-between">
                         <span>Berat Total</span>
-                        <span class="font-mono font-medium text-slate-900">2 Kg</span>
+                        <span class=" font-medium text-slate-900">2 Kg</span>
                     </div>
                     <div class="flex justify-between">
                         <span>Jarak Tempuh</span>
@@ -236,7 +236,7 @@
                     </div>
                     <div class="flex justify-between pt-2 border-t border-zinc-200/60">
                         <span class="font-medium text-slate-700">Ongkos Kurir (KurirPaid)</span>
-                        <span class="font-mono font-bold text-slate-900">Rp 25.000</span>
+                        <span class=" font-bold text-slate-900">Rp 25.000</span>
                     </div>
                 </div>
             </div>

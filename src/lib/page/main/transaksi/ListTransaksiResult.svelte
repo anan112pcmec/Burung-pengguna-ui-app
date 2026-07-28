@@ -16,9 +16,9 @@
             <div class="flex items-center justify-between text-xs text-slate-500 border-b border-zinc-100 pb-2">
                 <div class="flex items-center gap-2">
                     <span class="font-medium text-slate-900">22 Jul 2026</span>
-                    <span class="text-zinc-300">•</span>
-                    <span class="font-mono text-slate-600">TRX-8930219482</span>
-                    <span class="text-zinc-300">•</span>
+                    <span class="text-zinc-300">â€¢</span>
+                    <span class=" text-slate-600">TRX-8930219482</span>
+                    <span class="text-zinc-300">â€¢</span>
                     <span class="text-slate-600">3 Barang</span>
                 </div>
                 
@@ -46,7 +46,7 @@
                             Sepatu Running Nike Air Zoom - Sepatu Olahraga
                         </h4>
                         <p class="text-[11px] text-slate-500">
-                            Hitam / 42 • <span class="text-slate-700 font-medium">1x Rp 150.000</span>
+                            Hitam / 42 â€¢ <span class="text-slate-700 font-medium">1x Rp 150.000</span>
                         </p>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <!-- Total Belanja Transaksi -->
                 <div class="text-right shrink-0 border-l border-zinc-100 pl-4">
                     <span class="text-[10px] text-slate-400 block">Total Belanja</span>
-                    <span class="text-sm font-bold text-slate-900 font-mono">
+                    <span class="text-sm font-bold text-slate-900 ">
                         Rp 450.000
                     </span>
                 </div>
@@ -77,7 +77,7 @@
                         Beli lagi
                     </button>
                     <button type="button" class="px-1.5 py-1 text-slate-400 hover:text-slate-800 transition cursor-pointer" title="Opsi lainnya">
-                        •••
+                        â€¢â€¢â€¢
                     </button>
                 </div>
             </div>
@@ -103,13 +103,13 @@
                 </div>
                 <div class="flex justify-between items-center">
                     <span class="text-slate-400">Resi</span>
-                    <span class="font-mono text-slate-800 font-medium">JP-92049182</span>
+                    <span class=" text-slate-800 font-medium">JP-92049182</span>
                 </div>
                 
                 <!-- Latest Tracking Info (JejakPengiriman) -->
                 <div class="bg-white p-2 rounded-xs border border-zinc-200 space-y-1">
                     <span class="text-[9px] text-amber-700 font-medium block">
-                        • Posisi Terakhir
+                        â€¢ Posisi Terakhir
                     </span>
                     <p class="text-[10px] text-slate-700 font-medium leading-tight truncate">
                         Gudang Transit Jakarta Barat

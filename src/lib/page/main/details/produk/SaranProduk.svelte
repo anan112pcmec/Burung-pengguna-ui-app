@@ -19,8 +19,8 @@
         </div>
         
         <!-- Indikator Geser Mikro (Opsional untuk estetika) -->
-        <div class="text-[10px] font-mono text-zinc-400 tracking-wider uppercase select-none flex items-center gap-1">
-            Geser <span>→</span>
+        <div class="text-[10px]  text-zinc-400 tracking-wider uppercase select-none flex items-center gap-1">
+            Geser <span>â†’</span>
         </div>
     </div>
 

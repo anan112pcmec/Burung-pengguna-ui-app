@@ -60,13 +60,13 @@
 				<div class="bg-zinc-200 rounded-2xs overflow-hidden">
 					<img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=200" alt="Item Preview" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-300" />
 				</div>
-				<div class="bg-zinc-300 rounded-2xs flex items-center justify-center font-mono text-[10px] text-slate-700 font-bold">
+				<div class="bg-zinc-300 rounded-2xs flex items-center justify-center  text-[10px] text-slate-700 font-bold">
 					+{category.totalItems - 3}
 				</div>
 			</div>
 
 			<!-- Badge Lock / Public Status -->
-			<div class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-xs text-white text-[9px] font-mono px-1.5 py-0.5 rounded-2xs uppercase tracking-wider">
+			<div class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-xs text-white text-[9px]  px-1.5 py-0.5 rounded-2xs uppercase tracking-wider">
 				{category.isPublic ? 'PUBLIC' : 'PRIVATE'}
 			</div>
 
@@ -88,7 +88,7 @@
 		<!-- Row 2: Informasi Kategori Wishlist -->
 		<div class="p-3 flex flex-col justify-between bg-white">
 			<div>
-				<span class="text-[9px] font-mono font-medium tracking-[0.18em] text-slate-950/40 uppercase block">
+				<span class="text-[9px]  font-medium tracking-[0.18em] text-slate-950/40 uppercase block">
 					WISHLIST FOLDER
 				</span>
 				<h3 class="text-xs font-bold text-slate-900 tracking-tight truncate mt-0.5 group-hover:text-slate-950">
@@ -96,7 +96,7 @@
 				</h3>
 			</div>
 
-			<div class="flex items-center justify-between pt-2 border-t border-zinc-950/5 text-[10px] font-mono text-slate-950/60">
+			<div class="flex items-center justify-between pt-2 border-t border-zinc-950/5 text-[10px]  text-slate-950/60">
 				<span>{category.totalItems} ITEM</span>
 				<span class="group-hover:translate-x-0.5 transition-transform duration-300">&rarr;</span>
 			</div>
@@ -118,7 +118,7 @@
 				<path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
 			</svg>
 		</div>
-		<span class="text-[10px] font-mono font-bold tracking-[0.15em] text-slate-950/60 group-hover:text-slate-950 uppercase">
+		<span class="text-[10px]  font-bold tracking-[0.15em] text-slate-950/60 group-hover:text-slate-950 uppercase">
 			KATEGORI BARU
 		</span>
 	</button>
