@@ -1,7 +1,7 @@
 
 <script lang="ts">
 	import { Full } from '../../../../constant/UiConstant';
-    import type { Testimoni } from './types';
+    import type { Testimoni } from '../sign-in/types';
 
     let testimoniBurung: Testimoni[] = $state<Testimoni[]>([
         {

@@ -4,6 +4,6 @@
 
     if (browser) {
         // eslint-disable-next-line svelte/no-navigation-without-resolve
-        goto('/home', { replaceState: true });
+        goto('/sign-in', { replaceState: true });
     }
 </script>
