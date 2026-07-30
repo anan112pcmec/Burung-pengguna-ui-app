@@ -24,18 +24,18 @@
         updateProgress();
     });
 
-    const goHome: Action= (node) =>{
-        const event = () =>{
-            goto("/home")
-        }
-        node.addEventListener("click", event)
+    const goHome: Action = (node) => {
+        const event = () => {
+            goto("/home");
+        };
+        node.addEventListener("click", event);
 
-        return{
-            destroy(){
-                node.removeEventListener("click", event)
+        return {
+            destroy() {
+                node.removeEventListener("click", event);
             }
-        }
-    }
+        };
+    };
 </script>
 
 <svelte:window 
@@ -43,17 +43,18 @@
     onscroll={updateProgress}
 />
 
-<header class="fixed top-0 w-full bg-white border-b border-gray-200 grid grid-rows-[25%_75%] h-[5.5rem] sm:h-[6.5rem] md:h-[7rem] font-sans text-[11px] sm:text-[12px] md:text-[13px] z-[100] transition-all duration-300">
+<!-- PERBAIKAN UTAMA: overflow-visible ditambahkan agar dropdown tidak terpotong oleh batas header -->
+<header class="fixed top-0 w-full bg-white border-b border-gray-200 grid grid-rows-[25%_75%] h-[5.5rem] sm:h-[6.5rem] md:h-[7rem] font-sans text-[11px] sm:text-[12px] md:text-[13px] z-[100] transition-all duration-300 overflow-visible">
     
     <!-- Top Bar & Progress Bar -->
-    <div class="{Full} px-3 sm:px-6 flex items-center justify-between text-gray-500 text-[10px] sm:text-[11px] relative border-b border-gray-100 ">
+    <div class="{Full} px-3 sm:px-6 flex items-center justify-between text-gray-500 text-[10px] sm:text-[11px] relative border-b border-gray-100 overflow-visible">
         <div class="flex gap-2 sm:gap-4 truncate">
             {#each topMenus as menu}
                 <a href="/" class="hover:text-black transition-colors whitespace-nowrap {FontSection}">{menu}</a>
             {/each}
         </div>
         <div class="flex gap-2 items-center shrink-0">
-            <span class="cursor-pointer hover:text-black">•••</span>
+            <span class="cursor-pointer hover:text-black">&bull;&bull;&bull;</span>
         </div>
 
         <div 
@@ -63,10 +64,10 @@
     </div>  
 
     <!-- Main Navigation Bar -->
-    <div class="grid grid-cols-[38%_24%_38%] sm:grid-cols-[40%_20%_40%] px-2 sm:px-4 md:px-6 items-center">
+    <div class="grid grid-cols-[38%_24%_38%] sm:grid-cols-[40%_20%_40%] px-2 sm:px-4 md:px-6 items-center overflow-visible">
         
         <!-- Kiri: Notifikasi, Cart, Transaksi Quick Menu & Profile -->
-        <div class="{Full} flex items-center gap-1.5 sm:gap-3 md:gap-5 font-medium tracking-wide text-gray-800  scrollbar-none">
+        <div class="{Full} flex items-center gap-1.5 sm:gap-3 md:gap-5 font-medium tracking-wide text-gray-800 scrollbar-none overflow-visible">
             <!-- Inbox -->
             <button 
                 onclick={() => goto("/inbox")} 
@@ -98,12 +99,14 @@
                     <path d="M4 8H18.5C19.3284 8 20 8.67157 20 9.5V18.5C20 19.3284 19.3284 20 18.5 20H5.5C4.67157 20 4 19.3284 4 18.5V8ZM4 8V5.5C4 4.67157 4.67157 4 5.5 4H16C16.8284 4 17.5 4.67157 17.5 5.5V8" stroke="#343C54" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 
-                <div class="absolute left-0 sm:left-auto top-full mt-2 w-44 sm:w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-                    <a href="/transaksi" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Transaksi</a>
-                    <a href="/transaksi-dibatalkan" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
-                        <span>Transaksi Dibatalkan</span>
-                        <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
-                    </a>
+                <div class="absolute left-0 sm:left-auto top-full pt-1.5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-[999]">
+                    <div class="w-44 sm:w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1">
+                        <a href="/transaksi" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Transaksi</a>
+                        <a href="/transaksi-dibatalkan" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+                            <span>Transaksi Dibatalkan</span>
+                            <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -124,16 +127,18 @@
                     <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
 
-                <div class="absolute left-0 sm:left-auto sm:right-0 top-full mt-2 w-44 sm:w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-                    <a href="/user-overview" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Profile Overview</a>
-                    <a href="/settings" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Settings</a>
-                    <a href="/following" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
-                        <span>Following</span>
-                        <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
-                    </a>
-                    
-                    <hr class="border-gray-100 my-1" />
-                    <button class="w-full text-left block px-4 py-2 text-xs text-red-600 hover:bg-red-50 font-medium">Keluar</button>
+                <div class="absolute left-0 sm:left-auto sm:right-0 top-full pt-1.5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-[999]">
+                    <div class="w-44 sm:w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1">
+                        <a href="/user-overview" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Profile Overview</a>
+                        <a href="/settings" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Settings</a>
+                        <a href="/following" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+                            <span>Following</span>
+                            <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+                        </a>
+                        
+                        <hr class="border-gray-100 my-1" />
+                        <button class="w-full text-left block px-4 py-2 text-xs text-red-600 hover:bg-red-50 font-medium cursor-pointer">Keluar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,7 +149,7 @@
         </div>
 
         <!-- Kanan: Search & Actions -->
-        <div class="{Full} flex items-center justify-end gap-2 sm:gap-4 md:gap-6 text-gray-700 {FontSection}">
+        <div class="{Full} flex items-center justify-end gap-2 sm:gap-4 md:gap-6 text-gray-700 {FontSection} overflow-visible">
             
             <!-- Form Pencarian -->
             <div class="relative border-b border-transparent hover:border-black focus-within:border-black pb-0.5 sm:pb-1 transition-colors duration-800">
@@ -165,7 +170,7 @@
                 </form>
 
                 {#if navbarState.searching}
-                    <div class="absolute right-0 sm:left-0 top-full mt-2 w-56 sm:w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
+                    <div class="absolute right-0 sm:left-0 top-full mt-2 w-56 sm:w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-[999]">
                         <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Rekomendasi Produk</div>
                         <a href="/market" class="flex items-center justify-between px-3 py-2 text-xs text-gray-700 hover:bg-gray-50">
                             <span class="truncate">Sepatu Running Nike</span>
@@ -183,19 +188,17 @@
                 {/if}
             </div>
 
-            <!-- Action Icons (Bersembunyi dengan animasi saat mode pencarian aktif) -->
-            <div class="flex items-center gap-1 sm:gap-2 md:gap-4 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden {navbarState.searching ? 'max-w-0 opacity-0 pointer-events-none' : 'max-w-xs opacity-100'}">
+            <!-- Action Icons -->
+            <div class="flex items-center gap-1 sm:gap-2 md:gap-4 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-visible {navbarState.searching ? 'max-w-0 opacity-0 pointer-events-none' : 'max-w-xs opacity-100'}">
                 
                 <!-- Account / Sign menu -->
-                
-                    <div use:goHome class="cursor-pointer p-1 sm:p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-800 flex items-center justify-center shrink-0" title="Account">
-                        <svg class="w-5 h-5 sm:w-[22px] sm:h-[22px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3.25 9C3.25 6.10051 5.60051 3.75 8.5 3.75H15.5C18.3995 3.75 20.75 6.10051 20.75 9V9.40675C20.435 9.30498 20.0989 9.25 19.75 9.25H4.25C3.90109 9.25 3.56503 9.30498 3.25 9.40675V9Z" fill="#343C54"/>
-                            <path d="M3.25 10.4839C2.50914 10.8521 2 11.6166 2 12.5C2 13.3834 2.50914 14.1479 3.25 14.5161C3.55124 14.6658 3.89079 14.75 4.25 14.75H19.75C20.1092 14.75 20.4488 14.6658 20.75 14.5161C21.4909 14.1479 22 13.3834 22 12.5C22 11.6166 21.4909 10.8521 20.75 10.4839C20.4488 10.3342 20.1092 10.25 19.75 10.25H4.25C3.89079 10.25 3.55124 10.3342 3.25 10.4839Z" fill="#343C54"/>
-                            <path d="M20.75 15.5933C20.435 15.695 20.0989 15.75 19.75 15.75H4.25C3.9011 15.75 3.56503 15.695 3.25 15.5933V18C3.25 19.2426 4.25736 20.25 5.5 20.25H18.5C19.7426 20.25 20.75 19.2426 20.75 18V15.5933Z" fill="#343C54"/>
-                        </svg>
-                    </div>
-
+                <div use:goHome class="cursor-pointer p-1 sm:p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-800 flex items-center justify-center shrink-0" title="Account">
+                    <svg class="w-5 h-5 sm:w-[22px] sm:h-[22px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.25 9C3.25 6.10051 5.60051 3.75 8.5 3.75H15.5C18.3995 3.75 20.75 6.10051 20.75 9V9.40675C20.435 9.30498 20.0989 9.25 19.75 9.25H4.25C3.90109 9.25 3.56503 9.30498 3.25 9.40675V9Z" fill="#343C54"/>
+                        <path d="M3.25 10.4839C2.50914 10.8521 2 11.6166 2 12.5C2 13.3834 2.50914 14.1479 3.25 14.5161C3.55124 14.6658 3.89079 14.75 4.25 14.75H19.75C20.1092 14.75 20.4488 14.6658 20.75 14.5161C21.4909 14.1479 22 13.3834 22 12.5C22 11.6166 21.4909 10.8521 20.75 10.4839C20.4488 10.3342 20.1092 10.25 19.75 10.25H4.25C3.89079 10.25 3.55124 10.3342 3.25 10.4839Z" fill="#343C54"/>
+                        <path d="M20.75 15.5933C20.435 15.695 20.0989 15.75 19.75 15.75H4.25C3.9011 15.75 3.56503 15.695 3.25 15.5933V18C3.25 19.2426 4.25736 20.25 5.5 20.25H18.5C19.7426 20.25 20.75 19.2426 20.75 18V15.5933Z" fill="#343C54"/>
+                    </svg>
+                </div>
 
                 <!-- Transaksi -->
                 <a href="/transaksi" class="p-1 sm:p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-800 shrink-0" title="Transaksi">
@@ -212,12 +215,14 @@
                         </svg>
                     </div>
 
-                    <div class="absolute right-0 top-full mt-2 w-44 sm:w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-50">
-                        <a href="/wishlist" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Wishlist</a>
-                        <a href="/likes" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
-                            <span>Likes</span>
-                            <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
-                        </a>
+                    <div class="absolute right-0 top-full pt-1.5 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 z-[999]">
+                        <div class="w-44 sm:w-48 bg-white border border-gray-100 rounded-lg shadow-xl py-1">
+                            <a href="/wishlist" class="block px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">Wishlist</a>
+                            <a href="/likes" class="flex justify-between items-center px-4 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-slate-900">
+                                <span>Likes</span>
+                                <span class="bg-amber-100 text-amber-800 text-[9px] font-bold px-1.5 py-0.5 rounded-full">1</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 

@@ -42,7 +42,7 @@
                 <!-- ID Transaksi & Pengiriman -->
                 <p class="text-xs text-slate-500 mt-0.5 ">
                     ID Pengiriman: <span class="font-bold text-slate-800">SND-8820194</span> 
-                    <span class="text-zinc-300 mx-1">â€¢</span> ID Transaksi: TRX-20260722-90182
+                    <span class="text-zinc-300 mx-1">.</span> ID Transaksi: TRX-20260722-90182
                 </p>
             </div>
         </div>
@@ -86,12 +86,12 @@
                         <p class="text-xs font-bold text-slate-900">Rian Ardianto</p>
                         <!-- IdKurir & KendaraanRequired -->
                         <p class="text-[11px] text-slate-500 ">
-                            ID Kurir: #KRR-0042 â€¢ Motor (B 4821 BCD)
+                            ID Kurir: #KRR-0042 &bull; Motor (B 4821 BCD)
                         </p>
                     </div>
                 </div>
                 <span class="text-[10px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-xs">
-                    â€¢ Kurir Ditugaskan
+                    &bull; Kurir Ditugaskan
                 </span>
             </div>
 
@@ -118,7 +118,7 @@
                         <!-- Lokasi & Koordinat Geo (from JejakPengiriman) -->
                         <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Jl. Raya Pajajaran</span>
-                            <span>â€¢</span>
+                            <span>.</span>
                             <span>Lat/Long: -6.60124000, 106.80512000</span>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
                         </p>
                         <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Gudang Utama BSD</span>
-                            <span>â€¢</span>
+                            <span>.</span>
                             <span>Lat/Long: -6.28821000, 106.67102000</span>
                         </div>
                     </div>

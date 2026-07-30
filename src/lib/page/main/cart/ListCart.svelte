@@ -32,7 +32,7 @@
             
 
             <div class="text-slate-700/60 text-[10px] font-light tracking-wide truncate">
-                Hitam / XL â€¢ Ready Stock
+                Hitam / XL &bull; Ready Stock
             </div>
         </div>
 

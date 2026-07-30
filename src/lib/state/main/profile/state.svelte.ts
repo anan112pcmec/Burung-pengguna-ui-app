@@ -2,7 +2,7 @@ class ProfilingManagerOpen{
     public OpsiDipilih: 'Aktifitas' | 'Ubah Profil' | 'Daftar Alamat' | 'Keamanan Akun' | 'Notifikasi' |'Privasi Akun' | 'Penautan'
 
     constructor(){
-        this.OpsiDipilih = $state<'Aktifitas' | 'Ubah Profil' | 'Daftar Alamat' | 'Keamanan Akun' | 'Notifikasi' |'Privasi Akun' | 'Penautan'>('Aktifitas')
+        this.OpsiDipilih = $state<'Aktifitas' | 'Ubah Profil' | 'Daftar Alamat' | 'Keamanan Akun' | 'Notifikasi' |'Privasi Akun' | 'Penautan'>('Ubah Profil')
     }
 
     setAktifitas = () => {

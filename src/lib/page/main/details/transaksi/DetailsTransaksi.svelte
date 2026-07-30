@@ -29,7 +29,7 @@
                 </div>
                 <!-- KodeOrderSistem & CreatedAt -->
                 <p class="text-xs text-slate-500 mt-0.5 ">
-                    TRX-20260722-90182 <span class="text-zinc-300 mx-1">â€¢</span> 22 Juli 2026, 14:30 WIB
+                    TRX-20260722-90182 <span class="text-zinc-300 mx-1">.</span> 22 Juli 2026, 14:30 WIB
                 </p>
             </div>
         </div>
@@ -87,7 +87,7 @@
                             Sepatu Running Nike Air Zoom - Sepatu Olahraga Pria
                         </h3>
                         <p class="text-xs text-slate-500">
-                            Ukuran: 42 <span class="text-zinc-300 mx-1">â€¢</span> Warna: Hitam
+                            Ukuran: 42 <span class="text-zinc-300 mx-1">.</span> Warna: Hitam
                         </p>
                         <p class="text-xs text-slate-700 font-medium">
                             1 x <span class="">Rp 350.000</span>

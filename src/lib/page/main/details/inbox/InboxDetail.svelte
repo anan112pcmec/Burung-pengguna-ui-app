@@ -53,7 +53,7 @@
 			day: 'numeric',
 			month: 'short',
 			year: 'numeric'
-		}) + ' â€¢ ' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+		}) + ' &bull;' + d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
 	}
 </script>
 

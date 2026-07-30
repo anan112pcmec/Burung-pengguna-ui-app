@@ -1,5 +1,5 @@
-<script>
-    let activeTab = 'password';
+<script lang="ts">
+    let activeTab: string = $state<string>('password') ;
 </script>
 
 {#snippet UbahPassword()}
@@ -107,11 +107,11 @@
                 <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Metode Verifikasi</span>
                 <div class="grid grid-cols-2 gap-2">
                     <label class="flex items-center justify-center gap-2 border border-slate-900/20 py-2 px-3 rounded-sm cursor-pointer hover:border-slate-950 transition group">
-                        <input type="radio" name="pin_verification_method" value="email" class="accent-slate-950 cursor-pointer" checked />
+                        <input type="radio" name="pin_verification_method" value="email" class="accent-slate-950 cursor-pointer text-slate-900" checked />
                         <span class="text-[10px] font-medium tracking-wider text-slate-800 uppercase group-hover:text-slate-950">OTP via Email</span>
                     </label>
                     <label class="flex items-center justify-center gap-2 border border-slate-900/20 py-2 px-3 rounded-sm cursor-pointer hover:border-slate-950 transition group">
-                        <input type="radio" name="pin_verification_method" value="password" class="accent-slate-950 cursor-pointer" />
+                        <input type="radio" name="pin_verification_method" value="password" class="accent-slate-950 cursor-pointer text-slate-900" />
                         <span class="text-[10px] font-medium tracking-wider text-slate-800 uppercase group-hover:text-slate-950">Via Password</span>
                     </label>
                 </div>

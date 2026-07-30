@@ -81,7 +81,7 @@
             <!-- Username & Jam Operasional -->
             <div class="flex items-center gap-2 text-[10px] text-zinc-400">
                 <span class="truncate">@{seller.username}</span>
-                <span>â€¢</span>
+                <span>.</span>
                 <span class="shrink-0">ðŸ•’ {seller.jam_operasional}</span>
             </div>
 

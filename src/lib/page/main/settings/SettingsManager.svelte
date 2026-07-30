@@ -2,12 +2,10 @@
     import { LeftOpsiState } from "$lib/state/main/profile/state.svelte";
 	import type { Action } from "svelte/action";
 	import { SvelteMap } from "svelte/reactivity";
-	import Aktivitas from "./Aktivitas.svelte";
 	import Profil from "./Profil.svelte";
 	import Alamat from "./Alamat.svelte";
 	import KeamananAkun from "./KeamananAkun.svelte";
 	import Notifikasi from "./Notifikasi.svelte";
-	import PrivasiAkun from "./PrivasiAkun.svelte";
 	import Penautan from "./Penautan.svelte";
 
     let UbahProfil: boolean = $state<boolean>(false)
@@ -87,12 +85,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 
 <section class="grid grid-cols-[36%_64%] w-full h-[27rem] border border-zinc-950/10 rounded-sm bg-white">
     <div class="grid grid-rows-7 pl-4 pr-4 border-r border-zinc-950/10 py-2">
-<button 
-    onclick={() => LeftOpsiState.setAktifitas()}
-    class="w-full grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isAktifitas() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
-    <span>Aktifitas</span> 
-    <span class="text-right text-zinc-400">-></span>
-</button>
 
 <button 
     onclick={() => LeftOpsiState.setUbahProfil()}
@@ -123,13 +115,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 </button>
 
 <button 
-    onclick={() => LeftOpsiState.setPrivasiAkun()}
-    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isPrivasiAkun() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
-    <span>Privasi Akun</span> 
-    <span class="text-right text-zinc-400">-></span>
-</button>
-
-<button 
     onclick={() => LeftOpsiState.setPenautan()}
     class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isPenautan() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
     <span>Penautan</span> 
@@ -139,10 +124,7 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 
     <div class="p-6 overflow-y-auto scrollbar-none h-full bg-white flex flex-col min-h-0">
         
-        {#if LeftOpsiState.isAktifitas()}
-            <Aktivitas/>
-
-        {:else if LeftOpsiState.isUbahProfil()}
+        {#if LeftOpsiState.isUbahProfil()}
            <Profil/>
 
         {:else if LeftOpsiState.isDaftarAlamat()}
@@ -154,12 +136,6 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
         {:else if LeftOpsiState.isNotifikasi()}
         <Notifikasi/>
 
-        {:else if LeftOpsiState.isPrivasiAkun()}
-        <PrivasiAkun/>
-
-
-        {:else if LeftOpsiState.isPrivasiAkun()}
-            <PrivasiAkun/>
 
         {:else if LeftOpsiState.isPenautan()}
           <Penautan/>

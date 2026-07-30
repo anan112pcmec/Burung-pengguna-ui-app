@@ -50,7 +50,7 @@
 							</span>
 						</h3>
 						<span class="text-[10px] text-zinc-400  block">
-							@{kurir.username} â€¢ Mitra Kurir Terverifikasi
+							@{kurir.username} &bull; Mitra Kurir Terverifikasi
 						</span>
 					</div>
 				</div>
@@ -170,7 +170,7 @@
 		</div>
 		<div class="flex items-center gap-3 text-zinc-400">
 			<span>DESIGNED BY FAIZ HANNAN HAKIM</span>
-			<span>â€¢</span>
+			<span>.</span>
 			<span class="text-slate-600 font-semibold">JAKARTA, ID</span>
 		</div>
 	</div>

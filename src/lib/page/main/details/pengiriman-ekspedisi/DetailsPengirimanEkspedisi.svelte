@@ -30,7 +30,7 @@
                 <!-- ID Transaksi & Resi -->
                 <p class="text-xs text-slate-500 mt-0.5 ">
                     Resi: <span class="font-bold text-slate-800">EXP-JP-99201928</span> 
-                    <span class="text-zinc-300 mx-1">â€¢</span> ID Transaksi: TRX-20260722-90182
+                    <span class="text-zinc-300 mx-1">.</span> ID Transaksi: TRX-20260722-90182
                 </p>
             </div>
         </div>
@@ -88,7 +88,7 @@
                         <!-- Lokasi & Korodinat Geo -->
                         <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Jakarta Barat</span>
-                            <span>â€¢</span>
+                            <span>.</span>
                             <span>Lat/Long: -6.16832100, 106.75885000</span>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         </p>
                         <div class="flex items-center gap-3 pt-1 text-[10px] text-slate-400 ">
                             <span>Lokasi: Gudang Penjual - Tangerang</span>
-                            <span>â€¢</span>
+                            <span>.</span>
                             <span>Lat/Long: -6.17830000, 106.63188000</span>
                         </div>
                     </div>

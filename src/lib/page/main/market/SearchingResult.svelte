@@ -40,7 +40,7 @@
 					<span class="w-2 h-2 rounded-full shrink-0 {seller.status === 'Online' ? 'bg-emerald-500' : 'bg-zinc-300'}" title={seller.status}></span>
 				</div>
 				<p class="text-slate-500 text-[11px]  truncate">
-					@{seller.username} â€¢ <span class="uppercase text-slate-400">{seller.jenis}</span>
+					@{seller.username} &bull; <span class="uppercase text-slate-400">{seller.jenis}</span>
 				</p>
 			</div>
 		</div>
@@ -122,7 +122,7 @@
 			<div class="grid grid-cols-2 gap-4">
 				<div class="flex flex-col gap-1">
 					<span class=" text-[9px] text-zinc-400 uppercase tracking-widest">Layanan & Tipe</span>
-					<span class=" text-xs text-slate-950 font-bold uppercase"> â€” {kurir.tipe_kendaraan}</span>
+					<span class=" text-xs text-slate-950 font-bold uppercase"> &mdash; {kurir.tipe_kendaraan}</span>
 				</div>
 				<div class="flex flex-col gap-1">
 					<span class=" text-[9px] text-zinc-400 uppercase tracking-widest">Rating Akun</span>
