@@ -34,6 +34,10 @@
             <div class="text-slate-700/60 text-[10px] font-light tracking-wide truncate">
                 Hitam / XL &bull; Ready Stock
             </div>
+
+            <div class="text-slate-700/60 text-[10px] font-light tracking-wide truncate">
+                Ditambahkan: <span>12-08-2026</span>
+            </div>
         </div>
 
         <div class="flex flex-col items-end justify-between self-stretch shrink-0 py-0.5 gap-2">

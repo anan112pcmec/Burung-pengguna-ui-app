@@ -39,7 +39,7 @@
             </svg>
             <input 
                 type="text" 
-                placeholder="Cari ID transaksi atau nama barang..." 
+                placeholder="Cari Nama Barang / Seller" 
                 class="w-full bg-transparent text-xs text-slate-900 placeholder-slate-400 outline-none"
             />
         </div>

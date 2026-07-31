@@ -1,8 +1,9 @@
 <script lang=ts>
-    let UbahProfil = false;
+	import { SettingsPageState } from "$lib/state/main/settings/state.svelte";
+
 </script>
 
-{#if !UbahProfil}
+{#if SettingsPageState.Profil__IsTidakUbahProfil()}
     <!-- TAMPILAN PROFIL DETAIL (Ketika tidak sedang mengubah) -->
     <div class="flex flex-col space-y-6 h-full grid grid-rows-[82%_18%]">
         <div class="overflow-y-auto scrollbar-none space-y-6 pr-1">
@@ -55,41 +56,65 @@
         <div class="border-t border-zinc-950/10 pt-3 flex justify-end items-center">
             <button
                 type="button"
-                onclick={() => UbahProfil = true}
+                onclick={() => SettingsPageState.Profil__UbahProfil()}
                 class="text-xs tracking-wide border border-slate-900/20 px-4 py-2 hover:border-slate-950 hover:bg-slate-50 transition duration-300 rounded-sm uppercase font-medium text-slate-800">
                 Ubah Data Profil
             </button>
         </div>
     </div>
 
-{:else}
+{:else if SettingsPageState.Profil__IsUbahProfil()}
     <!-- Form Ubah Profil Lu Bawaan Sebelumnya -->
-    <form class="flex flex-col space-y-5 h-full grid grid-rows-[82%_18%]">
-        <div class="overflow-y-auto scrollbar-none space-y-4 pr-1">
-            <div class="flex flex-col space-y-2">
-                <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Username</span>
-                <input type="text" placeholder="Masukkan username" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
+   <form class="flex flex-col space-y-4 h-full grid grid-rows-[85%_15%]">
+    <div class="overflow-y-auto scrollbar-none space-y-4 pr-1">
+        
+        <!-- Foto Profil: Layout Kompak & Asimetris -->
+        <div class="p-3 border border-slate-900/10 rounded-sm bg-slate-50/50 flex items-center gap-4">
+            <div class="w-16 h-16 rounded-sm border border-slate-900/20 bg-white flex items-center justify-center overflow-hidden shrink-0 shadow-sm text-slate-400 text-xs">
+                <span>Foto</span>
             </div>
-            <div class="flex flex-col space-y-2">
-                <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Nama Lengkap</span>
-                <input type="text" placeholder="Masukkan nama" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
-            </div>
-            <div class="flex flex-col space-y-2">
-                <span class="text-[10px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Email</span>
-                <input type="email" placeholder="nama@domain.com" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
+            <div class="flex flex-col space-y-1.5 w-full">
+                <span class="text-[9px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Foto Profil</span>
+                <div class="flex items-center gap-2">
+                    <label class="cursor-pointer border border-slate-900/20 px-3 py-1 text-[11px] text-slate-800 bg-white hover:border-slate-950 hover:bg-slate-100 transition duration-300 rounded-sm uppercase font-medium">
+                        Unggah Baru
+                        <input type="file" accept="image/*" class="hidden" />
+                    </label>
+                    <span class="text-[10px] text-slate-400">JPG, PNG (Maks. 2MB)</span>
+                </div>
             </div>
         </div>
-        <div class="border-t border-zinc-950/10 pt-3 flex justify-end items-center gap-2">
-            <!-- Tombol Batal Balik ke Tampilan Awal -->
-            <button
-                type="button"
-                onclick={() => UbahProfil = false}
-                class="text-xs tracking-wide border border-transparent text-slate-500 hover:text-slate-950 px-4 py-2 transition duration-300 rounded-sm uppercase font-medium">
-                Batal
-            </button>
-            <button type="submit" class="text-xs tracking-wide bg-slate-950 text-white px-4 py-2 hover:bg-slate-800 transition duration-300 rounded-sm uppercase font-medium">
-                Simpan Perubahan
-            </button>
+
+        <!-- Username & Nama Lengkap (Grid 2 Kolom Kompak) -->
+        <div class="grid grid-cols-2 gap-3">
+            <div class="flex flex-col space-y-1.5">
+                <span class="text-[9px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Username</span>
+                <input type="text" placeholder="username" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
+            </div>
+            <div class="flex flex-col space-y-1.5">
+                <span class="text-[9px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Nama Lengkap</span>
+                <input type="text" placeholder="Nama lengkap" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
+            </div>
         </div>
-    </form>
+
+        <!-- Email -->
+        <div class="flex flex-col space-y-1.5">
+            <span class="text-[9px] font-medium tracking-[0.18em] text-slate-950/50 uppercase">Email</span>
+            <input type="email" placeholder="nama@domain.com" class="w-full border border-slate-900/20 px-2.5 py-1.5 text-xs outline-none focus:border-slate-950 bg-transparent rounded-sm placeholder:text-slate-400/70" />
+        </div>
+    </div>
+
+    <!-- Footer Aksi -->
+    <div class="border-t border-zinc-950/10 pt-2 flex justify-end items-center gap-2">
+        <button
+            type="button"
+            onclick={() => SettingsPageState.Profil__TidakUbahProfil()}
+            class="text-xs tracking-wide border border-transparent text-slate-500 hover:text-slate-950 px-3 py-1.5 transition duration-300 rounded-sm uppercase font-medium">
+            Batal
+        </button>
+        <button type="submit" class="text-xs tracking-wide bg-slate-950 text-white px-3 py-1.5 hover:bg-slate-800 transition duration-300 rounded-sm uppercase font-medium">
+            Simpan Perubahan
+        </button>
+    </div>
+</form>
 {/if}

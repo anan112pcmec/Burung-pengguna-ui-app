@@ -1,83 +1,17 @@
 <script lang="ts">
-    import { LeftOpsiState } from "$lib/state/main/profile/state.svelte";
 	import type { Action } from "svelte/action";
 	import { SvelteMap } from "svelte/reactivity";
 	import Profil from "./Profil.svelte";
-	import Alamat from "./Alamat.svelte";
 	import KeamananAkun from "./KeamananAkun.svelte";
 	import Notifikasi from "./Notifikasi.svelte";
 	import Penautan from "./Penautan.svelte";
+	import { SettingsPageState } from "$lib/state/main/settings/state.svelte";
+	import DaftarAlamat from "./DaftarAlamat.svelte";
 
     let UbahProfil: boolean = $state<boolean>(false)
     let EditAlamat2: boolean = $state<boolean>(false)
     
-    async function ClickedAlamatList(node: HTMLDivElement, eventHandle: (el: MouseEvent) => void) {
-        node.addEventListener("click", eventHandle);
-    }
-
-    const AlamatEditAction: Action = (node) => {
-    const alamatList = node.querySelectorAll('[class*="card-alamat"]') as NodeListOf<HTMLDivElement>;
-    const handlers: { alamat: HTMLDivElement; handler: (el: MouseEvent) => void }[] = [];
-    
-    const alamatCountClick = new SvelteMap<HTMLDivElement, number>();
-    const alamatTimers = new SvelteMap<HTMLDivElement, ReturnType<typeof setTimeout>>();
-
-    const AlamatClicked: HTMLDivElement[] = []
-
-    for (const alamat of alamatList) {
-        const eventmain = (el: MouseEvent) => {
-            el.stopPropagation();
-            el.preventDefault();
-
-            AlamatClicked.push(alamat)
-            alamat.classList.remove("border-slate-950/10")
-            alamat.classList.add("border-slate-950")
-
-            const currentCount = (alamatCountClick.get(alamat) ?? 0) + 1;
-            alamatCountClick.set(alamat, currentCount);
-
-            if (currentCount === 1) {
-                const timer = setTimeout(() => {
-                    alamatCountClick.set(alamat, 0);
-                    alamatTimers.delete(alamat);
-                }, 700);
-                
-                alamatTimers.set(alamat, timer);
-            }
-
-            if (currentCount > 2) {
-                const activeTimer = alamatTimers.get(alamat);
-                if (activeTimer) clearTimeout(activeTimer);
-                
-                // Reset data state hitungan
-                alamatCountClick.set(alamat, 0);
-                alamatTimers.delete(alamat);
-                
-                // Jalankan trigger edit
-                EditAlamat2 = true;
-            }
-        };
-
-        ClickedAlamatList(alamat, eventmain);
-        handlers.push({ alamat, handler: eventmain });
-    }
-
-    return {
-        destroy() {
-            // Bersihkan semua timer yang tersisa saat komponen hancur
-            for (const timer of alamatTimers.values()) {
-                clearTimeout(timer);
-            }
-            // Bersihkan semua event listener
-            for (const item of handlers) {
-                item.alamat.removeEventListener("click", item.handler);
-            }
-        }   
-    };
-
-    
-}
-
+  
 let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 
 </script>
@@ -87,36 +21,36 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
     <div class="grid grid-rows-7 pl-4 pr-4 border-r border-zinc-950/10 py-2">
 
 <button 
-    onclick={() => LeftOpsiState.setUbahProfil()}
-    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isUbahProfil() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
+    onclick={() => SettingsPageState.Profil()}
+    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {SettingsPageState.IsProfil() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
     <span>Ubah Profil</span> 
     <span class="text-right text-zinc-400">-></span>
 </button>
 
 <button 
-    onclick={() => LeftOpsiState.setDaftarAlamat()}
-    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isDaftarAlamat() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
+    onclick={() => SettingsPageState.DaftarAlamat()}
+    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {SettingsPageState.IsDaftarAlamat() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
     <span>Daftar Alamat</span> 
     <span class="text-right text-zinc-400">-></span>
 </button>
 
 <button 
-    onclick={() => LeftOpsiState.setKeamananAkun()}
-    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isKeamananAkun() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
+    onclick={() => SettingsPageState.KeamananAkun()}
+    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {SettingsPageState.IsKeamananAkun() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
     <span>Keamanan Akun</span> 
     <span class="text-right text-zinc-400">-></span>
 </button>
 
 <button 
-    onclick={() => LeftOpsiState.setNotifikasi()}
-    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isNotifikasi() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
+    onclick={() => SettingsPageState.Notifikasi()}
+    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {SettingsPageState.IsNotifikasi() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
     <span>Notifikasi</span> 
     <span class="text-right text-zinc-400">-></span>
 </button>
 
 <button 
-    onclick={() => LeftOpsiState.setPenautan()}
-    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {LeftOpsiState.isPenautan() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
+    onclick={() => SettingsPageState.Penautan()}
+    class="w-full border-t border-zinc-950/10 grid grid-cols-2 items-center text-[10px] font-medium tracking-[0.18em] uppercase transition text-left {SettingsPageState.IsPenautan() ? 'text-slate-950 font-bold' : 'text-slate-800/50 hover:text-slate-950'}">
     <span>Penautan</span> 
     <span class="text-right text-zinc-400">-></span>
 </button>
@@ -124,20 +58,20 @@ let activeTab: 'password' | 'pin' = $state<'password' | 'pin'>('password');
 
     <div class="p-6 overflow-y-auto scrollbar-none h-full bg-white flex flex-col min-h-0">
         
-        {#if LeftOpsiState.isUbahProfil()}
+        {#if SettingsPageState.IsProfil()}
            <Profil/>
 
-        {:else if LeftOpsiState.isDaftarAlamat()}
-           <Alamat/>
+        {:else if SettingsPageState.IsDaftarAlamat()}
+           <DaftarAlamat/>
 
-        {:else if LeftOpsiState.isKeamananAkun()}
+        {:else if SettingsPageState.IsKeamananAkun()}
          <KeamananAkun/>
 
-        {:else if LeftOpsiState.isNotifikasi()}
+        {:else if SettingsPageState.IsNotifikasi()}
         <Notifikasi/>
 
 
-        {:else if LeftOpsiState.isPenautan()}
+        {:else if SettingsPageState.IsPenautan()}
           <Penautan/>
         {/if}
 
