@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import type { Action } from 'svelte/action';
 	import ProductCard from '../../../GeneralComponent/ProductCard.svelte';
+	import { MarketPageState } from '$lib/state/main/market/state.svelte';
 
     const ulang:number = 24
     let ke: number = 0
@@ -156,6 +157,14 @@
 {/snippet}
 <div class="pr-2 pl-2 w-full flex flex-wrap items-start gap-x-1 gap-y-[10px] min-h-screen scrollbar-none">
         {#each Array(ulang) as _, i}
-            {@render KurirCard(i)}
+           {#if MarketPageState.IsResultBarang()}
+		   <ProductCard id={i}/>
+		   {:else if MarketPageState.IsResultSeller()}
+		   {@render SellerCard(i)}
+		   {:else if MarketPageState.IsResultKurir()}
+		   {@render KurirCard(i)}
+		   {:else}
+		   tak diketahui
+		   {/if}
         {/each}
 </div>

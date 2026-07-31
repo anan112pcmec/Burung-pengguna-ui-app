@@ -1,28 +1,123 @@
 <script lang="ts">
-	import { FilterState, UrutkanState } from "$lib/state/main/market/state.svelte";
+	import { MarketPageState } from "$lib/state/main/market/state.svelte";
 	import { Full } from "../../../../constant/UiConstant";
 
 	let section: string[] = $state<string[]>(["View All[18]", "Anak", 'Wanita', "Sale[2]", "Flash sale[1]"]);
 	
-	// State untuk Tab Kategori Utama
-	let activeTab = $state<"BARANG" | "SELLER" | "KURIR">("BARANG");
 </script>
+
+{#snippet SortingBarang()}
+	<div class="absolute left-0 top-full mt-2 w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
+						<div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Opsi</div>
+						
+						<a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+							<span>Harga Tertinggi ke Terendah</span>
+							<span class="text-[10px] text-gray-400">-></span>
+						</a>
+						
+						<a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+							<span>Harga Terendah ke Tertinggi</span>
+							<span class="text-[10px] text-gray-400">-></span>
+						</a>
+
+						<a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+							<span>Terbaru</span>
+							<span class="text-[10px] text-gray-400">-></span>
+						</a>
+						
+						<hr class="border-gray-100 my-1" />
+						<a href="/market" class="block text-center text-[11px] text-slate-800 font-medium hover:underline py-1" onclick={() => { MarketPageState.Unsort(); }}>
+							tutup
+						</a>
+					</div>
+{/snippet}
+
+
+{#snippet SortingSeller()}
+    <div class="absolute left-0 top-full mt-2 w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
+        <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Opsi Seller</div>
+        
+        <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+            <span>Rating Toko Tertinggi</span>
+            <span class="text-[10px] text-gray-400">-></span>
+        </a>
+        
+        <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+            <span>Ulasan Terbanyak</span>
+            <span class="text-[10px] text-gray-400">-></span>
+        </a>
+
+        <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+            <span>Paling Populer</span>
+            <span class="text-[10px] text-gray-400">-></span>
+        </a>
+        
+        <hr class="border-gray-100 my-1" />
+        <a href="/market" class="block text-center text-[11px] text-slate-800 font-medium hover:underline py-1" onclick={() => { MarketPageState.Unsort(); }}>
+            tutup
+        </a>
+    </div>
+{/snippet}
+
+{#snippet SortingKurir()}
+    <div class="absolute left-0 top-full mt-2 w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
+        <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Opsi Kurir</div>
+        
+        <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+            <span>Ongkos Kirim Termurah</span>
+            <span class="text-[10px] text-gray-400">-></span>
+        </a>
+        
+        <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+            <span>Estimasi Tercepat</span>
+            <span class="text-[10px] text-gray-400">-></span>
+        </a>
+
+        <a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
+            <span>Paling Sesuai</span>
+            <span class="text-[10px] text-gray-400">-></span>
+        </a>
+        
+        <hr class="border-gray-100 my-1" />
+        <a href="/market" class="block text-center text-[11px] text-slate-800 font-medium hover:underline py-1" onclick={() => { MarketPageState.Unsort(); }}>
+            tutup
+        </a>
+    </div>
+{/snippet}
 
 <section>
 	<!-- ─── TAB UTAMA: BARANG | SELLER | KURIR ─── -->
 	<div class="flex items-center gap-4 pl-2 text-xs font-bold border-b border-slate-900/10 pb-2 mb-2">
-		{#each ["BARANG", "SELLER", "KURIR"] as tab}
+		<button 
+				type="button"
+				onclick={(e) => {
+					e.preventDefault();
+					MarketPageState.ResultBarang();
+				}}
+				class="transition-colors cursor-pointer {MarketPageState.IsResultBarang() ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
+			>
+				Barang
+			</button>
 			<button 
 				type="button"
-				onclick={() => activeTab = tab as typeof activeTab}
-				class="transition-colors cursor-pointer {activeTab === tab ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
+				onclick={(e) => {
+					e.preventDefault();
+					MarketPageState.ResultSeller();
+				}}
+				class="transition-colors cursor-pointer {MarketPageState.IsResultSeller() ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
 			>
-				{tab}
+				Seller
 			</button>
-			{#if tab !== "KURIR"}
-				<span class="text-slate-300 font-normal">|</span>
-			{/if}
-		{/each}
+			<button 
+				type="button"
+				onclick={(e) => {
+					e.preventDefault();
+					MarketPageState.ResultKurir();
+				}}
+				class="transition-colors cursor-pointer {MarketPageState.IsResultKurir() ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
+			>
+				Kurir
+			</button>
 	</div>
 
 	<div class="w-full h-[10rem]  grid grid-rows-[12%_30%_2%_33%_5%_18%]">
@@ -54,7 +149,7 @@
 					onclick={(e) => {
 						e.preventDefault();
 						e.stopPropagation();
-						UrutkanState.action();
+						MarketPageState.Sorting();
 					}}
 				>
 					<span class="tracking-wide">
@@ -77,30 +172,16 @@
 				</button>
 
 				<!-- Dropdown dipindah ke luar button agar tag <a> di dalamnya berfungsi normal -->
-				{#if UrutkanState.urutkan}
-					<div class="absolute left-0 top-full mt-2 w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
-						<div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Opsi</div>
-						
-						<a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
-							<span>Harga Tertinggi ke Terendah</span>
-							<span class="text-[10px] text-gray-400">-></span>
-						</a>
-						
-						<a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
-							<span>Harga Terendah ke Tertinggi</span>
-							<span class="text-[10px] text-gray-400">-></span>
-						</a>
-
-						<a href="/market" class="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between">
-							<span>Terbaru</span>
-							<span class="text-[10px] text-gray-400">-></span>
-						</a>
-						
-						<hr class="border-gray-100 my-1" />
-						<a href="/market" class="block text-center text-[11px] text-slate-800 font-medium hover:underline py-1" onclick={() => { UrutkanState.action(); }}>
-							tutup
-						</a>
-					</div>
+				{#if MarketPageState.IsSorting()}
+					{#if MarketPageState.IsResultBarang()}
+						{@render SortingBarang()}
+					{:else if MarketPageState.IsResultSeller()}
+						{@render SortingSeller()}
+					{:else if MarketPageState.IsResultKurir()}
+						{@render SortingKurir()}
+					{:else}
+						tak diketahui
+					{/if}
 				{/if}
 			</div>
 
@@ -121,7 +202,7 @@
 					class="cursor-pointer"
 					onclick={(e) => {
 						e.preventDefault();
-						FilterState.filtering();
+						MarketPageState.Filtering();
 					}}
 				>
 					<span class="tracking-wide hover:text-slate-900/80">

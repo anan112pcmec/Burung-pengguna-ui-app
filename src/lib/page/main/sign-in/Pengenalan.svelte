@@ -4,7 +4,8 @@
     import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
     import { fade } from 'svelte/transition';
     import { Full } from '../../../../constant/UiConstant';
-    import { navbarState } from '$lib/state/main/general/state.svelte';
+	import { SignInPageState } from '$lib/state/main/sign-in/state.svelte';
+	import { GeneralPageState } from '$lib/state/main/general/state.svelte';
     
     const KontenKartuKanan: kartuPengenalanData[] = [
         {
@@ -326,17 +327,17 @@
 <section id="pengenalan" class="w-full mb-8 lg:mb-4 h-auto p-1 sm:p-2 grid grid-cols-[46%_8%_46%] lg:grid-cols-[42%_18%_40%] items-center z-10">
     
     <!-- LEFT SIDE: SIGNUP / LOGIN -->
-    <section id="signup-login" class="flex justify-center items-center h-[16rem] sm:h-[19rem] lg:h-[20rem] w-full max-w-md mx-auto {navbarState.searching ? '': 'perspective-1000'}">
+    <section id="signup-login" class="flex justify-center items-center h-[16rem] sm:h-[19rem] lg:h-[20rem] w-full max-w-md mx-auto {GeneralPageState.IsSearching() ? '': 'perspective-1000'}">
         
         <div
-            class="relative w-full h-full transition-transform duration-700 {navbarState.searching ? '': 'transform-style-3d'}"
+            class="relative w-full h-full transition-transform duration-700 {GeneralPageState.IsSearching() ? '': 'transform-style-3d'}"
             class:card-flipped={rotate}
         >
 
             <!-- FRONT CARD -->
             <div
-                class="absolute inset-0 backface-hidden border border-zinc-900/10 p-2.5 sm:p-5 lg:p-6 bg-gradient-to-br w-full from-slate-100/60 via-slate-100/40 to-white/30 {navbarState.searching ? '': 'backdrop-blur-xl'} rounded-sm grid grid-rows-[45%_55%] sm:grid-rows-[50%_50%] overflow-hidden shadow-xl shadow-slate-900/5"
-                style:z-index={rotate && !navbarState.searching ? 10 : 20}
+                class="absolute inset-0 backface-hidden border border-zinc-900/10 p-2.5 sm:p-5 lg:p-6 bg-gradient-to-br w-full from-slate-100/60 via-slate-100/40 to-white/30 {GeneralPageState.IsSearching() ? '': 'backdrop-blur-xl'} rounded-sm grid grid-rows-[45%_55%] sm:grid-rows-[50%_50%] overflow-hidden shadow-xl shadow-slate-900/5"
+                style:z-index={rotate && GeneralPageState.IsUnsearch() ? 10 : 20}
             >
                 <div class="relative overflow-hidden">
                     <div class="absolute -top-10 -right-10 w-20 h-20 sm:w-40 sm:h-40 bg-white/50 blur-2xl sm:blur-3xl rounded-full"></div>
@@ -387,7 +388,12 @@
                                         onclick={() => rotate = true}
                                         class="relative px-1.5 sm:px-3 lg:px-4 py-1 sm:py-2 rounded-xs border border-slate-900/20 text-[7.5px] sm:text-[11px] lg:text-xs font-medium uppercase tracking-wider text-slate-950 hover:border-slate-950 transition duration-300 hover:bg-slate-950 hover:text-white"
                                     >
-                                        Bergabung
+                                        {#if SignInPageState.isLoggedOut()}
+                                            Bergabung
+
+                                        {:else}
+                                            Selamat datang
+                                        {/if}
                                     </button>
 
                                 </div>
@@ -404,11 +410,12 @@
             <!-- BACK CARD (FORM LOGIN) -->
             <div
                 class="absolute inset-0 backface-hidden rotate-y-180 bg-slate-50 border border-zinc-900/10 rounded-sm flex flex-col justify-center py-2 sm:py-4 px-2 sm:px-6 lg:px-8 overflow-y-auto"
-                style:z-index={rotate && !navbarState.searching ? 20 : 10}
+                style:z-index={rotate && GeneralPageState.IsUnsearch() ? 20 : 10}
             >
                 <div class="w-full mx-auto">
 
-                    <h1 class="text-left font-sans font-bold text-xs sm:text-xl text-slate-950 tracking-wider uppercase">
+                    {#if SignInPageState.isLoggedOut()}
+                     <h1 class="text-left font-sans font-bold text-xs sm:text-xl text-slate-950 tracking-wider uppercase">
                         LOGIN
                     </h1>
 
@@ -476,6 +483,57 @@
                         </div>
 
                     </div>
+
+                    {:else}
+                        <div class="space-y-3 sm:space-y-4">
+                            <!-- Header Selamat Datang -->
+                            <div>
+                                <h1 class="text-left font-sans font-bold text-xs sm:text-xl text-slate-950 tracking-wider uppercase">
+                                    SELAMAT DATANG
+                                </h1>
+                                <p class="text-[8px] sm:text-xs text-slate-500 mt-0.5">
+                                    Anda telah berhasil masuk ke dalam sistem.
+                                </p>
+                            </div>
+
+                            <!-- Kartu Informasi Profil / User -->
+                            <div class="bg-slate-50 border border-slate-200 rounded-xs p-2 sm:p-3 space-y-2">
+                                <div class="flex items-center gap-2">
+                                    <!-- Avatar / Initial Minimalis -->
+                                    <div class="w-7 h-7 sm:w-9 sm:h-9 bg-slate-950 text-white flex items-center justify-center font-bold text-[10px] sm:text-xs rounded-xs uppercase">
+                                        @nanlol
+                                    </div>
+                                    
+                                    <div class="overflow-hidden">
+                                      <p class="text-[9px] sm:text-xs font-bold text-slate-950 truncate">
+                                        anan
+                                      </p>
+                                    <p class="text-[7.5px] sm:text-[10px] text-slate-500 truncate">
+                                        ananlol156@gmail.com
+                                      </p>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <!-- Aksi / Tombol Keluar -->
+                           
+
+                            <!-- Tombol Kembali (Opsional) -->
+                            <div class="flex justify-start mt-2 sm:mt-4 pt-1 sm:pt-2 border-t border-slate-200">
+                                <button
+                                  onclick={() => rotate = false}
+                                  class="text-slate-500 bg-transparent px-1 sm:px-2 py-0.5 sm:py-1 text-[7.5px] sm:text-xs font-bold uppercase tracking-wider rounded-xs transition duration-300 hover:text-slate-950 hover:bg-slate-100 flex items-center gap-1"
+                              >
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5">
+                                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                                  </svg>
+                                  Kembali
+                              </button>
+                          </div>
+                        </div>
+                    {/if}
+
+                   
                 </div>
 
             </div>

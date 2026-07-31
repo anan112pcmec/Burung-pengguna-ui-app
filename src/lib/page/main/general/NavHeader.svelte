@@ -1,9 +1,9 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
-    import { navbarState } from "$lib/state/main/general/state.svelte";
     import type { Action } from "svelte/action";
     import { FontSection } from "../../../../constant/NavbarDesign";
     import { Full } from "../../../../constant/UiConstant";
+	import { GeneralPageState } from "$lib/state/main/general/state.svelte";
 
     const topMenus = ["Customer Service", "Newsletter", "Find a store"];
     let param_search = $state("");
@@ -163,13 +163,13 @@
                         bind:value={param_search}
                         type="text" 
                         placeholder="Search..." 
-                        onfocus={() => navbarState.search()}
-                        onblur={() => setTimeout(() => navbarState.unsearch(), 200)} 
-                        class="bg-transparent outline-none text-[11px] sm:text-[12px] transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] placeholder-gray-400 {navbarState.searching ? 'w-32 sm:w-48 md:w-64' : 'w-16 sm:w-24 md:w-32'}"
+                        onfocus={() => GeneralPageState.Searching()}
+                        onblur={() => setTimeout(() => GeneralPageState.Unsearch(), 200)} 
+                        class="bg-transparent outline-none text-[11px] sm:text-[12px] transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] placeholder-gray-400 {GeneralPageState.IsSearching() ? 'w-32 sm:w-48 md:w-64' : 'w-16 sm:w-24 md:w-32'}"
                     />
                 </form>
 
-                {#if navbarState.searching}
+                {#if GeneralPageState.IsSearching()}
                     <div class="absolute right-0 sm:left-0 top-full mt-2 w-56 sm:w-full bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-[999]">
                         <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Rekomendasi Produk</div>
                         <a href="/market" class="flex items-center justify-between px-3 py-2 text-xs text-gray-700 hover:bg-gray-50">
@@ -189,7 +189,7 @@
             </div>
 
             <!-- Action Icons -->
-            <div class="flex items-center gap-1 sm:gap-2 md:gap-4 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-visible {navbarState.searching ? 'max-w-0 opacity-0 pointer-events-none' : 'max-w-xs opacity-100'}">
+            <div class="flex items-center gap-1 sm:gap-2 md:gap-4 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-visible { GeneralPageState.IsSearching() ? 'max-w-0 opacity-0 pointer-events-none' : 'max-w-xs opacity-100'}">
                 
                 <!-- Account / Sign menu -->
                 <div use:goHome class="cursor-pointer p-1 sm:p-2 text-gray-600 hover:text-slate-900 rounded-full hover:bg-gray-100 transition-colors duration-800 flex items-center justify-center shrink-0" title="Account">

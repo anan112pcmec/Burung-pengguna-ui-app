@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { SignUpPageState } from "$lib/state/main/sign-up/state.svelte";
+
 	// Pure UI State Mockup
 	let nama = $state("");
 	let username = $state("");
@@ -96,6 +98,10 @@
             <!-- Submit Button -->
             <div class="pt-2">
                 <button 
+                    onclick={(e) => {
+                        e.preventDefault();
+                        SignUpPageState.Otp()
+                        }}
                     type="submit" 
                     class="w-full h-10 bg-slate-950 text-white font-bold hover:bg-slate-800 border border-slate-950 rounded-2xs transition cursor-pointer flex items-center justify-center gap-2"
                 >

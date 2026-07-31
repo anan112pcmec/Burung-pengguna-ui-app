@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { FilterState, UrutkanState } from "$lib/state/main/market/state.svelte";
+	import { MarketPageState } from "$lib/state/main/market/state.svelte";
     import { Full } from "../../../../constant/UiConstant";
 
     let section: string[] = $state<string[]>(["View All Etalase[10]", "Sepatu", "Baju", "Elektronik", "Makanan"]);
@@ -61,7 +61,7 @@
                     onclick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        UrutkanState.action();
+                        MarketPageState.Sorting();
                     }}
                 >
                     <span class="tracking-wide">URUTKAN BERDASAR</span>
@@ -75,7 +75,7 @@
                 </button>
 
                 <!-- Dropdown Menu -->
-                {#if UrutkanState.urutkan}
+                {#if MarketPageState.IsSorting()}
                     <div class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
                         <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Opsi</div>
                         
@@ -96,7 +96,7 @@
                         <button 
                             type="button" 
                             class="w-full text-center text-[11px] text-slate-800 font-medium hover:underline py-1" 
-                            onclick={() => UrutkanState.action()}
+                            onclick={() => MarketPageState.Unsort()}
                         >
                             tutup
                         </button>
@@ -115,7 +115,7 @@
 
                 <button onclick={(e) => {
                     e.preventDefault();
-                    FilterState.filtering();
+                    MarketPageState.Filtering();
                 }}>
                     <span class="tracking-wide hover:text-slate-900 font-medium transition">
                         FILTER

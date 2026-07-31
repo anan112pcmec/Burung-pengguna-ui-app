@@ -1,14 +1,29 @@
-class NavbarState {
-    // TypeScript otomatis mendeteksi tipe data boolean
-    searching = $state(false);
+class State {
+    private _headerStatus :'searching' | 'unsearch' = $state('unsearch')
 
-    search = (): void => {
-        this.searching = true;
-    };
+    Searching = (): void =>{
+        this._headerStatus = "searching"
+    }
 
-    unsearch = (): void => {
-        this.searching = false;
-    };
+    Unsearch = (): void =>{
+        this._headerStatus = "unsearch"
+    }
+
+    IsSearching = (): boolean =>{
+        return this._headerStatus == 'searching'
+    }
+
+    IsUnsearch = (): boolean => {
+        return this._headerStatus == "unsearch"
+    }
+
+    get headerStatus(): 'searching' | "unsearch" {
+        return this._headerStatus
+    }
+
+    constructor(){
+        this._headerStatus = "unsearch"
+    }
 }
 
-export const navbarState = new NavbarState();
+export const GeneralPageState = new State();

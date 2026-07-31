@@ -1,29 +1,73 @@
-class FilterBerdasarState {
-    public filter: boolean
-    constructor(){
-        this.filter = $state<boolean>(false)
+class State {
+    private _statusFilter: 'filtering' | 'unfiltering' = $state<'filtering' | 'unfiltering'>('unfiltering')
+
+    Filtering = ():void => {
+        this._statusFilter = "filtering"
     }
 
-    filtering = ():void => {
-        this.filter = true
+    Unfiltering = ():void => {
+        this._statusFilter = "unfiltering"
     }
 
-    unfiltering = (): void => {
-        this.filter = false
+    IsFiltering = (): boolean =>{
+        return this._statusFilter == "filtering"
+    }
+
+    IsUnfiltering = (): boolean =>{
+        return this._statusFilter == "unfiltering"
+    } 
+
+    get StatusFilter(){
+        return this._statusFilter
+    }
+
+    private _statusSort: 'sorting' | 'unsort' = $state<'sorting' |'unsort'>('unsort')
+
+    Sorting = (): void => {
+        this._statusSort = "sorting"
+    }
+
+    Unsort = (): void => {
+        this._statusSort = "unsort"
+    }
+
+    IsSorting = (): boolean => {
+        return this._statusSort == "sorting"
+    }
+
+    IsUnsort = (): boolean => {
+        return this._statusSort == "unsort"
+    } 
+
+    get StatusSort(){
+        return this._statusSort
+    }
+
+    private _statusResultType: 'barang' | 'seller' | 'kurir' = $state<'barang' | 'seller' | 'kurir'>('barang')
+
+    ResultBarang = ():void => {
+        this._statusResultType = 'barang';
+    }
+
+    ResultSeller = (): void => {
+        this._statusResultType = 'seller'
+    }
+
+    ResultKurir = (): void =>{
+        this._statusResultType = 'kurir'
+    }
+
+    IsResultBarang = (): boolean =>{
+        return this._statusResultType == "barang"
+    }
+
+    IsResultSeller = (): boolean =>{
+        return this._statusResultType == "seller"
+    }
+
+    IsResultKurir = (): boolean =>{
+        return this._statusResultType == "kurir"
     }
 }
 
-export const FilterState = new FilterBerdasarState()
-
-class UrutkanBerdasarState {
-    public urutkan: boolean 
-    constructor(){
-        this.urutkan = $state<boolean>(false)
-    }
-
-    action = (): void =>{
-        this.urutkan = !this.urutkan
-    }
-}
-
-export const UrutkanState = new UrutkanBerdasarState()
+export const MarketPageState = new State()
