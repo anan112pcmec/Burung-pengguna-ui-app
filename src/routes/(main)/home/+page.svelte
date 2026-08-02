@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CategorySection from "$lib/page/main/home/CategorySection.svelte";
 	import HeadingAds from "$lib/page/main/home/HeadingAds.svelte";
+	import LastSeenProduct from "$lib/page/main/home/LastSeenProduct.svelte";
 	import ProductResultList from "$lib/page/main/home/ProductResultList.svelte";
 
 
@@ -8,6 +9,7 @@
 
 <main class="mt-[7rem]">
     <HeadingAds/>
+    <LastSeenProduct/>
     <CategorySection/>
     <ProductResultList/>
 </main>
