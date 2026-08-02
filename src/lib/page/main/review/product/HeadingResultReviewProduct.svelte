@@ -1,6 +1,6 @@
 <script lang="ts">
-	// State untuk tab aktif (Menunggu vs Selesai)
-	let activeTab = $state<"MENUNGGU" | "SELESAI">("MENUNGGU");
+	import { ReviewProductPageState} from "$lib/state/main/review/product/state.svelte";
+
 </script>
 
 <section id="heading-result-review-product" class="w-full bg-white border-b border-zinc-950/10 p-4 md:p-6 space-y-6">
@@ -28,14 +28,14 @@
 		<!-- Tab 1: Menunggu Diulas -->
 		<button 
 			type="button"
-			onclick={() => activeTab = "MENUNGGU"}
+			onclick={() => ReviewProductPageState.MenungguReview()}
 			class="pb-2.5 flex items-center gap-2 border-b-[2px] transition-colors cursor-pointer
-			{activeTab === 'MENUNGGU' ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
+			{ReviewProductPageState.IsMenungguReview() ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
 		>
-			<span class="font-sans text-sm font-bold">Menunggu Diulas</span>
+			<span class="font-sans text-sm font-bold">Menunggu Di Review</span>
 			<!-- Counter Badge -->
 			<span class="font-mono text-[9px] px-1.5 py-0.5 rounded-sm transition-colors
-				{activeTab === 'MENUNGGU' ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
+				{ReviewProductPageState.IsMenungguReview() ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
 			>
 				3
 			</span>
@@ -44,14 +44,14 @@
 		<!-- Tab 2: Ulasan Selesai -->
 		<button 
 			type="button"
-			onclick={() => activeTab = "SELESAI"}
+			onclick={() => ReviewProductPageState.TelahDiReview()}
 			class="pb-2.5 flex items-center gap-2 border-b-[2px] transition-colors cursor-pointer
-			{activeTab === 'SELESAI' ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
+			{ReviewProductPageState.IsTelahDiReview() ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
 		>
 			<span class="font-sans text-sm font-bold">Ulasan Selesai</span>
 			<!-- Counter Badge -->
 			<span class="font-mono text-[9px] px-1.5 py-0.5 rounded-sm transition-colors
-				{activeTab === 'SELESAI' ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
+				{ReviewProductPageState.IsTelahDiReview()  ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
 			>
 				12
 			</span>

@@ -16,5 +16,7 @@ class State {
     IsTidakTambahKategori = (): boolean =>{
         return this._statusTambahKategori == "tidak"
     }
-    
+
 }
+
+export const WishlistPageState = new State()

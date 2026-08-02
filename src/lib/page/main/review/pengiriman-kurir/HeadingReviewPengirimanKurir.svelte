@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { ReviewPengirimanPageState } from "$lib/state/main/review/pengiriman-kurir/state.svelte";
+	import ReviewPengirimanKurirResult from "./ReviewPengirimanKurirResult.svelte";
+
 	// State untuk tab aktif (Menunggu vs Selesai)
-	let activeTab = $state<"MENUNGGU" | "SELESAI">("MENUNGGU");
 </script>
 
 <section id="heading-review-pengiriman-kurir" class="w-full bg-white border-b border-zinc-950/10 p-4 md:p-6 space-y-6">
@@ -28,14 +30,14 @@
 		<!-- Tab 1: Menunggu Diulas -->
 		<button 
 			type="button"
-			onclick={() => activeTab = "MENUNGGU"}
+			onclick={() => ReviewPengirimanPageState.MenungguDiulas()}
 			class="pb-2.5 flex items-center gap-2 border-b-[2px] transition-colors cursor-pointer
-			{activeTab === 'MENUNGGU' ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
+			{ReviewPengirimanPageState.IsMenungguDiulas() ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
 		>
 			<span class="font-sans text-sm font-bold">Belum Dinilai</span>
 			<!-- Counter Badge -->
 			<span class="font-mono text-[9px] px-1.5 py-0.5 rounded-sm transition-colors
-				{activeTab === 'MENUNGGU' ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
+				{ReviewPengirimanPageState.IsMenungguDiulas() ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
 			>
 				2
 			</span>
@@ -44,14 +46,14 @@
 		<!-- Tab 2: Ulasan Selesai -->
 		<button 
 			type="button"
-			onclick={() => activeTab = "SELESAI"}
+			onclick={() => ReviewPengirimanPageState.Diulas()}
 			class="pb-2.5 flex items-center gap-2 border-b-[2px] transition-colors cursor-pointer
-			{activeTab === 'SELESAI' ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
+			{ReviewPengirimanPageState.IsDiulas() ? 'border-slate-950 text-slate-950' : 'border-transparent text-zinc-400 hover:text-slate-950'}"
 		>
 			<span class="font-sans text-sm font-bold">Sudah Dinilai</span>
 			<!-- Counter Badge -->
 			<span class="font-mono text-[9px] px-1.5 py-0.5 rounded-sm transition-colors
-				{activeTab === 'SELESAI' ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
+				{ReviewPengirimanPageState.IsDiulas() ? 'bg-slate-950 text-white' : 'bg-zinc-100 text-zinc-500'}"
 			>
 				18
 			</span>

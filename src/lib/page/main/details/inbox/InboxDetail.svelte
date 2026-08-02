@@ -65,7 +65,7 @@
 			type="button" 
 			class="text-xs font-bold text-slate-800 hover:text-slate-950 flex items-center gap-1.5 transition"
 		>
-			â† KEMBALI KE INBOX
+			KEMBALI KE INBOX
 		</button>
 
 		<div class="flex items-center gap-1.5">

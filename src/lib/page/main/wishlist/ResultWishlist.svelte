@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { Action } from 'svelte/action';
+	import { SvelteMap } from 'svelte/reactivity';
 
 	// Jumlah iterasi koleksi wishlist
 	const ulang = 6;
@@ -15,30 +16,132 @@
 		{ name: "HOME LIVING & DECOR", totalItems: 7, isPublic: true },
 	];
 
-    const ClickBoxWishlist: Action = (node) => {
-        const WishlistBoxs: NodeListOf<HTMLDivElement> = node.querySelectorAll('[class*="box-wishlist"]') as NodeListOf<HTMLDivElement>
-        const handlers: {element: HTMLDivElement, ev: (e:PointerEvent)=>void}[] = []
+	export const ClickBoxWishlist: Action = (node) => {
+    const WishlistBoxs: NodeListOf<HTMLDivElement> = node.querySelectorAll('[class*="box-wishlist"]');
+    const handlers: { element: HTMLDivElement; ev: (e: PointerEvent) => void }[] = [];
 
-        for (const wishlistEl of WishlistBoxs){
-            const event = (el: PointerEvent): void => {
-                el.preventDefault();
-                el.stopPropagation();
-
-                goto("/details/wishlist")
-            }
-
-            wishlistEl.addEventListener("click", event)
-            handlers.push({element: wishlistEl, ev: event})
-        }
-
-        return{
-            destroy(){
-                for (const h of handlers){
-                    h.element.removeEventListener("click", h.ev)
-                }
-            }
-        }
+    interface ClickTrack {
+        status: 'locked' | 'not-locked' | 'prep-for-delete';
+        count: number;
     }
+    
+    const WishlistClickedTrack: SvelteMap<HTMLDivElement, ClickTrack> = new SvelteMap();
+    const WishlistClickedTimeout: SvelteMap<HTMLDivElement, NodeJS.Timeout> = new SvelteMap();
+
+    for (const wishlistEl of WishlistBoxs) {
+        const event = (e: PointerEvent): void => {
+            const currentCount = WishlistClickedTrack.get(wishlistEl);
+            
+            // 1. Jika status saat ini 'locked', klik berikutnya ubah jadi 'prep-for-delete' (Border Tebal Siap Hapus)
+            if (currentCount && currentCount.status === 'locked') {
+                const existingTimeout = WishlistClickedTimeout.get(wishlistEl);
+                if (existingTimeout) clearInterval(existingTimeout);
+                WishlistClickedTimeout.delete(wishlistEl);
+
+                const updatePrep: ClickTrack = {
+                    status: 'prep-for-delete',
+                    count: 1
+                };
+                WishlistClickedTrack.set(wishlistEl, updatePrep);
+
+                // Ubah border menjadi tebal/aktif via class DOM
+                wishlistEl.classList.remove('border-zinc-950/10');
+                wishlistEl.classList.add('border-2', 'border-slate-950');
+                return;
+            }
+
+            // 2. Jika status 'prep-for-delete', klik kedua kalinya akan menghapus data & mereset border
+            if (currentCount && currentCount.status === 'prep-for-delete') {
+                WishlistClickedTrack.delete(wishlistEl);
+                
+                // Kembalikan border ke default
+                wishlistEl.classList.remove('border-2', 'border-slate-950');
+                wishlistEl.classList.add('border-zinc-950/10');
+                return;
+            }
+
+            // 3. Alur normal penambahan klik (Counter 1, 2, 3)
+            const newCount: ClickTrack = {
+                status: 'not-locked',
+                count: (currentCount?.count ?? 0) + 1,
+            }; 
+            
+            if (currentCount == undefined) {
+                WishlistClickedTrack.set(wishlistEl, newCount);
+                // Berikan animasi/border menebal pada klik pertama
+                wishlistEl.classList.remove('border-zinc-950/10');
+                wishlistEl.classList.add('border-2', 'border-slate-950');
+            } else if (currentCount.status != 'locked') {
+                WishlistClickedTrack.set(wishlistEl, newCount);
+            }
+
+            const latestCount = WishlistClickedTrack.get(wishlistEl)?.count ?? newCount.count;
+            if (latestCount >= 3) {
+                const existingTimeout = WishlistClickedTimeout.get(wishlistEl);
+                if (existingTimeout) clearInterval(existingTimeout);
+                WishlistClickedTimeout.delete(wishlistEl);
+                WishlistClickedTrack.delete(wishlistEl);
+
+                // Reset border sebelum pindah halaman
+                wishlistEl.classList.remove('border-2', 'border-slate-950');
+                wishlistEl.classList.add('border-zinc-950/10');
+
+                goto("/details/wishlist");
+                return;
+            }
+
+            // Atur Interval Timeout Mundur (Countdown)
+            if (!WishlistClickedTimeout.has(wishlistEl)) {
+                const intervalId = setInterval(() => {
+                    const clickedRn = WishlistClickedTrack.get(wishlistEl);
+                    console.log("el ini sisa click counter: ", clickedRn);
+
+                    if (clickedRn == undefined) {
+                        clearInterval(intervalId);
+                        WishlistClickedTimeout.delete(wishlistEl);
+                        return;
+                    }
+
+                    if (clickedRn.count <= 1) {
+                        const UpdateTrackStatus: ClickTrack = {
+                            status: 'locked',
+                            count: clickedRn.count
+                        };
+                        WishlistClickedTrack.set(wishlistEl, UpdateTrackStatus);
+                        
+                        clearInterval(intervalId);
+                        WishlistClickedTimeout.delete(wishlistEl);
+                    } else {
+                        const UpdateTrackStatus: ClickTrack = {
+                            status: 'not-locked',
+                            count: clickedRn.count - 1
+                        };
+                        WishlistClickedTrack.set(wishlistEl, UpdateTrackStatus);
+                    }
+                }, 1200);
+
+                WishlistClickedTimeout.set(wishlistEl, intervalId);
+            }
+        };
+
+        wishlistEl.addEventListener("click", event as EventListener);
+        handlers.push({ element: wishlistEl, ev: event as (e: PointerEvent) => void });
+    }
+
+    return {
+        destroy() {
+            for (const [, timeoutId] of WishlistClickedTimeout) {
+                clearInterval(timeoutId);
+            }
+            WishlistClickedTimeout.clear();
+            WishlistClickedTrack.clear();
+
+            for (const h of handlers) {
+                h.element.removeEventListener("click", h.ev as EventListener);
+            }
+        }
+    };
+};
 </script>
 
 {#snippet BoxWishlist(i: number)}
