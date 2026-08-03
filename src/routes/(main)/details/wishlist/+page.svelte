@@ -1,8 +1,10 @@
 <script lang="ts">
-	import WishlistDetails from "$lib/page/main/details/wishlist/WishlistDetails.svelte";
+	import WishlistHeader from "$lib/page/main/details/wishlist/WishlistHeader.svelte";
+	import WishlistResultProduct from "$lib/page/main/details/wishlist/WishlistResultProduct.svelte";
 
 </script>
 
 <main class="mt-[7rem]">
-    <WishlistDetails/>
+    <WishlistHeader/>
+    <WishlistResultProduct/>
 </main>

@@ -5,7 +5,7 @@
     
 </script>
 
-<main class="mt-[7rem]">
+<main class="mt-[7rem] p-2">
     <LikesHeading/>
     <LikesResult/>
 </main>
