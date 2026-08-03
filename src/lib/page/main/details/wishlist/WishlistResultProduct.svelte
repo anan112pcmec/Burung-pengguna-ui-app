@@ -6,8 +6,8 @@
 </script>
 
 <section  class="pr-2 pl-2 w-full flex flex-wrap items-start gap-x-1 gap-y-[10px] min-h-screen scrollbar-none">
-        {#each wishlistItems as id}
-			<ProductCard {id} />
+        {#each wishlistItems as i}
+			<ProductCard id={i} path={"/details/produk"} />
 		{/each}
 
 </section>

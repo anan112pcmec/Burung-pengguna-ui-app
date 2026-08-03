@@ -39,7 +39,7 @@
 		{#each Array(ulang) as _, i}
 			<!-- WAJIB pakai shrink-0 di wrapper ini agar ProductCard tidak mengecil otomatis -->
 			<div class="snap-start shrink-0">
-				<ProductCard id={i} />
+				<ProductCard id={i} path={"/details/produk"} />
 			</div>
 		{/each}
 

@@ -1,56 +1,91 @@
 <script lang="ts">
-  const bayangkanajasisellerbikindiskonsebanyak = 6;
-  const bayangkanajaadaimagefotobarangdidiskon = 5;
-
-  let pos: number = 0;
+	const bayangkanajasisellerbikindiskonsebanyak = 6;
+	const bayangkanajaadaimagefotobarangdidiskon = 5;
 </script>
 
+<!-- ==========================================
+     SNIPPET: ELEMEN DISKON KARTU
+=========================================== -->
 {#snippet DiskonElement(i: number)}
-  <div class="diskon-elemen-{i} relative bg-white text-zinc-900 rounded-2xl p-5 min-w-[12rem] shrink-0 border border-zinc-200/80 shadow-sm hover:border-zinc-300 transition-all overflow-visible my-4">
-    
-    <!-- Icon Bundle Melayang (Clean Monochrome) -->
-    <div class="absolute -top-3 -right-3 bg-zinc-900 text-white p-2 rounded-xl shadow-md border border-zinc-800 flex items-center justify-center z-30">
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-        <line x1="12" y1="22.08" x2="12" y2="12"/>
-      </svg>
-    </div>
+	<div class="relative w-[17rem] shrink-0 bg-white border border-zinc-950/10 flex flex-col p-5 group hover:border-slate-950 transition-colors cursor-pointer">
+		
+		<!-- ─── TOP BAR: LABEL & PERSENTASE ─── -->
+		<div class="flex justify-between items-start mb-6">
+			<div class="flex flex-col">
+				<span class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest font-bold">
+					Promo Bundel
+				</span>
+				<h2 class="font-sans font-extrabold text-slate-950 text-4xl tracking-tighter mt-1 flex items-baseline gap-1">
+					40% <span class="text-lg text-zinc-400 font-bold tracking-normal">OFF</span>
+				</h2>
+			</div>
 
-    <div class="grid grid-cols-[55%_45%] items-center gap-2">
-      <!-- Teks Diskon -->
-      <div class="flex flex-col justify-center">
-        <h2 class="text-4xl font-extrabold text-zinc-900  tracking-tight">40%</h2>
-        <span class="text-[11px] text-zinc-500 mt-1 ">Promo Spesial</span>
-      </div>
+			<!-- Ikon Boks Hitam Solid -->
+			<div class="w-8 h-8 bg-slate-950 text-white flex items-center justify-center shrink-0">
+				<!-- Menyesuaikan stroke-linecap jadi square agar senada -->
+				<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+					<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+					<polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+					<line x1="12" y1="22.08" x2="12" y2="12"/>
+				</svg>
+			</div>
+		</div>
 
-      <div class="relative h-28 w-full">
-        {#each Array(bayangkanajaadaimagefotobarangdidiskon) as _, idx}
-          <div 
-            style="z-index: {10 - idx}; transform: translateX({pos + (idx * 12)}px) rotate({pos - (idx * 8)}deg) skewX(2deg);" 
-            class="card_{idx} absolute top-0 left-0 w-20 h-24 rounded-xl overflow-hidden shadow-md border-2 border-white transition-all duration-300 origin-bottom-left bg-zinc-100"
-          >
-            <!-- Mockup Image Full Container -->
-            <img 
-              src="https://picsum.photos/200/300?random={i * 10 + idx}" 
-              alt="Foto Produk" 
-              class="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:opacity-100 transition-all" 
-            />
-          </div>
-        {/each}
-      </div>
-    </div>
-  </div>
+		<!-- ─── BODY: IMAGE STACK (TUMPUKAN RAPI) ─── -->
+		<!-- Menggunakan perhitungan matematika yang lebih kalem agar kartu tidak terlihat berantakan -->
+		<div class="relative h-32 w-full mt-2">
+			{#each Array(bayangkanajaadaimagefotobarangdidiskon) as _, idx}
+				<div 
+					style="z-index: {10 - idx}; transform: translateX({idx * 16}px) rotate({(idx * 5) - 10}deg);" 
+					class="absolute top-0 left-4 w-24 h-28 border border-zinc-950/20 bg-zinc-50 transition-all duration-300 origin-bottom"
+				>
+					<!-- Efek grayscale bawaanmu saya pertahankan, sangat cocok untuk style minimalis -->
+					<img 
+						src="https://picsum.photos/200/300?random={i * 10 + idx}" 
+						alt="Foto Produk Diskon" 
+						class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
+					/>
+				</div>
+			{/each}
+		</div>
+
+		<!-- ─── FOOTER: INFO TAMBAHAN ─── -->
+		<div class="mt-6 border-t border-zinc-950/10 pt-3 flex items-center justify-between">
+			<span class="font-mono text-[9px] text-zinc-400 uppercase tracking-widest">
+				Berakhir 3 Hari
+			</span>
+			<span class="font-mono text-[10px] font-bold text-slate-950 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+				KLAIM 
+				<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+					<path stroke-linecap="square" stroke-linejoin="miter" d="M5 12h14M12 5l7 7-7 7"/>
+				</svg>
+			</span>
+		</div>
+
+	</div>
 {/snippet}
 
-<!-- Container Utama Horizontal Scroll -->
-<section id="diskon-section">
-    <h1 class="p-2">
-        <span>Diskon Nama Seller</span>
-    </h1>
-    <div  class="flex gap-6 overflow-x-auto scrollbar-none items-center p-4 w-full bg-white">
-         {#each Array(bayangkanajasisellerbikindiskonsebanyak) as _, i}
-            {@render DiskonElement(i)}
-        {/each}
-    </div>
+<!-- ==========================================
+     SECTION: CONTAINER HORIZONTAL SCROLL
+=========================================== -->
+<section id="diskon-section" class="w-full bg-white border border-zinc-950/10 flex flex-col">
+	
+	<!-- Header Section (Senada dengan 'Barang Unggulan') -->
+	<div class="flex items-center justify-between border-b border-zinc-950/10 p-4 md:px-6 bg-zinc-50/50">
+		<h2 class="font-sans font-bold text-slate-950 text-sm md:text-base tracking-tight uppercase">
+			Diskon & Penawaran Toko
+		</h2>
+		
+		<div class="flex items-center gap-2 font-mono text-[10px] text-zinc-500 uppercase tracking-widest font-bold">
+			<span>{bayangkanajasisellerbikindiskonsebanyak} PROMO AKTIF</span>
+		</div>
+	</div>
+
+	<!-- Kontainer Gulir -->
+	<div class="flex gap-4 overflow-x-auto scrollbar-none items-stretch px-4 py-6 md:px-6 w-full">
+		{#each Array(bayangkanajasisellerbikindiskonsebanyak) as _, i}
+			{@render DiskonElement(i)}
+		{/each}
+	</div>
+	
 </section>

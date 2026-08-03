@@ -158,7 +158,7 @@
 <div class="pr-2 pl-2 w-full flex flex-wrap items-start gap-x-1 gap-y-[10px] min-h-screen scrollbar-none">
         {#each Array(ulang) as _, i}
            {#if MarketPageState.IsResultBarang()}
-		   <ProductCard id={i}/>
+		   <ProductCard id={i} path={"/details/produk"} />
 		   {:else if MarketPageState.IsResultSeller()}
 		   {@render SellerCard(i)}
 		   {:else if MarketPageState.IsResultKurir()}

@@ -2,12 +2,14 @@
 	import { goto } from "$app/navigation";
 	import type { Action } from "svelte/action";
 
-const id: number = $props<number>()
-
+let { id, path, fun }: { id: number; path: string, fun?: () => void } = $props();
 const DetailsAction: Action = (node) =>{
    const handleClick = () => {
         // Tambahkan '/' di awal untuk path absolut
-        goto("/details/produk"); 
+        if(fun !== undefined){
+            fun()
+        }
+        goto(path); 
     };
 
     node.addEventListener("click", handleClick)
