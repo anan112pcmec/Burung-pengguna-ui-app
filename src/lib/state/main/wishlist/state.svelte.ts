@@ -1,20 +1,28 @@
 class State {
-    private _statusTambahKategori: 'tambah' |'tidak' = $state<'tambah' | 'tidak'>("tidak")
+    private _statusAksiWishlist: 'tambah-kategori' | 'hapus-kategori' |'idle' = $state<'tambah-kategori' | 'hapus-kategori' | 'idle'>("idle")
 
     TambahKategori = (): void =>{
-        this._statusTambahKategori = "tambah"
+        this._statusAksiWishlist = "tambah-kategori"
     }
 
-    TidakTambahKategori = (): void => {
-        this._statusTambahKategori = "tidak"
+    HapusKategori = (): void => {
+        this._statusAksiWishlist = "hapus-kategori"
+    }
+
+    Idle = (): void => {
+        this._statusAksiWishlist = "idle"
     }
 
     IsTambahKategori = (): boolean => {
-        return this._statusTambahKategori == "tambah"
+        return this._statusAksiWishlist == "tambah-kategori"
     }
 
-    IsTidakTambahKategori = (): boolean =>{
-        return this._statusTambahKategori == "tidak"
+    IsHapusKategori = (): boolean => {
+        return this._statusAksiWishlist == "hapus-kategori"
+    }
+
+    IsIdle = (): boolean => {
+        return this._statusAksiWishlist == "idle"
     }
 
 }

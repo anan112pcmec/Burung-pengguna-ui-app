@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { WishlistPageState } from "$lib/state/main/wishlist/state.svelte";
+
 	// State untuk Search & Total Counter Wishlist
 	let searchQuery = $state("");
 	let totalWishlist = $state(3);
@@ -63,4 +65,5 @@
 		</div>
 
 	</div>
+
 </section>
