@@ -31,11 +31,11 @@
 			<h2 class="font-sans font-bold text-slate-950 text-base md:text-lg tracking-tight uppercase">
 				Pencarian Direktori Etalase
 			</h2>
-			<p class="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mt-0.5">
+			<p class="text-[10px] text-zinc-500 uppercase tracking-widest mt-0.5">
 				Telusuri kategori atau nomor rak penyimpanan toko
 			</p>
 		</div>
-		<span class="font-mono text-[10px] text-slate-950 font-bold bg-zinc-100 border border-zinc-950/10 px-3 py-1 self-start md:self-auto uppercase">
+		<span class="text-[10px] text-slate-950 font-bold bg-zinc-100 border border-zinc-950/10 px-3 py-1 self-start md:self-auto uppercase">
 			Index: Aktif
 		</span>
 	</div>
@@ -51,12 +51,12 @@
 			type="text" 
 			bind:value={searchQuery}
 			placeholder="Ketik nama etalase atau kode (contoh: ET-01)..." 
-			class="w-full bg-zinc-50 border border-zinc-950/10 pl-11 pr-4 py-3 font-mono text-xs text-slate-950 placeholder-zinc-400 focus:outline-none focus:border-slate-950 focus:bg-white transition-all"
+			class="w-full bg-zinc-50 border border-zinc-950/10 pl-11 pr-4 py-3  text-xs text-slate-950 placeholder-zinc-400 focus:outline-none focus:border-slate-950 focus:bg-white transition-all"
 		/>
 		{#if searchQuery}
 			<button 
 				onclick={() => searchQuery = ""}
-				class="absolute right-3 font-mono text-[10px] text-zinc-400 hover:text-slate-950 uppercase tracking-widest px-2 py-1"
+				class="absolute right-3 text-[10px] text-zinc-400 hover:text-slate-950 uppercase tracking-widest px-2 py-1"
 			>
 				Reset
 			</button>

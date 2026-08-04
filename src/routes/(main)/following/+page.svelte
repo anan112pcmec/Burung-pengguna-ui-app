@@ -4,7 +4,7 @@
 
 </script>
 
-<main class="mt-[7rem] p-2">
+<main class="mt-[7rem] p-4">
     <FollowingHeader/>
     <FollowingResult/>
 </main>

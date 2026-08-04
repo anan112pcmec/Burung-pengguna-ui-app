@@ -2,6 +2,7 @@
 	import ProductCard from "$lib/GeneralComponent/ProductCard.svelte";
 
     // Mock untuk loop rekomendasi produk
+    const {path}: {path:string} = $props()
     const jumlahSaran: number = 6;
 </script>
 
@@ -29,7 +30,7 @@
         {#each Array(jumlahSaran) as _, i}
             <!-- Wrapper snap agar pergeseran card terasa taktil & pas di grid -->
             <div class="snap-start flex-shrink-0">
-                <ProductCard id={i}/>
+                <ProductCard id={i} path={path}/>
             </div>
         {/each}
     </div>

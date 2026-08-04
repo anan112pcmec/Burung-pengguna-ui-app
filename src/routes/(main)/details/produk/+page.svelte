@@ -1,11 +1,13 @@
 <script>
-	import DetailProduk from "$lib/page/main/details/produk/DetailProduk.svelte";
-	import SaranProduk from "$lib/page/main/details/produk/SaranProduk.svelte";
+	import DetailProduk from "$lib/GeneralComponent/DetailProduk.svelte";
+	import KomentarProduk from "$lib/GeneralComponent/KomentarProduk.svelte";
+	import SaranProduk from "$lib/GeneralComponent/SaranProduk.svelte";
 
 
 </script>
 
 <main class="mt-[7rem]">
 <DetailProduk/>
-<SaranProduk/>
+<KomentarProduk/>
+<SaranProduk path={"/details/produk"}/>
 </main>
