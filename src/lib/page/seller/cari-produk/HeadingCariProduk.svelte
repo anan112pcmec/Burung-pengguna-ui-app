@@ -1,4 +1,5 @@
 <script lang="ts">
+	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
 	import { MarketPageState } from "$lib/state/main/market/state.svelte";
     import { Full } from "../../../../constant/UiConstant";
 
@@ -54,55 +55,13 @@
         <div class="px-2 pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-slate-800/70">
             
             <!-- Sort Dropdown Container -->
-            <div class="relative">
-                <button 
-                    type="button"
-                    class="flex items-center gap-2 hover:text-slate-900 transition" 
-                    onclick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        MarketPageState.Sorting();
-                    }}
-                >
-                    <span class="tracking-wide">URUTKAN BERDASAR</span>
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 4.875C12.6213 4.875 13.125 5.37868 13.125 6V10.8752V13.1252V18.0007C13.125 18.622 12.6213 19.1257 12 19.1257C11.3787 19.1257 10.875 18.622 10.875 18.0007V13.1252V10.8752V6C10.875 5.37868 11.3787 4.875 12 4.875Z" fill="currentColor"/>
-                        <g opacity="0.4">
-                            <path d="M18.0007 10.875H13.1252V13.125H18.0007C18.622 13.125 19.1257 12.6213 19.1257 12C19.1257 11.3787 18.622 10.875 18.0007 10.875Z" fill="currentColor"/>
-                            <path d="M6 13.125H10.8752V10.875H6C5.37868 10.875 4.875 11.3787 4.875 12C4.875 12.6213 5.37868 13.125 6 13.125Z" fill="currentColor"/>
-                        </g>
-                    </svg>
-                </button>
-
-                <!-- Dropdown Menu -->
-                {#if MarketPageState.IsSorting()}
-                    <div class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-xl py-2 z-50">
-                        <div class="px-3 py-1 text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Opsi</div>
-                        
-                        <a href="/market" class="px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between transition">
-                            <span>Harga Tertinggi ke Terendah</span>
-                            <span class="text-[10px] text-gray-400">→</span>
-                        </a>
-                        <a href="/market" class="px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between transition">
-                            <span>Harga Terendah ke Tertinggi</span>
-                            <span class="text-[10px] text-gray-400">→</span>
-                        </a>
-                        <a href="/market" class="px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 flex items-center justify-between transition">
-                            <span>Terbaru</span>
-                            <span class="text-[10px] text-gray-400">→</span>
-                        </a>
-                        
-                        <hr class="border-gray-100 my-1" />
-                        <button 
-                            type="button" 
-                            class="w-full text-center text-[11px] text-slate-800 font-medium hover:underline py-1" 
-                            onclick={() => MarketPageState.Unsort()}
-                        >
-                            tutup
-                        </button>
-                    </div>
-                {/if}
-            </div>
+           <UrutkanBerdasar Kriteria={[
+            {nama: "Harga Tertinggi ke Terendah", fun: () => {}},
+			{nama: "Harga Terendah ke Tertinggi", fun: () => {}},
+			{nama: "Terbaru Ditambahkan", fun: () => {}},
+			{nama: "Terlama Ditambahkan", fun: () => {}},
+			{nama: "Likes Tertinggi", fun: () => {}},
+            ]} />
 
             <!-- Filter Trigger -->
             <div class="flex items-center gap-2">

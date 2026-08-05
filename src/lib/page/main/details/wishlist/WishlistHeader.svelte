@@ -1,4 +1,5 @@
 <script lang="ts">
+	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
     import ProductCard from "$lib/GeneralComponent/ProductCard.svelte";
 	import { DetailsWishlistPageState } from "$lib/state/main/details/wishlist/state.svelte";
 
@@ -17,8 +18,6 @@
 
     // Utility State untuk Search, Sort, & Filter
     let searchQuery = $state("");
-    let sortBy = $state("newest"); // "newest", "price_asc", "price_desc", "discount"
-    let selectedCategory = $state("all");
 </script>
 {#snippet Static()}
     <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-zinc-100 pb-4">
@@ -95,7 +94,7 @@
     
     <!-- ─── 1. HEADER UTILITY & SEARCH BAR ─── -->
 	
-    <header class="border border-zinc-950/10 bg-white p-4 sm:p-5 rounded-sm space-y-4">
+    <header class=" bg-white p-4 sm:p-5 rounded-sm space-y-4">
        
         <!-- Folder Meta & Title Bar -->
         {#if DetailsWishlistPageState.IsStatic()}
@@ -147,26 +146,15 @@
             </div>
 
             <!-- Sorting Dropdown -->
-            <select 
-                bind:value={sortBy} 
-                class="h-9 px-3 text-xs bg-zinc-50 border border-zinc-950/10 rounded-2xs text-slate-900 focus:outline-none focus:border-slate-950 transition cursor-pointer"
-            >
-                <option value="newest">TERBARU DITAMBAHKAN</option>
-                <option value="price_asc">HARGA: TERENDAH → TERTINGGI</option>
-                <option value="price_desc">HARGA: TERTINGGI → TERENDAH</option>
-                <option value="discount">DISKON TERBESAR</option>
-            </select>
-
-            <!-- Quick Category Filter -->
-            <select 
-                bind:value={selectedCategory} 
-                class="h-9 px-3 text-xs bg-zinc-50 border border-zinc-950/10 rounded-2xs text-slate-900 focus:outline-none focus:border-slate-950 transition cursor-pointer"
-            >
-                <option value="all">SEMUA KATEGORI</option>
-                <option value="electronics">ELEKTRONIK</option>
-                <option value="furniture">FURNITUR</option>
-                <option value="accessories">AKSESORIS</option>
-            </select>
+           <div class="flex items-center">
+                <UrutkanBerdasar Kriteria={[
+                    {nama: "Acak", fun: (): void => {}}, 
+                    {nama: "Terbaru" , fun: (): void => {}}, 
+                    {nama: "Terlama", fun: (): void => {}},
+                    {nama: "Likes Tertinggi",  fun: (): void => {}}
+                    ]} OpsiDropdown={"Kanan"}
+                />
+           </div>
 
         </div>
     </header>

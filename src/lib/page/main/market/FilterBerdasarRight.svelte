@@ -274,7 +274,6 @@
 {#if MarketPageState.IsFiltering()}
   <!-- Backdrop Blur & Background Hitam Transparan -->
 <div in:fade out:fade use:othersideClick class="fixed  h-full inset-0 z-100 flex justify-end bg-black/40 backdrop-blur-sm">
-        
     {#if MarketPageState.IsResultBarang()}
 		{@render BarangFilter()}
     {:else if MarketPageState.IsResultSeller()}

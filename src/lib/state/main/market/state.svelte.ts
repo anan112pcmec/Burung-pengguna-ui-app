@@ -21,27 +21,7 @@ class State {
         return this._statusFilter
     }
 
-    private _statusSort: 'sorting' | 'unsort' = $state<'sorting' |'unsort'>('unsort')
-
-    Sorting = (): void => {
-        this._statusSort = "sorting"
-    }
-
-    Unsort = (): void => {
-        this._statusSort = "unsort"
-    }
-
-    IsSorting = (): boolean => {
-        return this._statusSort == "sorting"
-    }
-
-    IsUnsort = (): boolean => {
-        return this._statusSort == "unsort"
-    } 
-
-    get StatusSort(){
-        return this._statusSort
-    }
+    
 
     private _statusResultType: 'barang' | 'seller' | 'kurir' = $state<'barang' | 'seller' | 'kurir'>('barang')
 
