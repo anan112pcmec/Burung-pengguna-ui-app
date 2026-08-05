@@ -106,14 +106,14 @@
 					<span class="text-xs font-bold text-zinc-950">
 						{item.nama_pengguna || `User #${item.id_pengguna_review}`}
 					</span>
-					<span class="text-[10px] font-mono text-zinc-400">
+					<span class="text-[10px]  text-zinc-400">
 						{formatDate(item.created_at)}
 					</span>
 				</div>
 			</div>
 
 			<!-- Rating Tag -->
-			<div class="flex items-center gap-1 bg-zinc-950 text-white px-2 py-0.5 rounded-2xs font-mono text-[11px] font-bold">
+			<div class="flex items-center gap-1 bg-zinc-950 text-white px-2 py-0.5 rounded-2xs text-[11px] font-bold">
 				<span>★</span>
 				<span>{Number(item.rating_review).toFixed(1)}</span>
 			</div>
@@ -162,7 +162,7 @@
 		{/if}
 
 		<!-- Action Bar: Like & Dislike Counter -->
-		<div class="flex items-center gap-3 pt-1 text-[11px] font-mono text-zinc-500">
+		<div class="flex items-center gap-3 pt-1 text-[11px]  text-zinc-500">
 			<!-- Like Button -->
 			<button class="flex items-center gap-1 hover:text-zinc-950 transition-colors cursor-pointer {item.is_liked ? 'text-zinc-950 font-bold' : ''}">
 				<svg class="w-3.5 h-3.5" fill={item.is_liked ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -188,23 +188,31 @@
 =========================================== -->
 <section id="review-produk" class="w-full border-y border-zinc-200 bg-white">
 	<!-- Header Section -->
-	<div class="px-4 py-3.5 border-b border-zinc-200 flex items-center justify-between">
+	<div class="px-6 py-3.5 border-b border-zinc-200 flex items-center justify-between">
 		<div class="flex items-center gap-2">
-			<h3 class="text-xs font-bold font-mono uppercase tracking-wider text-zinc-950">
+			<h3 class="text-[11px] font-bold  uppercase tracking-wider text-zinc-950">
 				Ulasan Pembeli
 			</h3>
-			<span class="font-mono text-[10px] bg-zinc-100 border border-zinc-200 px-1.5 py-0.2 font-bold text-zinc-700">
+			<span class=" text-[10px] bg-zinc-100 border border-zinc-200 px-1.5 py-0.2 font-bold rounded-full text-zinc-700">
 				{reviewList.length}
 			</span>
+		</div>
+		<div class="flex items-center gap-1.5 text-xs text-zinc-500 font-medium">
+			<span class="group-hover:text-slate-950 transition-colors">
+				Lihat Semua
+			</span>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-zinc-400 group-hover:text-slate-950 transition-transform duration-300 ">
+				<path d="m6 9 6 6 6-6"/>
+			</svg>
 		</div>
 	</div>
 
 	<!-- List Ulasan -->
-	<div class="divide-y divide-zinc-200">
+	<div class="divide-y divide-zinc-200 max-h-[15rem] overflow-y-auto scroll-auto scrollbar-none">
 		{#each reviewList as item (item.id_review)}
 			{@render Review(item)}
 		{:else}
-			<div class="p-6 text-center font-mono text-xs text-zinc-400">
+			<div class="p-6 text-center  text-xs text-zinc-400">
 				NIL_REVIEWS
 			</div>
 		{/each}

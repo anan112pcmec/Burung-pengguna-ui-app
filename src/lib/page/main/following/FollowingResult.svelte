@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
+
 	// Pure UI Mockup Data Seller
 	const followedSellers = [
 		{
@@ -37,7 +39,12 @@
 <br>
 <section id="following-result" class="max-h-[28rem] overflow-y-auto w-full border  p-2 border-zinc-950/10 rounded-sm bg-white divide-y divide-zinc-950/10">
 	{#each followedSellers as seller}
-		<div class="flex items-start justify-between gap-3 p-3.5 transition hover:bg-zinc-50">
+		<div 
+        onclick={() => goto("/seller-overview")}
+        role="button"
+        tabindex="0"
+        onkeydown={() =>{console.log("")}}
+        class="flex items-start justify-between gap-3 p-3.5 transition hover:bg-zinc-50">
     
     <!-- Left Column: Avatar + Seller Details -->
     <div class="flex items-start gap-3 min-w-0">
