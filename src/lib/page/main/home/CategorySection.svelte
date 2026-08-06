@@ -31,7 +31,8 @@
     </div>
 {/snippet}
 
-<section id="category-section" class="p-4" >
+<section id="category-section" class="p-4 space-y-4" >
+<h1 class="text-[18px] ml-1">Kategori Barang</h1>
 <div class="flex items-start overflow-x-auto whitespace-nowrap scrollbar-none gap-2">
     {#each Array(ulang) as _, i}
         {@render ListCategory(i)}

@@ -10,7 +10,7 @@
 
 <section>
 	<!-- ─── TAB UTAMA: BARANG | SELLER | KURIR ─── -->
-	<div class="flex items-center gap-4 pl-2 text-xs font-bold border-b border-slate-900/10 pb-2 mb-2">
+	<div class="flex items-center gap-4 pl-2 text-[15px] font-semibold border-b border-slate-900/10 pb-2 mb-2">
 		<button 
 				type="button"
 				onclick={(e) => {
@@ -19,7 +19,7 @@
 				}}
 				class="transition-colors cursor-pointer {MarketPageState.IsResultBarang() ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
 			>
-				Barang
+				BARANG
 			</button>
 			<button 
 				type="button"
@@ -29,7 +29,7 @@
 				}}
 				class="transition-colors cursor-pointer {MarketPageState.IsResultSeller() ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
 			>
-				Seller
+				SELLER
 			</button>
 			<button 
 				type="button"
@@ -39,7 +39,7 @@
 				}}
 				class="transition-colors cursor-pointer {MarketPageState.IsResultKurir() ? 'text-slate-950 underline underline-offset-4 decoration-2' : 'text-slate-800/40 hover:text-slate-950'}"
 			>
-				Kurir
+				KURIR
 			</button>
 	</div>
 
@@ -50,8 +50,9 @@
 			</p>
 		</div>
 
-		<div class="p-2 font-bold font-sans text-2xl">
-			<h1>BARANG 1</h1>
+		<div class="p-2 font-bold font-sans text-2xl grid grid-cols-2">
+		<h1>BARANG 1</h1>
+		<h2 class="text-end text-[15px]">TOTAL PRODUK(20)</h2>
 		</div>
 
 		<div><!-- Hanya sebagai jarak --></div>

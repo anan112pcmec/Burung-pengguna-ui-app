@@ -39,7 +39,7 @@
         
         {#each Kriteria as k (k.nama)}
         <button 
-        onclick={() => k.fun}
+        onclick={k.fun}
         class="px-3 py-2 text-[11px] text-slate-800 hover:bg-slate-50 hover:text-slate-950 flex items-center justify-between transition">
             <span>{k.nama}</span>
             <span class="text-[9px] ml-2 text-slate-400">&rarr;</span>

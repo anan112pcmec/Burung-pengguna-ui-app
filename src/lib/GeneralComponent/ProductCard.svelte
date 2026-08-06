@@ -56,7 +56,7 @@
         </div>
 
         <!-- Bagian Lokasi dengan min-w-0 agar truncate berfungsi sempurna di dalam flexbox -->
-        <div class="flex px-2 items-center gap-1.5 text-[10px] text-zinc-500 uppercase tracking-wider min-w-0">
+        <div class="flex px-3 items-center gap-1.5 text-[10px] text-zinc-500 uppercase tracking-wider min-w-0">
             <!-- Ikon Lokasi Titik (Pin SVG) -->
             <svg class="w-3 h-3 text-slate-950 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="square" stroke-linejoin="miter" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -64,25 +64,28 @@
             </svg>
             
             <!-- Teks Alamat (Menggunakan truncate murni tanpa line-clamp) -->
-            <span class="truncate font-semibold text-slate-900">Jl. Pajajaran No. 123, RT 02/RW 05, Baranangsiang, Bogor Timur, Kota Bogor, 16143</span>
+            <span class="truncate font-semibold text-[10px] text-slate-900">Jl. Pajajaran No. 123, RT 02/RW 05, Baranangsiang, Bogor Timur, Kota Bogor, 16143</span>
         </div>
 
         <!-- Bagian Bawah (Rating & Tombol) -->
-        <div class="text-slate-900 text-[10px] space-y-2 font-medium items-center px-1 tracking-wide min-w-0">
-            <div class="grid grid-cols-3">
-                <div class="flex items-center justify-center gap-1">
+        <div class="text-slate-900 text-[10px] space-y-4 font-medium items-center  tracking-wide min-w-0">
+            <div class="grid grid-cols-3 text-[11px]">
+                <div class="flex items-center justify-center">
                     <span class="text-slate-700">★</span>
-                    <span>4.8</span>
+                    <span class="">4.8</span>
                 </div>
                 <div class="flex justify-center text-slate-700/80 truncate">
-                    2.1k terjual
+                    2.1k Terjual
                 </div>
                 <div class="flex justify-center text-slate-700/80 truncate">
-                    Stok 12
+                    Stok:12
                 </div>
             </div>
             
-            <button class="group w-full flex items-center justify-center gap-2 text-slate-800/70 text-xs border border-slate-900/20 px-1 py-1 hover:border-slate-900/50 hover:bg-slate-900 hover:text-white transition duration-300 rounded-xs">
+            <button onclick={(e) =>{
+                e.preventDefault()
+                e.stopPropagation()
+            }} class="group  w-full flex items-center justify-center gap-2 text-slate-800/70 text-xs border border-slate-900/20 px-1 py-1 hover:border-slate-900/50 hover:bg-slate-900 hover:text-white transition duration-300 rounded-xs">
                 <span class="tracking-wide truncate">TAMBAH KERANJANG</span>
                 <span class="opacity-80 transition duration-300 shrink-0">
                     <svg class="w-[15px] h-[15px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

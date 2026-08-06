@@ -1,4 +1,6 @@
 <script lang="ts">
+	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
+
 	// State data promo dari backend untuk ditampilkan ke pembeli
 	let promo = $state({
 		id_diskon_produk: 101,
@@ -9,6 +11,7 @@
 		berlaku_sampai_diskon_produk: "2026-08-31",
 		status_diskon_produk: "Aktif"
 	});
+	
 </script>
 
 <section id="diskon-header" class="w-full border border-zinc-200 rounded-xs bg-white p-4">
@@ -39,6 +42,8 @@
 			{/if}
 		</div>
 
+		
+
 		<!-- Right Side: Info Masa Berlaku & Status Otomatis -->
 		<div class="shrink-0 flex items-center gap-2 pt-2 md:pt-0 border-t border-zinc-100 md:border-t-0 text-[10px] text-zinc-500">
 			<svg class="w-3.5 h-3.5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -47,5 +52,30 @@
 			<span>BERLAKU S/D {promo.berlaku_sampai_diskon_produk}</span>
 		</div>
 
+		
+
 	</div>
+	 <div class="relative pt-4 space-y-4 ">
+        <input 
+            type="text" 
+    	    placeholder="Cari item di Diskon ini..." 
+            class="w-full h-9 px-3 text-xs bg-zinc-50 border border-zinc-950/10 rounded-2xs text-slate-900 placeholder:text-zinc-400 focus:outline-none focus:border-slate-950 focus:bg-white transition"
+        />
+		<div class="w-full grid grid-cols-2 pl-0.5">
+			<div class="flex items-center">
+				<UrutkanBerdasar Kriteria={[
+					{nama: "Terbaru", fun: (): void =>{}},
+					{nama: "Harga Termurah", fun: (): void =>{}},
+					{nama: "Harga Tertinggi", fun: (): void =>{}}
+				]}/>
+			</div>
+			<dir class="flex items-end justify-end">
+				<button class="p-1.5 justify-end text-right border border-zinc-200 rounded-xs text-zinc-600 hover:text-slate-950 hover:border-zinc-400 transition" title="Bagikan Etalase">
+					<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0-10.628a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zm0 10.628a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" />
+					</svg>
+				</button>
+			</dir>
+		</div>
+    </div>
 </section>

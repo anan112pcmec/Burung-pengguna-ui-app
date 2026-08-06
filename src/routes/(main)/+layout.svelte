@@ -3,8 +3,6 @@
     import NavHeader from "../../lib/page/main/general/NavHeader.svelte";
     import NavFooter from "../../lib/page/main/general/NavFooter.svelte";
     
-    import { fade } from 'svelte/transition';
-    import { onMount } from 'svelte';
 	
 
     let { children } = $props();

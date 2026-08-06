@@ -1,4 +1,6 @@
 <script lang="ts">
+	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
+
 	// Interface mengikuti struct GORM Go
 	interface MediaEtalaseFoto {
 		id_media_etalase_foto: number;
@@ -69,7 +71,7 @@
 	};
 </script>
 
-<section id="etalase-header" class="w-full bg-white border border-zinc-200 rounded-xs overflow-hidden shadow-2xs">
+<section id="etalase-header" class="w-full bg-white border border-zinc-200 rounded-xs shadow-2xs">
 	
 	<!-- ─── MEDIA GALERI / BANNER ETALASE ─── -->
 	{#if data.media_foto && data.media_foto.length > 0}
@@ -147,9 +149,7 @@
 		</div>
 
 		<!-- ─── ACTION BAR (SEARCH & ACTIONS) ─── -->
-		<div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-4">
-			<!-- Search Bar Produk di Etalase Ini -->
-			<div class="relative flex-1 max-w-xs">
+		 <div class="relative flex-1 w-full">
 				<svg class="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
 				</svg>
@@ -159,6 +159,14 @@
 					class="w-full bg-zinc-50 border border-zinc-200 rounded-xs pl-8 pr-3 py-1.5 text-xs text-slate-950 placeholder:text-zinc-400 focus:outline-none focus:border-slate-950 transition"
 				/>
 			</div>
+		<div class="pt-3 border-t border-zinc-100 flex items-center justify-between gap-4">
+			<!-- Search Bar Produk di Etalase Ini -->
+			
+			<UrutkanBerdasar Kriteria={[
+					{nama: "Terbaru", fun: (): void =>{}},
+					{nama: "Harga Termurah", fun: (): void =>{}},
+					{nama: "Harga Tertinggi", fun: (): void =>{}}
+				]}/>
 
 			<!-- Quick Actions -->
 			<div class="flex items-center gap-2">

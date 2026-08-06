@@ -3,21 +3,6 @@
     import ProductCard from "$lib/GeneralComponent/ProductCard.svelte";
 	import { DetailsWishlistPageState } from "$lib/state/main/details/wishlist/state.svelte";
 
-    // Properti komponen (bisa disesuaikan dengan data dari backend/props)
-    let { 
-        wishlistName = "SETUP MEJA KERJA", 
-        wishlistDescription = "Kumpulan referensi perangkat dan aksesoris untuk menunjang produktivitas kerja harian agar lebih rapi dan ergonomis.",
-        visibility = "PUBLIC",
-        itemCount = 20 
-    }: {
-        wishlistName?: string;
-        wishlistDescription?: string;
-        visibility?: string;
-        itemCount?: number;
-    } = $props();
-
-    // Utility State untuk Search, Sort, & Filter
-    let searchQuery = $state("");
 </script>
 {#snippet Static()}
     <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-zinc-100 pb-4">
@@ -139,7 +124,6 @@
             <div class="relative">
                 <input 
                     type="text" 
-                    bind:value={searchQuery}
                     placeholder="Cari item di wishlist ini..." 
                     class="w-full h-9 px-3 text-xs bg-zinc-50 border border-zinc-950/10 rounded-2xs text-slate-900 placeholder:text-zinc-400 focus:outline-none focus:border-slate-950 focus:bg-white transition"
                 />
