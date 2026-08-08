@@ -5,7 +5,7 @@
 	import KeamananAkun from "./KeamananAkun.svelte";
 	import Notifikasi from "./Notifikasi.svelte";
 	import Penautan from "./Penautan.svelte";
-	import { SettingsPageState } from "$lib/state/main/settings/state.svelte";
+	import { SettingsPageState } from "./state/ui.state.svelte";
 	import DaftarAlamat from "./DaftarAlamat.svelte";
 
     let UbahProfil: boolean = $state<boolean>(false)

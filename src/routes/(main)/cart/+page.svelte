@@ -3,7 +3,7 @@
 	import HapusKeranjangElement from "$lib/page/main/cart/HapusKeranjangElement.svelte";
 	import ListCart from "$lib/page/main/cart/ListCart.svelte";
 	import TotalBelanja from "$lib/page/main/cart/TotalBelanja.svelte";
-	import { CartPageState } from "$lib/state/main/cart/state.svelte";
+	import { CartPageState } from "$lib/page/main/cart/state/ui.state.svelte";
 
 
 </script>

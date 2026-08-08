@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Action } from "svelte/action";
 	import { fade } from "svelte/transition";
-    import { MarketPageState} from "../../../state/main/market/state.svelte"
+    import { MarketPageState} from "./state/ui.state.svelte"
 
    const othersideClick: Action = (node) => {
         // Cari elemen modal berdasarkan class

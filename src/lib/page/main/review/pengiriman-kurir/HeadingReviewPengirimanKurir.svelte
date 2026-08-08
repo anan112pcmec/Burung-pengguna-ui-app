@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ReviewPengirimanPageState } from "$lib/state/main/review/pengiriman-kurir/state.svelte";
+	import { ReviewPengirimanPageState } from "$lib/page/main/review/pengiriman-kurir/state/ui.state.svelte";
 	import ReviewPengirimanKurirResult from "./ReviewPengirimanKurirResult.svelte";
 
 	// State untuk tab aktif (Menunggu vs Selesai)

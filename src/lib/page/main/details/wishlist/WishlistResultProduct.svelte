@@ -9,5 +9,4 @@
         {#each wishlistItems as i}
 			<ProductCard id={i} path={"/details/produk"} />
 		{/each}
-
 </section>

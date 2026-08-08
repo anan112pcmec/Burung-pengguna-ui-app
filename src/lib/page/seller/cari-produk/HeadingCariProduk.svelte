@@ -1,6 +1,5 @@
 <script lang="ts">
 	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
-	import { MarketPageState } from "$lib/state/main/market/state.svelte";
     import { Full } from "../../../../constant/UiConstant";
 
     let section: string[] = $state<string[]>(["View All Etalase[10]", "Sepatu", "Baju", "Elektronik", "Makanan"]);
@@ -74,7 +73,7 @@
 
                 <button onclick={(e) => {
                     e.preventDefault();
-                    MarketPageState.Filtering();
+                   // MarketPageState.Filtering();//
                 }}>
                     <span class="tracking-wide hover:text-slate-900 font-medium transition">
                         FILTER

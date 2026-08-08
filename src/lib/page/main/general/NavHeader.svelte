@@ -3,7 +3,7 @@
     import type { Action } from "svelte/action";
     import { FontSection } from "../../../../constant/NavbarDesign";
     import { Full } from "../../../../constant/UiConstant";
-	import { GeneralPageState } from "$lib/state/main/general/state.svelte";
+	import { GeneralPageState } from "$lib/page/main/general/state/ui.state.svelte";
 
     const topMenus = ["Customer Service", "Newsletter", "Find a store"];
     let param_search = $state("");

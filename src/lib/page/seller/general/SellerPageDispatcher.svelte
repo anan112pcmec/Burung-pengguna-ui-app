@@ -1,7 +1,7 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
 	import { page } from "$app/state";
-    import { SellerGeneralPageState } from "$lib/state/seller/general/state.svelte";
+    import { SellerGeneralPageState } from "./state/ui.state.svelte";
 
     let pageName = $derived(
     page.url.pathname.split('/').filter(Boolean).pop() ?? ''

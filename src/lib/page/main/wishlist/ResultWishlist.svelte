@@ -1,6 +1,6 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
-    import { WishlistPageState } from '$lib/state/main/wishlist/state.svelte';
+    import { WishlistPageState } from './state/ui.state.svelte';
     import type { Action } from 'svelte/action';
     import { SvelteMap } from 'svelte/reactivity';
 

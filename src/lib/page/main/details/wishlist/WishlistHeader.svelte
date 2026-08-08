@@ -1,7 +1,7 @@
 <script lang="ts">
 	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
     import ProductCard from "$lib/GeneralComponent/ProductCard.svelte";
-	import { DetailsWishlistPageState } from "$lib/state/main/details/wishlist/state.svelte";
+	import { DetailsWishlistPageState } from "./state/ui.state.svelte";
 
 </script>
 {#snippet Static()}

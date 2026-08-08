@@ -1,6 +1,6 @@
 <script lang="ts">
 	import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
-	import { MarketPageState } from "$lib/state/main/market/state.svelte";
+	import { MarketPageState } from "$lib/page/main/market/state/ui.state.svelte";
 	import { Full } from "../../../../constant/UiConstant";
 
 	let section: string[] = $state<string[]>(["View All[18]", "Anak", 'Wanita', "Sale[2]", "Flash sale[1]"]);
@@ -50,9 +50,8 @@
 			</p>
 		</div>
 
-		<div class="p-2 font-bold font-sans text-2xl grid grid-cols-2">
-		<h1>BARANG 1</h1>
-		<h2 class="text-end text-[15px]">TOTAL PRODUK(20)</h2>
+		<div class="p-2 font-bold font-sans text-2xl ">
+		<h1>BARANG 1(20)</h1>
 		</div>
 
 		<div><!-- Hanya sebagai jarak --></div>

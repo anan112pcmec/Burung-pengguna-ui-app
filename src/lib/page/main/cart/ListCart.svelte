@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CartPageState } from "$lib/state/main/cart/state.svelte";
+	import { CartPageState } from "$lib/page/main/cart/state/ui.state.svelte";
 	import { Full } from "../../../../constant/UiConstant";
 
     const ulang: number = 5

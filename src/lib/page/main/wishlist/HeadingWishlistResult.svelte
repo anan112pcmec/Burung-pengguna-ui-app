@@ -1,6 +1,6 @@
 <script lang="ts">
     import UrutkanBerdasar from "$lib/GeneralComponent/MicroComponent/UrutkanBerdasar.svelte";
-import { WishlistPageState } from "$lib/state/main/wishlist/state.svelte";
+import { WishlistPageState } from "./state/ui.state.svelte";
 
     // State untuk Search, Sort, & Total Counter Wishlist
     let searchQuery = $state("");

@@ -1,5 +1,5 @@
 <script lang=ts>
-	import { SettingsPageState } from "$lib/state/main/settings/state.svelte";
+	import { SettingsPageState } from "./state/ui.state.svelte";
 
 </script>
 

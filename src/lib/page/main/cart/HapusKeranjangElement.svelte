@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CartPageState } from "$lib/state/main/cart/state.svelte";
+	import { CartPageState } from "$lib/page/main/cart/state/ui.state.svelte";
 
 	// Props Svelte 5 & Mock Data
 	let {

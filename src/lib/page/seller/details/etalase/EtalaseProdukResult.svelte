@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ProductCard from "$lib/GeneralComponent/ProductCard.svelte";
-	import { SellerGeneralPageState } from "$lib/state/seller/general/state.svelte";
+	import { SellerGeneralPageState } from "../../general/state/ui.state.svelte";
 
     const ulang = 11
 </script>

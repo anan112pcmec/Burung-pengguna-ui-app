@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SignUpPageState } from "$lib/state/main/sign-up/state.svelte";
+	import { SignUpPageState } from "$lib/page/main/sign-up/state/ui.state.svelte";
 	import type { Action } from "svelte/action";
     import { Full } from "../../../../constant/UiConstant";
 

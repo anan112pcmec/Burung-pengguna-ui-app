@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ReviewProductPageState} from "$lib/state/main/review/product/state.svelte";
+	import { ReviewProductPageState} from "$lib/page/main/review/product/state/ui.state.svelte";
 
 </script>
 

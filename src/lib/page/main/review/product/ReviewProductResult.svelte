@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { ReviewProductPageState as pageFlowState, ReviewProductPageState } from '$lib/state/main/review/product/state.svelte';
+    import { ReviewProductPageState as pageFlowState, ReviewProductPageState } from '$lib/page/main/review/product/state/ui.state.svelte';
     import type { Action } from 'svelte/action';
 
 const ulang = 9

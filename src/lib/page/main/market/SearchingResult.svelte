@@ -2,13 +2,28 @@
 	import { goto } from '$app/navigation';
 	import type { Action } from 'svelte/action';
 	import ProductCard from '../../../GeneralComponent/ProductCard.svelte';
-	import { MarketPageState } from '$lib/state/main/market/state.svelte';
+	import { MarketPageState } from '$lib/page/main/market/state/ui.state.svelte';
 
     const ulang:number = 24
     let ke: number = 0
     function tambah(){
         ke++
     }
+
+	const foto_foto_sellerCard = ["https://picsum.photos/600/200?random=30", "https://picsum.photos/600/200?random=40", "https://picsum.photos/600/200?random=50", "https://picsum.photos/600/200?random=60", "https://picsum.photos/600/200?random=70", "https://picsum.photos/600/200?random=80"]
+	var rotateCardPhoto: {
+		rotateDeg?: number;
+		plusMinus?: number;
+	}[] = [
+		{
+			rotateDeg: 7,
+			plusMinus:1
+		},
+		{
+			rotateDeg: 13,
+			plusMinus:-1
+		}
+	]
 </script>
 {#snippet SellerCard(id: number)}
 	{@const seller = {
@@ -115,7 +130,41 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class=" p-4 h-[9rem] relative flex items-center justify-center overflow-hidden ">
+			<!-- Efek Cahaya Background Tipis -->
+			<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
 
+			<div class="flex items-center justify-center space-x-2">
+				{#each foto_foto_sellerCard as foto, i}
+					{@const config = rotateCardPhoto[i % rotateCardPhoto.length]}
+					{@const deg = (config.rotateDeg ?? 12) * (config.plusMinus ?? 1)}
+					
+					<!-- Kartu Foto ala Polaroid / Katalog Produk -->
+					<div 
+						style="transform: rotate({deg}deg);" 
+						id="canvas-foto-{i}" 
+						class="relative group/photo w-20 h-20 bg-white p-1.5 rounded-md shadow-xl transition-all duration-300 hover:rotate-0 hover:scale-110 hover:z-30 cursor-pointer"
+					>
+						<!-- Frame Foto -->
+						<div class="w-full h-full overflow-hidden rounded bg-zinc-100 relative">
+							<img 
+								class="w-full h-full object-cover group-hover/photo:scale-105 transition-transform duration-500" 
+								src="{foto}" 
+								alt="Produk etalase {i + 1}" 
+							/>
+							<!-- Overlay Tipis saat Hover -->
+							<div class="absolute inset-0 bg-black/10 opacity-0 group-hover/photo:opacity-100 transition-opacity"></div>
+						</div>
+
+						<!-- Label kecil nomor produk (Opsional untuk estetika katalog) -->
+						<span class="absolute -bottom-2 -right-1 bg-slate-900 text-white text-[8px] font-mono px-1 py-0.5 rounded shadow-sm opacity-0 group-hover/photo:opacity-100 transition-opacity">
+							#{i + 1}
+						</span>
+					</div>
+				{/each}
+			</div>
+		</div>
 		<!-- ─── FOOTER ─── -->
 		<div class="px-4 py-2.5 bg-zinc-50 border-t border-zinc-100 flex items-center justify-between text-[10px]">
 			<span class="text-zinc-400 font-medium">Garansi Resmi</span>

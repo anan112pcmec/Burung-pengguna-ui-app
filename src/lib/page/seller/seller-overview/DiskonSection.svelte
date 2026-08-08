@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SellerGeneralPageState } from "$lib/state/seller/general/state.svelte";
+	import { SellerGeneralPageState } from "../general/state/ui.state.svelte";
 	import DiskonCard from "../general/DiskonCard.svelte";
 
 	const bayangkanajasisellerbikindiskonsebanyak = 6;

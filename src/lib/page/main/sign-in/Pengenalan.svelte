@@ -4,8 +4,8 @@
     import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
     import { fade } from 'svelte/transition';
     import { Full } from '../../../../constant/UiConstant';
-	import { SignInPageState } from '$lib/state/main/sign-in/state.svelte';
-	import { GeneralPageState } from '$lib/state/main/general/state.svelte';
+	import { SignInPageState } from '$lib/page/main/sign-in/state/ui.state.svelte';
+	import { GeneralPageState } from '$lib/page/main/general/state/ui.state.svelte';
     
     const KontenKartuKanan: kartuPengenalanData[] = [
         {

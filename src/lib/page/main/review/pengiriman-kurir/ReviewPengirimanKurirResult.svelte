@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ReviewPengirimanPageState } from '$lib/state/main/review/pengiriman-kurir/state.svelte';
+	import { ReviewPengirimanPageState } from '$lib/page/main/review/pengiriman-kurir/state/ui.state.svelte';
 
     const ulang = 9;
 </script>
